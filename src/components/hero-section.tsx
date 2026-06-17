@@ -1,14 +1,14 @@
-import Image from "next/image"
-import { ChevronDown, Calendar, Search } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { BookingCard } from "./BookingCard"
+import Image from "next/image";
+import { ChevronDown, Calendar, Search } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { BookingCard } from "./BookingCard";
 
 const avatars = [
   "/images/doctor-1.png",
   "/images/doctor-2.png",
   "/images/doctor-3.png",
   "/images/doctor-4.png",
-]
+];
 
 export function HeroSection() {
   return (
@@ -38,13 +38,13 @@ export function HeroSection() {
           </p>
 
           <div className="mt-7 flex flex-wrap gap-3">
-            <Button size="lg" className="rounded-full px-7">
+            <Button size="lg" className="rounded-sm px-7">
               Book Appointment
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="rounded-full border-primary px-7 text-primary hover:bg-primary hover:text-primary-foreground"
+              className="rounded-sm border-primary px-7 text-primary hover:bg-primary hover:text-primary-foreground"
             >
               Find a Doctor
             </Button>
@@ -71,29 +71,32 @@ export function HeroSection() {
         </div>
 
         {/* Right: booking card */}
-       <div className="flex xl:justify-end justify-center">
-  <BookingCard />
-</div>
+        <div className="flex xl:justify-end justify-center">
+          <BookingCard />
+        </div>
       </div>
     </section>
-  )
+  );
 }
 
 function SelectField({
   label,
   icon = "chevron",
 }: {
-  label: string
-  icon?: "chevron" | "calendar"
+  label: string;
+  icon?: "chevron" | "calendar";
 }) {
   return (
     <button className="flex w-full items-center justify-between rounded-lg border border-border bg-card px-4 py-3 text-left text-sm text-muted-foreground transition-colors hover:border-primary/50">
       {label}
       {icon === "chevron" ? (
-        <ChevronDown className="size-4 text-muted-foreground" aria-hidden="true" />
+        <ChevronDown
+          className="size-4 text-muted-foreground"
+          aria-hidden="true"
+        />
       ) : (
         <Calendar className="size-4 text-muted-foreground" aria-hidden="true" />
       )}
     </button>
-  )
+  );
 }
