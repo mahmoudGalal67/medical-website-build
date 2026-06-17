@@ -9,7 +9,7 @@ import { StatsBar } from "@/components/stats-bar";
 export default function Home() {
   return (
       <main className="min-h-screen bg-background ">
-   <div className="max-w-7xl mx-auto border-x-1 ">
+   <div className="max-w-7xl mx-auto border-x ">
       <SiteHeader />
       <HeroSection />
       <FeatureStrip />
