@@ -2,12 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import {
-  Phone,
-  MessageCircle,
-  Siren,
-  HeartPulse,
-} from "lucide-react";
+import { Phone, MessageCircle, Siren, HeartPulse } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 
@@ -19,6 +14,7 @@ const navLinks = [
   "Insurance",
   "Packages",
   "Blog",
+  "Booking",
   "Contact Us",
 ];
 
@@ -90,7 +86,7 @@ export function SiteHeader() {
               {navLinks.map((link) => (
                 <Link
                   key={link}
-                  href="#"
+                  href={link}
                   className="relative text-sm font-medium text-foreground/80 transition-colors hover:text-primary"
                 >
                   {link}
@@ -98,9 +94,7 @@ export function SiteHeader() {
               ))}
             </nav>
 
-            <Button className="rounded-full px-6">
-              Book Appointment
-            </Button>
+            <Button className="rounded-full px-6">Book Appointment</Button>
           </div>
 
           {/* Mobile Actions */}
@@ -159,9 +153,7 @@ export function SiteHeader() {
             </nav>
 
             <div className="border-t p-4">
-              <Button className="w-full rounded-full">
-                Book Appointment
-              </Button>
+              <Button className="w-full rounded-full">Book Appointment</Button>
             </div>
           </div>
         </div>
