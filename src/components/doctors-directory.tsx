@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 
 import { useState } from "react";
 import Image from "next/image";
@@ -186,12 +187,14 @@ function DoctorCard({ doctor }: { doctor: Doctor }) {
           <span className="font-medium text-foreground">{doctor.rating}</span>
           <span className="text-muted-foreground">({doctor.reviews})</span>
         </div>
-        <Button
-          variant="outline"
-          className="mt-3 w-full border-brand/30 text-primary hover:bg-brand-muted hover:text-brand"
-        >
-          Book Now
-        </Button>
+        <Link href="DoctorDetails">
+          <Button
+            variant="outline"
+            className="mt-3 w-full border-brand/30 text-primary hover:bg-primary hover:text-white cursor-pointer"
+          >
+            Book Now
+          </Button>
+        </Link>
       </div>
     </div>
   );

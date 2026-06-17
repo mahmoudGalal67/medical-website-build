@@ -1,5 +1,4 @@
 import { DoctorsDirectory } from "@/components/doctors-directory";
-import { BookingDateTime } from "@/components/booking-date-time";
 
 export default function Page() {
   return (
