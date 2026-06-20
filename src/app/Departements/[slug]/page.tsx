@@ -75,13 +75,13 @@ export default function DepartmentPage() {
         <div className="container mx-auto px-4 py-20">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <span className="bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-medium">
+              <span className="bg-blue-100 text-primary px-4 py-2 rounded-full text-sm font-medium">
                 Department
               </span>
 
               <h1 className="text-5xl lg:text-6xl font-bold text-slate-900 mt-6 leading-tight">
                 Cardiology
-                <span className="text-blue-600 block">Department</span>
+                <span className="text-primary block">Department</span>
               </h1>
 
               <p className="mt-6 text-lg text-slate-600 leading-8">
@@ -91,7 +91,7 @@ export default function DepartmentPage() {
               </p>
 
               <div className="flex flex-wrap gap-4 mt-8">
-                <button className="bg-blue-600 text-white px-8 py-4 rounded-xl font-medium">
+                <button className="bg-primary text-white px-8 py-4 rounded-xl font-medium">
                   Book Appointment
                 </button>
 
@@ -102,17 +102,17 @@ export default function DepartmentPage() {
 
               <div className="grid grid-cols-3 gap-6 mt-12">
                 <div>
-                  <h3 className="font-bold text-3xl text-blue-600">15+</h3>
+                  <h3 className="font-bold text-3xl text-primary">15+</h3>
                   <p className="text-slate-500">Specialists</p>
                 </div>
 
                 <div>
-                  <h3 className="font-bold text-3xl text-blue-600">20K+</h3>
+                  <h3 className="font-bold text-3xl text-primary">20K+</h3>
                   <p className="text-slate-500">Patients</p>
                 </div>
 
                 <div>
-                  <h3 className="font-bold text-3xl text-blue-600">98%</h3>
+                  <h3 className="font-bold text-3xl text-primary">98%</h3>
                   <p className="text-slate-500">Satisfaction</p>
                 </div>
               </div>
@@ -160,7 +160,7 @@ export default function DepartmentPage() {
               "Emergency Care",
             ].map((item) => (
               <div key={item} className="bg-white p-6 rounded-2xl shadow-sm">
-                <Heart className="text-blue-600 mb-4" />
+                <Heart className="text-primary mb-4" />
                 <h3 className="font-semibold">{item}</h3>
               </div>
             ))}
@@ -182,7 +182,7 @@ export default function DepartmentPage() {
                 key={service}
                 className="bg-slate-50 rounded-2xl p-8 hover:shadow-lg transition"
               >
-                <ShieldPlus className="text-blue-600 mb-4" />
+                <ShieldPlus className="text-primary mb-4" />
 
                 <h3 className="font-semibold">{service}</h3>
               </div>
@@ -197,7 +197,7 @@ export default function DepartmentPage() {
         <div className="flex justify-between items-center mb-12">
           <h2 className="text-4xl font-bold">Department Specialists</h2>
 
-          <button className="text-blue-600 font-medium">
+          <button className="text-primary font-medium">
             View All Doctors
           </button>
         </div>
@@ -227,7 +227,7 @@ export default function DepartmentPage() {
                   <span className="text-yellow-500">⭐ {doctor.rating}</span>
                 </div>
 
-                <button className="w-full mt-6 bg-blue-600 text-white py-3 rounded-xl">
+                <button className="w-full mt-6 bg-primary text-white py-3 rounded-xl">
                   Book Appointment
                 </button>
               </div>
@@ -263,7 +263,7 @@ export default function DepartmentPage() {
             </div>
 
             <div className="bg-slate-50 rounded-3xl p-10">
-              <Building2 className="h-12 w-12 text-blue-600" />
+              <Building2 className="h-12 w-12 text-primary" />
 
               <h3 className="font-bold text-2xl mt-6">
                 World-Class Facilities
@@ -364,7 +364,7 @@ export default function DepartmentPage() {
       {/* CTA */}
 
       <section className="container mx-auto px-4 pb-20">
-        <div className="bg-blue-600 rounded-[40px] p-12 text-white text-center">
+        <div className="bg-primary rounded-[40px] p-12 text-white text-center">
           <h2 className="md:text-5xl text-3xl font-bold">
             Need Medical Consultation?
           </h2>
@@ -373,7 +373,7 @@ export default function DepartmentPage() {
             Schedule your appointment with our specialists today.
           </p>
 
-          <button className="bg-white text-blue-600 px-10 py-4 rounded-xl mt-8 font-semibold">
+          <button className="bg-white text-primary px-10 py-4 rounded-xl mt-8 font-semibold">
             Book Appointment
           </button>
         </div>
@@ -393,7 +393,7 @@ function StatCard({
 }) {
   return (
     <div className="text-center">
-      <div className="flex justify-center mb-3 text-blue-600">{icon}</div>
+      <div className="flex justify-center mb-3 text-primary">{icon}</div>
 
       <h3 className="text-3xl font-bold">{value}</h3>
 

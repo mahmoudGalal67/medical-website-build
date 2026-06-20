@@ -21,7 +21,7 @@ import {
 function Feature({ icon, title }: { icon: ReactNode; title: string }) {
   return (
     <div className="text-center">
-      <div className="w-16 h-16 mx-auto rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600 mb-4">
+      <div className="w-16 h-16 mx-auto rounded-2xl bg-blue-50 flex items-center justify-center text-primary mb-4">
         {icon}
       </div>
 
@@ -81,13 +81,13 @@ export default function DepartmentsPage() {
       <section className="bg-white border-b">
         <div className="container mx-auto px-4 py-24">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="inline-flex items-center rounded-full bg-blue-100 px-4 py-2 text-sm font-medium text-blue-600">
+            <span className="inline-flex items-center rounded-full bg-blue-100 px-4 py-2 text-sm font-medium text-primary">
               Medical Departments
             </span>
 
             <h1 className="mt-6 text-5xl md:text-6xl font-bold text-slate-900">
               Find The Right
-              <span className="block text-blue-600">Medical Department</span>
+              <span className="block text-primary">Medical Department</span>
             </h1>
 
             <p className="mt-6 text-lg text-slate-600 leading-8">
@@ -102,7 +102,7 @@ export default function DepartmentsPage() {
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder="Search departments..."
-                className="h-14 w-full rounded-2xl border border-slate-200 bg-white pl-14 pr-4 outline-none focus:border-blue-500"
+                className="h-14 w-full rounded-2xl border border-slate-200 bg-white pl-14 pr-4 outline-none focus:border-primary"
               />
             </div>
           </div>
@@ -131,7 +131,7 @@ export default function DepartmentsPage() {
                 className="group rounded-3xl border border-slate-100 bg-white p-8 transition-all hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl"
               >
                 <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-50">
-                  <Icon className="h-8 w-8 text-blue-600" />
+                  <Icon className="h-8 w-8 text-primary" />
                 </div>
 
                 <h3 className="text-xl font-bold text-slate-900">
@@ -147,7 +147,7 @@ export default function DepartmentsPage() {
                     {department.doctors} Doctors
                   </span>
 
-                  <ArrowRight className="h-5 w-5 text-blue-600 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="h-5 w-5 text-primary transition-transform group-hover:translate-x-1" />
                 </div>
               </Link>
             );
@@ -160,7 +160,7 @@ export default function DepartmentsPage() {
       {/* FEATURED */}
 
       <section className="container mx-auto px-4 py-16">
-        <div className="overflow-hidden rounded-[32px] bg-gradient-to-r from-blue-600 to-blue-700 p-10 text-white">
+        <div className="overflow-hidden rounded-[32px] bg-gradient-to-r from-primary to-blue-400 p-10 text-white">
           <div className="grid gap-10 lg:grid-cols-2">
             <div>
               <span className="rounded-full bg-white/20 px-4 py-2 text-sm">
@@ -174,7 +174,7 @@ export default function DepartmentsPage() {
                 modern diagnostic technology.
               </p>
 
-              <button className="mt-8 rounded-xl bg-white px-8 py-3 font-semibold text-blue-600">
+              <button className="mt-8 rounded-xl bg-white px-8 py-3 font-semibold text-primary">
                 Learn More
               </button>
             </div>
@@ -221,14 +221,14 @@ export default function DepartmentsPage() {
       {/* CTA */}
 
       <section className="container mx-auto px-4 pb-20">
-        <div className="rounded-[40px] bg-blue-600 p-12 text-center text-white">
+        <div className="rounded-[40px] bg-primary p-12 text-center text-white">
           <h2 className="text-5xl font-bold">Need Medical Assistance?</h2>
 
           <p className="mt-4 text-lg text-blue-100">
             Book your appointment with our specialists today.
           </p>
 
-          <button className="mt-8 rounded-xl bg-white px-10 py-4 font-semibold text-blue-600">
+          <button className="mt-8 rounded-xl bg-white px-10 py-4 font-semibold text-primary">
             Book Appointment
           </button>
         </div>

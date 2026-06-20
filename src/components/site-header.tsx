@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Phone, MessageCircle, Siren, HeartPulse } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 const navLinks = [
   "About Us",
@@ -64,19 +65,7 @@ export function SiteHeader() {
             <span className="flex size-10 items-center justify-center rounded-xl bg-primary text-primary-foreground">
               <HeartPulse className="size-5" />
             </span>
-
-            <span className="flex flex-col leading-none">
-              <span
-                className="text-sm font-bold text-primary lg:text-base"
-                dir="rtl"
-              >
-                مركز الرفاه الطبي
-              </span>
-
-              <span className="text-[10px] tracking-[0.18em] text-muted-foreground">
-                AL REFAH MEDICAL CENTER
-              </span>
-            </span>
+<Image src="/logo.jpeg" alt="HealthCare Booking" width={80} height={30} />
           </Link>
 
           {/* Desktop Navigation + CTA */}
