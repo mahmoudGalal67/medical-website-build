@@ -7,11 +7,7 @@ import { BranchesSection } from "@/components/branches";
 
 export default async function HomePage({
   params,
-}: {
- params: {
-  locale: "en" | "ar";
-};
-}) {
+}: any) {
   const { locale } =  params;
   return (
     <div>

@@ -2,11 +2,7 @@ import { DoctorsDirectory } from "@/components/doctors-directory";
 
 export default async function Page({
   params,
-}: {
-   params: {
-  locale: "en" | "ar";
-};
-}) {
+}:any) {
   const { locale } =  params;
 
   return (
