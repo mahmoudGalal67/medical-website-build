@@ -48,25 +48,18 @@ export function BookingCard() {
             </SelectTrigger>
 
             <SelectContent >
-              <SelectItem value="cardiology" >
-                Cardiology
+              <SelectItem value="Lasertreatment" >
+                Laser treatment
               </SelectItem>
 
-              <SelectItem value="dermatology">
-                Dermatology
+              <SelectItem value="Dentistry">
+                Dentistry
               </SelectItem>
 
-              <SelectItem value="orthopedics">
-                Orthopedics
+              <SelectItem value="Gynecology">
+                Gynecology
               </SelectItem>
 
-              <SelectItem value="neurology">
-                Neurology
-              </SelectItem>
-
-              <SelectItem value="pediatrics">
-                Pediatrics
-              </SelectItem>
             </SelectContent>
           </Select>
         </div>

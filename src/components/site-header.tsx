@@ -7,10 +7,9 @@ import { Phone, MessageCircle, Siren, HeartPulse } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
-  "Home",
   "About Us",
-  "Departments",
-  "Doctors",
+  "Departements",
+  "doctors",
   "Insurance",
   "Packages",
   "Blog",
@@ -140,7 +139,7 @@ export function SiteHeader() {
               {navLinks.map((link, index) => (
                 <Link
                   key={link}
-                  href="#"
+                  href={link}
                   onClick={() => setIsOpen(false)}
                   className="translate-y-0 px-6 py-3 text-sm font-medium text-foreground/80 transition-all duration-300 hover:bg-muted hover:text-primary"
                   style={{

@@ -1,3 +1,6 @@
+import Link from "next/link";
+
+
 import {
   CirclePile,
   UsersRound,
@@ -40,18 +43,19 @@ export function ServicesSection2() {
             departements.
           </p>
         </div>
-        <a
-          href="#"
+        <Link
+          href="/Departements"
           className="shrink-0 text-sm font-semibold text-primary hover:underline"
         >
           View All
-        </a>
+        </Link>
       </div>
 
       <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
         {services.map((service) => (
-          <div
+          <Link
             key={service.title}
+            href={`/Departements/${service.title.toLowerCase().replace(/\s+/g, '-')}`}
             className="group flex flex-col items-center gap-3 rounded-xl border border-border bg-card p-5 text-center transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-md"
           >
             <span className="flex size-12 items-center justify-center rounded-xl bg-secondary text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
@@ -63,7 +67,7 @@ export function ServicesSection2() {
             <p className="text-xs leading-relaxed text-muted-foreground">
               {service.desc}
             </p>
-          </div>
+          </Link>
         ))}
       </div>
     </section>
