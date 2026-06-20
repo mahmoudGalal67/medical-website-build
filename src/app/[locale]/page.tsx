@@ -9,19 +9,20 @@ export default async  function HomePage({
   params,
 }: {
   params: Promise<{
-    locale: "en" | "ar";
+    locale: string;
   }>;
 }) {
   const { locale } = await  params;
+    const lang = locale === "ar" ? "ar" : "en";
   return (
     <div>
-      <HeroSection locale={locale} />
-      <FeatureStrip  locale={locale}/>
-      <BranchesSection locale={locale} />
+      <HeroSection locale={lang} />
+      <FeatureStrip  locale={lang}/>
+      <BranchesSection locale={lang} />
       {/* <DepartmentsSection locale={locale} /> */}
-      <DoctorsSection locale={locale}/>
+      <DoctorsSection locale={lang}/>
       {/* <ServicesSection /> */}
-      <InsuranceSection locale={locale}/>
+      <InsuranceSection locale={lang}/>
     </div>
   );
 }

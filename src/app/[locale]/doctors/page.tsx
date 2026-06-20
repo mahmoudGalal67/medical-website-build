@@ -4,15 +4,15 @@ export default async function Page({
   params,
 }: {
   params: Promise<{
-    locale: "en" | "ar";
+    locale: string;
   }>;
 }) {
   const { locale } = await params;
-
+  const lang = locale === "ar" ? "ar" : "en";
   return (
     <main className="min-h-screen bg-muted/30 px-4 py-10">
       <div className="mx-auto flex max-w-6xl flex-col gap-12">
-        <DoctorsDirectory locale={locale} />
+        <DoctorsDirectory locale={lang} />
       </div>
     </main>
   );

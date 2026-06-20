@@ -53,11 +53,11 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
   params: Promise<{
-    locale: "en" | "ar";
+    locale: string;
   }>;
 }>) {
     const { locale } = await params;
-
+  const lang = locale === "ar" ? "ar" : "en";
   const dict = await getDictionary(locale);
   return (
     <html lang={locale}
@@ -71,7 +71,7 @@ export default async function RootLayout({
             <SiteHeader />
             <FloatingContact/>
             {children}
-            <StatsBar locale={locale} />
+            <StatsBar locale={lang} />
             </DictionaryProvider>
           </div>
         </main>
