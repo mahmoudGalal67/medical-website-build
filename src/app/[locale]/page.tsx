@@ -5,7 +5,7 @@ import { InsuranceSection } from "@/components/insurance-section";
 import { BranchesSection } from "@/components/branches";
   // import { DepartmentsSection } from "@/components/departments";
 
-export default async function HomePage({
+export default  function HomePage({
   params,
 }: {
  params: {

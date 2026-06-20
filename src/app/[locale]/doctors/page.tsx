@@ -1,6 +1,6 @@
 import { DoctorsDirectory } from "@/components/doctors-directory";
 
-export default async function Page({
+export default function Page({
   params,
 }: {
    params: {
