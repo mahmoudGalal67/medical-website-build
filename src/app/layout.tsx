@@ -4,6 +4,7 @@ import { StatsBar } from "@/components/stats-bar";
 import { SiteHeader } from "@/components/site-header";
 
 import "./globals.css";
+import FloatingContact from "@/components/FloatingContact";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({
@@ -57,6 +58,7 @@ export default function RootLayout({
         <main className="min-h-screen bg-background ">
           <div className="max-w-7xl mx-auto border-x ">
             <SiteHeader />
+            <FloatingContact />
             {children}
             <StatsBar />
           </div>
