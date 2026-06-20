@@ -1,13 +1,13 @@
 import { DoctorsDirectory } from "@/components/doctors-directory";
 
-export default function Page({
+export default async function Page({
   params,
 }: {
-   params: {
-  locale: "en" | "ar";
-};
+  params: Promise<{
+    locale: "en" | "ar";
+  }>;
 }) {
-  const { locale } =  params;
+  const { locale } = await params;
 
   return (
     <main className="min-h-screen bg-muted/30 px-4 py-10">

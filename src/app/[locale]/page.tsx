@@ -5,14 +5,14 @@ import { InsuranceSection } from "@/components/insurance-section";
 import { BranchesSection } from "@/components/branches";
   // import { DepartmentsSection } from "@/components/departments";
 
-export default  function HomePage({
+export default async  function HomePage({
   params,
 }: {
- params: {
-  locale: "en" | "ar";
-};
+  params: Promise<{
+    locale: "en" | "ar";
+  }>;
 }) {
-  const { locale } =  params;
+  const { locale } = await  params;
   return (
     <div>
       <HeroSection locale={locale} />

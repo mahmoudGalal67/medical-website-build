@@ -52,11 +52,11 @@ export default async function RootLayout({
   params,
 }: Readonly<{
   children: React.ReactNode;
-  params: {
+  params: Promise<{
     locale: "en" | "ar";
-  };
+  }>;
 }>) {
-   const { locale } = params;
+    const { locale } = await params;
 
   const dict = await getDictionary(locale);
   return (
