@@ -3,7 +3,7 @@ import { FeatureStrip } from "@/components/feature-strip";
 import { HeroSection } from "@/components/hero-section";
 import { InsuranceSection } from "@/components/insurance-section";
 import { BranchesSection } from "@/components/branches";
-  // import { DepartmentsSection } from "@/components/departments";
+  import { DepartmentsSection } from "@/components/departments";
 
 export default async  function HomePage({
   params,
@@ -19,7 +19,7 @@ export default async  function HomePage({
       <HeroSection locale={lang} />
       <FeatureStrip  locale={lang}/>
       <BranchesSection locale={lang} />
-      {/* <DepartmentsSection locale={locale} /> */}
+      <DepartmentsSection locale={lang} />
       <DoctorsSection locale={lang}/>
       {/* <ServicesSection /> */}
       <InsuranceSection locale={lang}/>
