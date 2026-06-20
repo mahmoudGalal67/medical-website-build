@@ -52,7 +52,9 @@ export default async function RootLayout({
   params,
 }: Readonly<{
   children: React.ReactNode;
-  params: any;
+  params: {
+    locale: "en" | "ar";
+  };
 }>) {
    const { locale } = params;
 
