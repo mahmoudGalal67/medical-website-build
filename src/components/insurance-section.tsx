@@ -1,3 +1,4 @@
+import { getDictionary } from "@/i18n/config";
 import { ChevronLeft, ChevronRight } from "lucide-react"
 
 const partners = [
@@ -9,11 +10,13 @@ const partners = [
   "Malath",
 ]
 
-export function InsuranceSection() {
+export async function InsuranceSection({ locale }: { locale: "en" | "ar" }) {
+    const dict = await getDictionary(locale);
+  
   return (
     <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
       <h2 className="text-lg font-bold text-foreground">
-        Our Insurance Partners
+        {dict.sections.Insurance.title}
       </h2>
 
       <div className="mt-5 flex items-center gap-3">

@@ -1,3 +1,4 @@
+import { getDictionary } from "@/i18n/config";
 import {
   HeartPulse,
   Baby,
@@ -10,55 +11,54 @@ import {
 
 type Service = {
   icon: LucideIcon;
-  title: string;
-  desc: string;
+  title: { ar: string; en: string };
+  location: { ar: string; en: string };
 };
 
 const services: Service[] = [
-  { icon: HeartPulse, title: "Branch 1", desc: "Heart & Vascular Care" },
-  { icon: Baby, title: "Branch 2", desc: "Child Care & Vaccination" },
+  { icon: HeartPulse, title: {ar: "دار الهدي", en: "dar al-hoda"}, location: {ar: "حي طويق شارع خديجة بنت خويلد", en: "tawiq district khadija bint khaawil street"} },
+  { icon: Baby, title: {ar: "دار الخيال الطبي", en: "dar al-khayal al-tiby"}, location: {ar: "حي طويق شارع بلال بن رباح", en: "tawiq district balal bin rabah street"} },
   {
     icon: Sparkles,
-    title: "Branch 3",
-    desc: "Skin, Hair & Nail Treatments",
+    title: {ar: " الجزيرة كير", en: "El Jazeera Care"},
+    location: {ar: "محافظة تادق حي الخالدية طريق الملك فهد", en: "Gynecology, Hair & Nail Treatments"},
   },
-  { icon: Bone, title: "Branch 4", desc: "Bone & Joint Care" },
-  { icon: Stethoscope, title: "Branch 5", desc: "Dental Care & Implants" },
-  { icon: ScanLine, title: "Branch 6", desc: "X-Ray, MRI & Ultrasound" },
+  { icon: Bone, title: {ar:  "سند الجزيرة", en: "Sanad el-jazeera"}, location: {ar: "طويق", en: "tawiq"} },
 ];
 
-export function ServicesSection1() {
+export async function BranchesSection({locale}: {locale: "en" | "ar"}) {
+    const dict = await getDictionary(locale);
+  
   return (
     <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
       <div className="flex items-end justify-between gap-4">
         <div>
           <h2 className="text-2xl font-bold text-foreground">
-            Sanad Al Jazeera Group branches
+           {dict.sections.branches.title}
           </h2>
           <p className="mt-1 text-sm text-muted-foreground">
-            Comprehensive healthcare services for you and your family at 6
-            places.
+            {dict.sections.branches.description}
           </p>
         </div>
         <a
           href="#"
           className="shrink-0 text-sm font-semibold text-primary hover:underline"
         >
-          View All
+          {dict.Buttons.view}
         </a>
       </div>
 
       <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
         {services.map((service) => (
           <div
-            key={service.title}
+            key={service.title[locale]}
             className="group flex flex-col items-center gap-3 rounded-xl border border-border bg-card p-5 text-center transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-md"
           >
             <h3 className="text-sm font-semibold text-foreground">
-              {service.title}
+              {service.title[locale]}
             </h3>
             <p className="text-xs leading-relaxed text-muted-foreground">
-              {service.desc}
+              {service.location[locale]}
             </p>
           </div>
         ))}

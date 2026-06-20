@@ -1,0 +1,44 @@
+{
+    "HomePage": {
+        "title": "Your ",
+        "title2": "Is Our Priority",
+        "description": "Advanced medical care with compassion and excellence."
+    },
+    "Buttons": {
+        "book": "Book Appointment",
+        "findDoctor": "Find a Doctor",
+        "findTime": "Find Available Time",
+        "view": "View All",
+        "cancel": "Cancel"
+
+    },
+    "heroBookingForm":{
+        "title": "Book Your Appointment",
+        "description": "Choose a department, doctor, and preferred date.",
+        "selectDoctor": "Select Doctor",
+        "selectDepartment": "Select Department",
+        "selectDate": "Choose  date",
+        "submit": "Find Available Time"
+    },
+    "labels": {
+        "email": "Email address",
+        "password": "Password"
+    },
+    "sections": {
+"branches": {
+            "title": "Sanad Al Jazeera Group branches",
+            "description": "Comprehensive healthcare services for you and your family at 6 places."
+        },
+"departments": {
+            "title": "Our Departements",
+            "description": "Comprehensive healthcare services for you and your family at 4 departements.."
+        },
+"featuresDoctors": {
+            "title": "Featured Doctors",
+            "description": "Our experienced doctors are here to provide you the best care."
+        },
+"Insurance": {
+            "title": "Our Insurance Partners"
+        }
+    }
+}

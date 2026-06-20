@@ -22,7 +22,7 @@ import {
 import { Calendar } from "@/components/ui/calendar";
 import { cn } from "@/lib/utils";
 
-export function BookingCard() {
+export function BookingCard({dict}: {dict: any}) {
   const [department, setDepartment] = useState("");
   const [doctor, setDoctor] = useState("");
   const [date, setDate] = useState<Date>();
@@ -30,11 +30,11 @@ export function BookingCard() {
   return (
     <div className="w-full max-w-sm rounded-2xl border bg-card p-6 shadow-xl">
       <h2 className="text-xl font-bold">
-        Book Appointment
+       {dict.heroBookingForm.title}
       </h2>
 
       <p className="mt-1 text-sm text-muted-foreground">
-        Choose a department, doctor, and preferred date.
+        {dict.heroBookingForm.description}
       </p>
 
       <div className="mt-5 space-y-4">
@@ -44,7 +44,7 @@ export function BookingCard() {
 
           <Select value={department} onValueChange={setDepartment} >
             <SelectTrigger className="!h-12 w-full py-2">
-              <SelectValue placeholder="Select Department" />
+              <SelectValue placeholder={dict.heroBookingForm.selectDepartment} />
             </SelectTrigger>
 
             <SelectContent >
@@ -70,7 +70,7 @@ export function BookingCard() {
 
           <Select value={doctor} onValueChange={setDoctor}>
             <SelectTrigger className="!h-12  w-full">
-              <SelectValue placeholder="Select Doctor" />
+              <SelectValue placeholder={dict.heroBookingForm.selectDoctor} />
             </SelectTrigger>
 
             <SelectContent>
@@ -105,7 +105,7 @@ export function BookingCard() {
 
                 {date
                   ? format(date, "PPP")
-                  : "Choose  date"}
+                  : dict.heroBookingForm.selectDate}
                   <CalendarIcon className="mr-2 size-4" />
               </Button>
             </PopoverTrigger>
@@ -129,7 +129,7 @@ export function BookingCard() {
           className="h-12 w-full rounded-xl"
         >
           <Search className="size-4" />
-          Find Available Time
+          {dict.heroBookingForm.submit}
         </Button>
       </div>
     </div>

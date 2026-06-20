@@ -1,7 +1,8 @@
 import Image from "next/image";
-import { ChevronDown, Calendar, Search } from "lucide-react";
+import { ChevronDown, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BookingCard } from "./BookingCard";
+import { getDictionary } from "@/i18n/config";
 
 const avatars = [
   "/images/doctor-1.png",
@@ -10,17 +11,20 @@ const avatars = [
   "/images/doctor-4.png",
 ];
 
-export function HeroSection() {
+export async function HeroSection({locale}: {locale: 'en' | 'ar'}) {
+  
+   const dict = await getDictionary(locale);
+ 
   return (
-    <section className="relative overflow-hidden bg-secondary  max-w-7xl mx-auto">
+    <section className="relative overflow-hidden bg-secondary  max-w-7xl mx-auto" >
       {/* Background image on the right */}
-      <div className="absolute inset-y-0 xl:right-[15%] right-0 hidden w-1/2 lg:block">
+      <div className={`${locale === 'ar' ? 'absolute inset-y-0 xl:left-[45%] left-0' : 'absolute inset-y-0 xl:right-[15%] right-0'} hidden w-1/2 lg:block`}>
         <Image
           src="/images/hero-doctor.png"
           alt="Smiling doctor with a stethoscope"
           fill
           priority
-          className="object-left"
+          className={`${locale === 'ar' ? 'object-right' : 'object-left'}`}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/30 to-transparent" />
       </div>
@@ -29,24 +33,24 @@ export function HeroSection() {
         {/* Left: copy */}
         <div className="flex flex-col justify-center">
           <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-foreground text-balance sm:text-5xl">
-            Your Health
-            <br />
-            Is Our Priority
+          {dict.HomePage.title}
+          <br />
+          {dict.HomePage.title2}
           </h1>
           <p className="mt-4 max-w-md text-base text-muted-foreground leading-relaxed">
-            Advanced medical care with compassion and excellence.
+            {dict.HomePage.description}
           </p>
 
           <div className="mt-7 flex flex-wrap gap-3">
             <Button size="lg" className="rounded-sm px-7">
-              Book Appointment
+              {dict.Buttons.book}
             </Button>
             <Button
               size="lg"
               variant="outline"
               className="rounded-sm border-primary px-7 text-primary hover:bg-primary hover:text-primary-foreground"
             >
-              Find a Doctor
+              {dict.Buttons.findDoctor}
             </Button>
           </div>
 
@@ -62,17 +66,19 @@ export function HeroSection() {
               ))}
             </div>
             <p className="text-sm text-muted-foreground">
-              Trusted by{" "}
+              {locale === "en" ? "Trusted by" : "مُوثوق من قبل"}{" "}
               <span className="font-bold text-foreground">100,000+</span>
               <br />
-              Patients
+              <span className="font-bold text-foreground">
+                {locale === "en" ? "Patients" : "مرضى"}
+              </span>
             </p>
           </div>
         </div>
 
         {/* Right: booking card */}
         <div className="flex xl:justify-end justify-center">
-          <BookingCard />
+          <BookingCard dict={dict} />
         </div>
       </div>
     </section>

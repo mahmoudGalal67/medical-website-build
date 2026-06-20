@@ -30,7 +30,7 @@ function Feature({ icon, title }: { icon: ReactNode; title: string }) {
   );
 }
 
-export default function DepartmentsPage() {
+export default async function DepartmentsPage({}) {
   const [search, setSearch] = useState("");
 
   const departments = [

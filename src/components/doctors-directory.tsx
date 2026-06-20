@@ -74,8 +74,8 @@ const filterGroups: FilterGroup[] = [
 
 type Doctor = {
   id: number;
-  name: string;
-  specialty: string;
+  name: { en: string; ar: string };
+  specialty: { en: string; ar: string };
   rating: number;
   reviews: number;
   image: string;
@@ -84,48 +84,48 @@ type Doctor = {
 const doctors: Doctor[] = [
   {
     id: 1,
-    name: "Dr. Ahmed Al Harbi",
-    specialty: "Cardiologist",
+    name: {en: "Dr. Ahmed Al-Shehri", ar: "د. أحمد الشهري"},
+    specialty: {en: "Cardiologist", ar: "أخصائي قلب"},
     rating: 4.9,
     reviews: 120,
     image: "/doctors/doctor-1.png",
   },
   {
     id: 2,
-    name: "Dr. Sara Al Mutairi",
-    specialty: "Dermatologist",
+    name: {en: "Dr. Sara Al Mutairi", ar: "د. سارة المطيري"},
+    specialty: {en: "Dermatologist", ar: "أخصائي جلدية"},
     rating: 4.8,
     reviews: 98,
     image: "/doctors/doctor-2.png",
   },
   {
     id: 3,
-    name: "Dr. Mohammed Ali",
-    specialty: "Orthopedic Surgeon",
+    name: {en: "Dr. Mohammed Ali", ar: "د. محمد علي"},
+    specialty: {en: "Orthopedic Surgeon", ar: "جراح عظام"},
     rating: 4.9,
     reviews: 110,
     image: "/doctors/doctor-3.png",
   },
   {
     id: 4,
-    name: "Dr. Huda Al Enazi",
-    specialty: "Pediatrician",
+    name: {en: "Dr. Huda Al Enazi", ar: "د. هدى العنازي"},
+    specialty: {en: "Pediatrician", ar: "أخصائي طفولة"},
     rating: 4.8,
     reviews: 76,
     image: "/doctors/doctor-4.png",
   },
   {
     id: 5,
-    name: "Dr. Faisal Khan",
-    specialty: "Neurologist",
+    name: {en: "Dr. Faisal Khan", ar: "د. فيصل خان"},
+    specialty: {en: "Neurologist", ar: "أخصائي عصبي"},
     rating: 4.7,
     reviews: 64,
     image: "/doctors/doctor-5.png",
   },
   {
     id: 6,
-    name: "Dr. Reem Al Otaibi",
-    specialty: "Dentist",
+    name: {en: "Dr. Reem Al Otaibi", ar: "د. ريم العطيبة"},
+    specialty: {en: "Dentist", ar: "أخصائي أسنان"},
     rating: 4.9,
     reviews: 85,
     image: "/doctors/doctor-6.png",
@@ -157,7 +157,7 @@ function FilterSection({ group }: { group: FilterGroup }) {
   );
 }
 
-function DoctorCard({ doctor }: { doctor: Doctor }) {
+function DoctorCard({ doctor, locale }: { doctor: Doctor; locale: "en" | "ar" }) {
   const [fav, setFav] = useState(false);
   return (
     <div className="overflow-hidden rounded-2xl border border-border bg-card transition-shadow hover:shadow-md">
@@ -178,9 +178,11 @@ function DoctorCard({ doctor }: { doctor: Doctor }) {
         </button>
       </div>
       <div className="p-4 text-center">
-        <h3 className="text-sm font-semibold text-foreground">{doctor.name}</h3>
+        <h3 className="text-sm font-semibold text-foreground">
+          {locale === "en" ? doctor.name.en : doctor.name.ar}
+        </h3>
         <p className="mt-0.5 text-xs text-muted-foreground">
-          {doctor.specialty}
+          {locale === "en" ? doctor.specialty.en : doctor.specialty.ar}
         </p>
         <div className="mt-2 flex items-center justify-center gap-1 text-xs">
           <Star className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
@@ -200,7 +202,7 @@ function DoctorCard({ doctor }: { doctor: Doctor }) {
   );
 }
 
-export function DoctorsDirectory() {
+export function DoctorsDirectory({ locale }: { locale: "en" | "ar" }) {
   return (
     <div className="mx-auto w-full max-w-6xl rounded-3xl border border-border bg-background p-4 shadow-sm sm:p-6">
       {/* Hero */}
@@ -263,7 +265,7 @@ export function DoctorsDirectory() {
           </div>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
             {doctors.map((doctor) => (
-              <DoctorCard key={doctor.id} doctor={doctor} />
+              <DoctorCard key={doctor.id} doctor={doctor} locale={locale} />
             ))}
           </div>
 
