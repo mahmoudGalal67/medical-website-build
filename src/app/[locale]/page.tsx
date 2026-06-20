@@ -8,9 +8,11 @@ import { BranchesSection } from "@/components/branches";
 export default async function HomePage({
   params,
 }: {
-  params: Promise<{ locale: "en" | "ar" }>;
+ params: {
+  locale: "en" | "ar";
+};
 }) {
-  const { locale } = await params;
+  const { locale } =  params;
   return (
     <div>
       <HeroSection locale={locale} />
