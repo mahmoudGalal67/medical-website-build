@@ -2,7 +2,6 @@ import { DoctorsSection } from "@/components/doctors-section";
 import { FeatureStrip } from "@/components/feature-strip";
 import { HeroSection } from "@/components/hero-section";
 import { InsuranceSection } from "@/components/insurance-section";
-import { ServicesSection } from "@/components/services-section";
 import { BranchesSection } from "@/components/branches";
   import { DepartmentsSection } from "@/components/departments";
 
