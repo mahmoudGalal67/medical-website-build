@@ -65,7 +65,7 @@ export function SiteHeader() {
             <span className="flex size-10 items-center justify-center rounded-xl bg-primary text-primary-foreground">
               <HeartPulse className="size-5" />
             </span>
-<Image src="logo.jpeg" alt="HealthCare Booking" width={80} height={30} />
+<Image src="Logo.jpeg" alt="HealthCare Booking" width={80} height={30} />
           </Link>
 
           {/* Desktop Navigation + CTA */}
