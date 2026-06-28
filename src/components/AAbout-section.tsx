@@ -35,13 +35,13 @@ export default function AboutSection() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#2d004d]/30 to-transparent" />
             </div>
             {/* Floating badge */}
-            <div className="absolute -bottom-6 -right-6 bg-primary text-white rounded-2xl p-5 shadow-xl shadow-primary/30">
+            <div className="absolute -bottom-6 md:-right-6 -right-3 bg-primary text-white rounded-2xl p-5 shadow-xl shadow-primary/30">
               <p className="text-3xl font-bold text-white">15+</p>
               <p className="text-xs text-purple-200 mt-0.5">
                 Years of Excellence
               </p>
             </div>
-            <div className="absolute -top-6 -left-6 bg-primary2 text-white rounded-2xl p-4 shadow-xl">
+            <div className="absolute -top-6 md:-left-6 -left-3 bg-primary2 text-white rounded-2xl p-4 shadow-xl">
               <p className="text-2xl font-bold">3K+</p>
               <p className="text-xs font-medium mt-0.5">Patients Served</p>
             </div>

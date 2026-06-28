@@ -8,7 +8,7 @@ export default function FloatingContact() {
     const params = useParams();
   const locale = (params.locale || 'en') as string
   return (
-    <div className="fixed top-28 right-6 z-50 flex flex-col gap-4">
+    <div className="fixed top-26 right-6 z-50 flex flex-col gap-4">
       {/* WhatsApp */}
 
       <a
@@ -19,13 +19,13 @@ export default function FloatingContact() {
       >
         <span className="absolute inset-0 rounded-full bg-green-500 animate-ping opacity-30" />
 
-        <div className="relative flex h-16 w-16 items-center justify-center rounded-full bg-green-500 text-white shadow-xl transition-all duration-300 hover:scale-110 hover:shadow-green-300">
+        <div className="relative flex h-14 w-14 items-center justify-center rounded-full bg-green-500 text-white shadow-xl transition-all duration-300 hover:scale-110 hover:shadow-green-300">
           <Image
             src="/whatsapp.png"
             alt="whatsapp"
-            width={32}
-            height={32}
-            className="w-8 h-8 filter brightness-0 invert"
+            width={24}
+            height={24}
+            className="w-6 h-6 filter brightness-0 invert"
           />
         </div>
 
@@ -36,11 +36,11 @@ export default function FloatingContact() {
 
       {/* Call */}
 
-      <a href="tel:+201234567890" className="group relative">
+      <a href="tel:+201234567690" className="group relative">
         <span className="absolute inset-0 rounded-full bg-blue-600 animate-ping opacity-30" />
 
-        <div className="relative flex h-16 w-16 items-center justify-center rounded-full bg-blue-600 text-white shadow-xl transition-all duration-300 hover:scale-110 hover:shadow-blue-300">
-          <Phone className="h-8 w-8" />
+        <div className="relative flex h-14 w-14 items-center justify-center rounded-full bg-blue-600 text-white shadow-xl transition-all duration-300 hover:scale-110 hover:shadow-blue-300">
+          <Phone className="h-6 w-6" />
         </div>
 
         <div className="absolute right-20 top-1/2 -translate-y-1/2 whitespace-nowrap rounded-xl bg-white px-4 py-2 text-sm font-medium shadow-lg opacity-0 transition-all duration-300 group-hover:opacity-100">
