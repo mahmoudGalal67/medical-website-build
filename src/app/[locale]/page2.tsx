@@ -1,4 +1,3 @@
-import { DoctorsSection } from "@/components/doctors-section";
 import { FeatureStrip } from "@/components/feature-strip";
 import { HeroSection } from "@/components/hero-section";
 import { InsuranceSection } from "@/components/insurance-section";
@@ -20,7 +19,6 @@ export default async function HomePage({
       <FeatureStrip locale={lang} />
       <BranchesSection locale={lang} />
       <DepartmentsSection locale={lang} />
-      <DoctorsSection locale={lang} />
       {/* <ServicesSection /> */}
       <InsuranceSection locale={lang} />
     </div>
