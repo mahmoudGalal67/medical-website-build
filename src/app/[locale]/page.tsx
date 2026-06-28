@@ -1,28 +1,27 @@
-import { DoctorsSection } from "@/components/doctors-section";
-import { FeatureStrip } from "@/components/feature-strip";
-import { HeroSection } from "@/components/hero-section";
-import { InsuranceSection } from "@/components/insurance-section";
-import { BranchesSection } from "@/components/branches";
-  import { DepartmentsSection } from "@/components/departments";
+import HeroSection from "@/components/AAhero-section";
+import StatsSection from "@/components/AAstatus-section";
+import ServicesSection from "@/components/AAservices-section";
+import AboutSection from "@/components/AAbout-section";
+import DoctorsSection from "@/components/AAdoctors-section";
+import TestimonialsSection from "@/components/AAtestimonials-section";
+import OffersSection from "@/components/AAoffers-section";
+import EquipmentSection from "@/components/AAequipment-section";
+import GallerySection from "@/components/AAgallary-section";
+import FooterSection from "@/components/AAfooterSection";
 
-export default async  function HomePage({
-  params,
-}: {
-  params: Promise<{
-    locale: string;
-  }>;
-}) {
-  const { locale } = await  params;
-    const lang = locale === "ar" ? "ar" : "en";
+export default function Home() {
   return (
-    <div>
-      <HeroSection locale={lang} />
-      <FeatureStrip  locale={lang}/>
-      <BranchesSection locale={lang} />
-      <DepartmentsSection locale={lang} />
-      <DoctorsSection locale={lang}/>
-      {/* <ServicesSection /> */}
-      <InsuranceSection locale={lang}/>
-    </div>
+    <main className="min-h-screen">
+      <HeroSection />
+      <StatsSection />
+      <ServicesSection />
+      <AboutSection />
+      <DoctorsSection />
+      <TestimonialsSection />
+      <OffersSection />
+      <EquipmentSection />
+      <GallerySection />
+      <FooterSection />
+    </main>
   );
 }
