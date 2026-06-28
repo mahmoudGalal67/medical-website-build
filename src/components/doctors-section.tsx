@@ -1,130 +1,203 @@
-import Image from "next/image"
-import { Star } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { getDictionary } from "@/i18n/config";
+"use client";
 
-type Doctor = {
+
+interface Doctor {
   id: number;
-  name: { en: string; ar: string };
-  specialty: { en: string; ar: string };
-  rating: number;
-  reviews: number;
+  name: string;
+  title: string;
+  specialty: string;
+  clinic: string;
   image: string;
-};
+}
 
 const doctors: Doctor[] = [
   {
     id: 1,
-    name: {en: "Dr. Ahmed Al-Shehri", ar: "د. أحمد الشهري"},
-    specialty: {en: "Cardiologist", ar: "أخصائي قلب"},
-    rating: 4.9,
-    reviews: 120,
-    image: "/doctors/doctor-1.png",
+    name: "الدكتورة هبه السيد",
+    title: "ماجستير نساء وولادة جامعة عين شمس",
+    specialty: "14 عام خبرة في النساء والولادة والتجميل النسائي",
+    clinic: "عيادة النساء والولادة",
+    image:
+      "https://images.pexels.com/photos/5452201/pexels-photo-5452201.jpeg?auto=compress&cs=tinysrgb&w=600",
   },
   {
     id: 2,
-    name: {en: "Dr. Sara Al Mutairi", ar: "د. سارة المطيري"},
-    specialty: {en: "Dermatologist", ar: "أخصائي جلدية"},
-    rating: 4.8,
-    reviews: 98,
-    image: "/doctors/doctor-2.png",
+    name: "الدكتور ابراهيم فتحي",
+    title: "دبلوم امراض الباطنية خبرة 22 عام",
+    specialty: "",
+    clinic: "عيادة الباطنية",
+    image:
+      "https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg?auto=compress&cs=tinysrgb&w=600",
   },
   {
     id: 3,
-    name: {en: "Dr. Mohammed Ali", ar: "د. محمد علي"},
-    specialty: {en: "Orthopedic Surgeon", ar: "جراح عظام"},
-    rating: 4.9,
-    reviews: 110,
-    image: "/doctors/doctor-3.png",
+    name: "الدكتوره هبه سالم",
+    title: "اخصائية الجلدية والتجميل خبرة 10 اعوام",
+    specialty: "",
+    clinic: "عيادة الجلدية والتجميل والليزر",
+    image:
+      "https://images.pexels.com/photos/5214958/pexels-photo-5214958.jpeg?auto=compress&cs=tinysrgb&w=600",
   },
   {
-    id: 4,
-    name: {en: "Dr. Huda Al Enazi", ar: "د. هدى العنازي"},
-    specialty: {en: "Pediatrician", ar: "أخصائي طفولة"},
-    rating: 4.8,
-    reviews: 76,
-    image: "/doctors/doctor-4.png",
+    id: 1,
+    name: "الدكتورة هبه السيد",
+    title: "ماجستير نساء وولادة جامعة عين شمس",
+    specialty: "14 عام خبرة في النساء والولادة والتجميل النسائي",
+    clinic: "عيادة النساء والولادة",
+    image:
+      "https://images.pexels.com/photos/5452201/pexels-photo-5452201.jpeg?auto=compress&cs=tinysrgb&w=600",
   },
   {
-    id: 5,
-    name: {en: "Dr. Faisal Khan", ar: "د. فيصل خان"},
-    specialty: {en: "Neurologist", ar: "أخصائي عصبي"},
-    rating: 4.7,
-    reviews: 64,
-    image: "/doctors/doctor-5.png",
+    id: 2,
+    name: "الدكتور ابراهيم فتحي",
+    title: "دبلوم امراض الباطنية خبرة 22 عام",
+    specialty: "",
+    clinic: "عيادة الباطنية",
+    image:
+      "https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg?auto=compress&cs=tinysrgb&w=600",
   },
   {
-    id: 6,
-    name: {en: "Dr. Reem Al Otaibi", ar: "د. ريم العطيبة"},
-    specialty: {en: "Dentist", ar: "أخصائي أسنان"},
-    rating: 4.9,
-    reviews: 85,
-    image: "/doctors/doctor-6.png",
+    id: 3,
+    name: "الدكتوره هبه سالم",
+    title: "اخصائية الجلدية والتجميل خبرة 10 اعوام",
+    specialty: "",
+    clinic: "عيادة الجلدية والتجميل والليزر",
+    image:
+      "https://images.pexels.com/photos/5214958/pexels-photo-5214958.jpeg?auto=compress&cs=tinysrgb&w=600",
   },
-]
+];
 
-export async function DoctorsSection({ locale }: { locale: "en" | "ar" }) {
-  const dict = await getDictionary(locale);
+function BrandLogo() {
   return (
-    <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-      <div className="flex items-end justify-between gap-4">
-        <div>
-          <h2 className="text-2xl font-bold text-foreground">
-            {dict.sections.featuresDoctors.title}
-          </h2>
-          <p className="mt-1 text-sm text-muted-foreground">
-            {dict.sections.featuresDoctors.description}
-          </p>
+    <div className="absolute top-4 right-4 w-10 h-10 rounded-full border-2 border-white flex items-center justify-center z-10">
+      <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5 text-white">
+        <path
+          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"
+          fill="currentColor"
+        />
+        <path
+          d="M12 4c-4.41 0-8 3.59-8 8s3.59 8 8 8 8-3.59 8-8-3.59-8-8-8zm0 14c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"
+          fill="currentColor"
+          opacity="0.4"
+        />
+      </svg>
+    </div>
+  );
+}
+
+function WatermarkText() {
+  return (
+    <div className="absolute bottom-0 left-0 right-0 flex items-end justify-center overflow-hidden pointer-events-none select-none h-28">
+      <span
+        className="text-[48px] font-black tracking-widest uppercase leading-none"
+        style={{
+          color: "transparent",
+          WebkitTextStroke: "1.5px rgba(180,120,220,0.35)",
+          letterSpacing: "0.1em",
+          fontFamily: "Arial Black, sans-serif",
+        }}
+      >
+        سند الجزيرة
+      </span>
+    </div>
+  );
+}
+
+function SocialButton({ icon }: { icon: React.ReactNode }) {
+  return (
+    <button className="w-9 h-9 rounded-full border-2 border-white/60 flex items-center justify-center text-white hover:border-white hover:text-white transition-colors duration-200">
+      {icon}
+    </button>
+  );
+}
+
+function DoctorCard({ doctor }: { doctor: Doctor }) {
+  return (
+    <div className="flex flex-col rounded-2xl overflow-hidden shadow-2xl" style={{ background: "#367F8B" }}>
+      {/* Top image area */}
+      <div className="relative" style={{ background: "#367F8B", minHeight: 320 }}>
+        <BrandLogo />
+
+        {/* Doctor photo with gold circle background */}
+        <div className="flex items-end justify-center pt-10 pb-0 relative z-10">
+          <div
+            className="relative"
+            style={{
+              width: 220,
+              height: 240,
+              display: "flex",
+              alignItems: "flex-end",
+              justifyContent: "center",
+            }}
+          >
+            {/* Gold circle */}
+            <div
+              className="absolute rounded-full"
+              style={{
+                width: 190,
+                height: 190,
+                background: "#D4A017",
+                bottom: 0,
+                left: "50%",
+                transform: "translateX(-50%)",
+              }}
+            />
+            {/* Doctor image */}
+            <img
+              src={doctor.image}
+              alt={doctor.name}
+              className="relative z-10 object-cover object-top rounded-full"
+              style={{
+                width: 190,
+                height: 210,
+                objectPosition: "top center",
+              }}
+            />
+          </div>
         </div>
-        <a
-          href="#"
-          className="shrink-0 text-sm font-semibold text-primary hover:underline"
-        >
-          {dict.Buttons.view}
-        </a>
+
+        {/* Watermark */}
+        <WatermarkText />
       </div>
 
-      <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      {/* Divider */}
+      <div className="h-px w-full" style={{ background: "rgba(255,255,255,0.15)" }} />
+
+      {/* Bottom info area */}
+      <div
+        className="flex flex-col items-center text-center px-5 pt-5 pb-6 gap-2"
+        style={{ background: "#176773", direction: "rtl" }}
+      >
+        <h3 className="text-white font-bold text-lg leading-snug">{doctor.name}</h3>
+        <p className="text-white/90 text-sm leading-relaxed">{doctor.title}</p>
+        {doctor.specialty && (
+          <p className="text-white/80 text-sm leading-relaxed">{doctor.specialty}</p>
+        )}
+        <p className="text-white/80 text-sm mt-1">{doctor.clinic}</p>
+
+        {/* Social icons */}
+        {/* <div className="flex gap-3 mt-3" style={{ direction: "ltr" }}>
+          <SocialButton icon={<Facebook size={15} />} />
+          <SocialButton icon={<Twitter size={15} />} />
+          <SocialButton icon={<Linkedin size={15} />} />
+        </div> */}
+      </div>
+    </div>
+  );
+}
+
+export default function DoctorsSection() {
+  return (
+    <section
+      className="w-full min-h-screen py-16 px-4"
+      style={{ background: "#A6DAE3" }}
+    >
+      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
         {doctors.map((doctor) => (
-          <article
-            key={doctor.name[locale]}
-            className="overflow-hidden rounded-2xl border border-border bg-card transition-shadow hover:shadow-md"
-          >
-            <div className="relative aspect-[4/3] w-full overflow-hidden bg-secondary">
-              <Image
-                src={doctor.image}
-                alt={`Portrait of ${doctor.name[locale]}`}
-                fill
-                className="object-cover object-top"
-              />
-            </div>
-            <div className="p-4">
-              <h3 className="text-base font-bold text-foreground">
-                {doctor.name[locale]}
-              </h3>
-              <p className="text-sm text-primary">{doctor.specialty[locale] }</p>
-              <div className="mt-2 flex items-center gap-1 text-xs">
-                <Star
-                  className="size-3.5 fill-star text-star"
-                  aria-hidden="true"
-                />
-                <span className="font-semibold text-foreground">
-                  {doctor.rating}
-                </span>
-                <span className="text-muted-foreground">
-                  ({doctor.reviews})
-                </span>
-              </div>
-              <Button
-                variant="outline"
-                className="mt-4 w-full rounded-lg border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-              >
-               {dict.Buttons.book}
-              </Button>
-            </div>
-          </article>
+          <DoctorCard key={doctor.id} doctor={doctor} />
         ))}
       </div>
     </section>
-  )
+  );
 }
+

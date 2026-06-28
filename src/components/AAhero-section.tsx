@@ -6,26 +6,51 @@ import { ChevronDown } from "lucide-react";
 export default function HeroSection() {
   const [loaded, setLoaded] = useState(false);
 
+  const images = [
+  "/hero/1.webp",
+  "/hero/2.webp",
+  "/hero/3.webp",
+  "/hero/4.webp",
+];
   useEffect(() => {
     const t = setTimeout(() => setLoaded(true), 100);
     return () => clearTimeout(t);
   }, []);
 
+
+const [current, setCurrent] = useState(0);
+
+useEffect(() => {
+  const interval = setInterval(() => {
+    setCurrent((prev) => (prev + 1) % images.length);
+  }, 5000);
+
+  return () => clearInterval(interval);
+}, []);
+
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative py-16 flex items-center justify-center overflow-hidden"
     >
       {/* Background */}
-      <div className="absolute inset-0">
-        <img
-          src="https://images.pexels.com/photos/3845625/pexels-photo-3845625.jpeg?auto=compress&cs=tinysrgb&w=1920"
-          alt="Clinic"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#2d004d]/85 via-[#3d0066]/75 to-[#2d004d]/90" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#2d004d]/60 via-transparent to-transparent" />
-      </div>
+    <div className="absolute inset-0 overflow-hidden">
+  {images.map((image, index) => (
+    <div
+      key={image}
+      className={`absolute inset-0 transition-opacity duration-[1800ms] ease-in-out ${
+        current === index ? "opacity-100" : "opacity-0"
+      }`}
+    >
+      <img
+        src={image}
+        className="w-full h-full object-cover scale-105 animate-slow-zoom"
+      />
+    </div>
+  ))}
+
+  <div className="absolute inset-0 bg-primary/70" />
+</div>
 
       {/* Decorative circles */}
       <div className="absolute top-20 right-20 w-64 h-64 rounded-full border border-[#c9a227]/20 opacity-60 hidden lg:block" />
@@ -40,61 +65,73 @@ export default function HeroSection() {
           }`}
         >
           <span
-            className="inline-block bg-[#c9a227]/20 border border-[#c9a227]/40 text-[#f0d060] text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6"
+            className="inline-block bg-primary2/20 border border-primary2/40 text-primary2 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6"
             style={{ transitionDelay: "200ms" }}
           >
-            Premium Medical Care
+           رعاية طبية متميزة
+
           </span>
         </div>
 
         <h1
-          className={`text-4xl sm:text-5xl lg:text-7xl font-bold text-white leading-tight mb-6 transition-all duration-1000 delay-200 ${
+          className={`text-2xl sm:text-5xl lg:text-5xl font-bold text-white leading-tight mb-6 transition-all duration-1000 delay-200 ${
             loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          Al Awali
+          سند الجزبرة
           <br />
-          <span className="text-[#c9a227]">Dental & Beauty</span>
+          <span className="text-primary2">الجمال والعناية</span>
           <br />
-          <span className="text-white/90 text-3xl sm:text-4xl lg:text-5xl font-light">
-            Clinic
+          <span className="text-white/90 text-2xl sm:text-4xl lg:text-4xl font-light">
+            
           </span>
         </h1>
 
         <p
-          className={`text-white/75 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed transition-all duration-1000 delay-300 ${
+          className={`text-white/75 text-base sm:text-sm max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed transition-all duration-1000 delay-300 ${
             loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          Providing world-class dental and aesthetic treatments with
-          cutting-edge technology and compassionate care. Your perfect smile is
-          our mission.
+         نقدم علاجات أسنان وتجميل بمستوى عالمي، معتمدين على تقنيات متطورة ورعاية تتسم بالاهتمام والتعاطف؛ فابتسامتك المثالية هي غايتنا.
         </p>
 
         <div
-          className={`flex flex-col sm:flex-row gap-4 justify-center lg:justify-start transition-all duration-1000 delay-500 ${
+          className={`flex flex-col sm:flex-row gap-4 justify-center  transition-all duration-1000 delay-500 ${
             loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
           <a
             href="#about"
-            className="inline-flex items-center justify-center gap-2 bg-[#c9a227] hover:bg-[#b8911e] text-white font-semibold px-8 py-3.5 rounded-full transition-all duration-300 shadow-lg shadow-[#c9a227]/30 hover:shadow-[#c9a227]/50 hover:-translate-y-0.5"
+            className="inline-flex items-center justify-center gap-2 bg-primary2 hover:bg-primary text-white font-semibold px-8 py-3.5 rounded-full transition-all duration-300 shadow-lg shadow-primary2/30 hover:shadow-primary2/50 hover:-translate-y-0.5"
           >
-            Discover More
+          اكتشف المزيد
+
           </a>
           <a
             href="#contact"
-            className="inline-flex items-center justify-center gap-2 border-2 border-white/40 hover:border-[#c9a227] text-white hover:text-[#c9a227] font-semibold px-8 py-3.5 rounded-full transition-all duration-300 hover:-translate-y-0.5"
+            className="inline-flex items-center justify-center gap-2 border-2 border-white/40 hover:bg-primary2 text-white hover:text-primary font-semibold px-8 py-3.5 rounded-full transition-all duration-300 hover:-translate-y-0.5"
           >
-            Book Appointment
+حجز موعد
           </a>
         </div>
       </div>
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
+  <svg
+    viewBox="0 0 1440 180"
+    preserveAspectRatio="none"
+    className="w-full h-[180px] md:block hidden"
+  >
+    <path
+      fill="#47A9B8"
+      d="M0,0 C300,170 1140,170 1440,0 L1440,180 L0,180 Z"
+    />
+  </svg>
+</div>
 
       {/* Scroll indicator */}
       <a
         href="#stats"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/60 hover:text-[#c9a227] transition-colors duration-200 animate-bounce"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/60 hover:text-primary2 transition-colors duration-200 animate-bounce"
       >
         <ChevronDown size={32} />
       </a>

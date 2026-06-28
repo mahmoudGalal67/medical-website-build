@@ -26,7 +26,7 @@ export default function AboutSection() {
                 : "opacity-0 -translate-x-12"
             }`}
           >
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-purple-200">
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-primary">
               <img
                 src="https://images.pexels.com/photos/3881449/pexels-photo-3881449.jpeg?auto=compress&cs=tinysrgb&w=800"
                 alt="Doctor"
@@ -35,13 +35,13 @@ export default function AboutSection() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#2d004d]/30 to-transparent" />
             </div>
             {/* Floating badge */}
-            <div className="absolute -bottom-6 -right-6 bg-[#3d0066] text-white rounded-2xl p-5 shadow-xl shadow-purple-900/30">
-              <p className="text-3xl font-bold text-[#c9a227]">15+</p>
+            <div className="absolute -bottom-6 -right-6 bg-primary text-white rounded-2xl p-5 shadow-xl shadow-primary/30">
+              <p className="text-3xl font-bold text-white">15+</p>
               <p className="text-xs text-purple-200 mt-0.5">
                 Years of Excellence
               </p>
             </div>
-            <div className="absolute -top-6 -left-6 bg-[#c9a227] text-white rounded-2xl p-4 shadow-xl">
+            <div className="absolute -top-6 -left-6 bg-primary2 text-white rounded-2xl p-4 shadow-xl">
               <p className="text-2xl font-bold">3K+</p>
               <p className="text-xs font-medium mt-0.5">Patients Served</p>
             </div>
@@ -55,7 +55,7 @@ export default function AboutSection() {
                 : "opacity-0 translate-x-12"
             }`}
           >
-            <span className="text-[#7c3aed] text-sm font-semibold uppercase tracking-widest">
+            <span className="text-primary text-sm font-semibold uppercase tracking-widest">
               About Us
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold text-[#2d004d] mt-3 mb-5 leading-tight">
@@ -82,7 +82,7 @@ export default function AboutSection() {
                 >
                   <CheckCircle
                     size={18}
-                    className="text-[#c9a227] flex-shrink-0"
+                    className="text-white flex-shrink-0"
                   />
                   {h}
                 </li>
@@ -91,7 +91,7 @@ export default function AboutSection() {
 
             <a
               href="#doctors"
-              className="inline-flex items-center gap-2 bg-[#3d0066] hover:bg-[#2d004d] text-white font-semibold px-7 py-3.5 rounded-full transition-all duration-300 hover:-translate-y-0.5 shadow-lg shadow-purple-900/30"
+              className="inline-flex items-center gap-2 bg-primary hover:bg-[#2d004d] text-white font-semibold px-7 py-3.5 rounded-full transition-all duration-300 hover:-translate-y-0.5 shadow-lg shadow-primary/30"
             >
               Meet Our Team
               <ArrowRight size={16} />

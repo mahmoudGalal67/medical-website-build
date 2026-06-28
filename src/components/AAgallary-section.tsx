@@ -54,7 +54,7 @@ export default function GallerySection() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <span className="text-[#7c3aed] text-sm font-semibold uppercase tracking-widest flex items-center justify-center gap-2">
+          <span className="text-primary text-sm font-semibold uppercase tracking-widest flex items-center justify-center gap-2">
             <Camera size={14} />
             Gallery
           </span>

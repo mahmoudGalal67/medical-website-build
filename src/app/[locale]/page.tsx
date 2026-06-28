@@ -1,8 +1,8 @@
 import HeroSection from "@/components/AAhero-section";
-import StatsSection from "@/components/AAstatus-section";
+import StatsSection from "@/components/AAStatus-sectionn";
 import ServicesSection from "@/components/AAservices-section";
 import AboutSection from "@/components/AAbout-section";
-import DoctorsSection from "@/components/AAdoctors-section";
+import DoctorsSection from "@/components/doctors-section";
 import TestimonialsSection from "@/components/AAtestimonials-section";
 import OffersSection from "@/components/AAoffers-section";
 import EquipmentSection from "@/components/AAequipment-section";
@@ -13,10 +13,10 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       <HeroSection />
-      <StatsSection />
+      <StatsSection  />
       <ServicesSection />
       <AboutSection />
-      <DoctorsSection />
+      <DoctorsSection  />
       <TestimonialsSection />
       <OffersSection />
       <EquipmentSection />

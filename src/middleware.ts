@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 const locales = ["en", "ar"];
-const defaultLocale = "en";
+const defaultLocale = "ar";
 
 export function middleware(req: NextRequest) {
   const refreshToken = req.cookies.get("refresh_token");

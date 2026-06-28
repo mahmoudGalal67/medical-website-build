@@ -13,12 +13,12 @@ import { useDictionary } from "@/providers/dictionary-provider";
 
 const navLinks : { en: { title: string; href: string }, ar: { title: string; href: string } }[] = [
  {en:{title: "Home", href: "/"}, ar:{title: "الرئيسية", href: "/"}},
- {en:{title: "Departments", href: "en/Departements"}, ar:{title: "الأقسام", href: "ar/Departements"}},
- {en:{title: "Doctors", href: "en/doctors"}, ar:{title: "الأطباء", href: "ar/doctors"}},
- {en:{title: "Insurance", href: "en/insurance"}, ar:{title: "التأمين", href: "ar/insurance"}},
- {en:{title: "Packages", href: "en/packages"}, ar:{title: "الحزم", href: "ar/packages"}},
- {en:{title: "Blog", href: "en/blog"}, ar:{title: "المدونة", href: "ar/blog"}},
- {en:{title: "Booking", href: "en/booking"}, ar:{title: "الحجز", href: "ar/booking"}},
+ {en:{title: "sade el-jezera care", href: "en/Departements"}, ar:{title: "ثادق الجزيرة كير", href: "ar/Departements"}},
+ {en:{title: "sanad el-jezera taweq", href: "en/doctors"}, ar:{title: "سند الجزيرة فرع طويق", href: "ar/doctors"}},
+ {en:{title: "dar el-khyal", href: "en/insurance"}, ar:{title: "دار الخيال", href: "ar/insurance"}},
+ {en:{title: "dar el-hoda", href: "en/packages"}, ar:{title: " دار الهدا", href: "ar/packages"}},
+ {en:{title: "sanad el-jezera mahdya", href: "en/blog"}, ar:{title: "سند الجزيرة فرع المهدية", href: "ar/blog"}},
+ {en:{title: "sanad el--jezera lbn", href: "en/booking"}, ar:{title: "سند الجزيرة فرع لبن", href: "ar/booking"}},
  {en:{title: "Contact Us", href: "en/contact"}, ar:{title: "اتصل بنا", href: "ar/contact"}},
 ];
 
@@ -42,10 +42,10 @@ export function SiteHeader() {
 
 
   return (
-    <header className="max-w-7xl mx-auto" >
+    <header className="mx-auto" >
       {/* Top Utility Bar */}
       <div className="text-white" dir="ltr">
-        <div className="bg-primary2 mx-auto flex h-9 max-w-7xl items-center justify-between rounded-t-xl px-4 text-xs sm:px-6 lg:px-8">
+        <div className="bg-primary mx-auto flex h-9  items-center justify-between rounded-t-xl px-4 text-xs sm:px-6 lg:px-36">
           <div className="flex items-center gap-4 sm:gap-6">
             <span className="flex items-center gap-1.5 font-medium text-red-400">
               <Siren className="size-3.5" />
@@ -64,13 +64,13 @@ export function SiteHeader() {
           </div>
 
           <div className="flex items-center gap-3">
-            <button dir="rtl" className={`opacity-90 cursor-pointer hover:opacity-100 ${locale === 'ar' ? 'text-primary' : ''}`} onClick={() => switchLanguage('ar')}>
+            <button dir="rtl" className={`opacity-90 cursor-pointer hover:opacity-100 ${locale === 'ar' ? 'text-primary2' : ''}`} onClick={() => switchLanguage('ar')}>
               العربية
             </button>
 
             <span className="opacity-40">|</span>
 
-            <button className={`font-medium opacity-90 cursor-pointer hover:opacity-100 ${locale === 'en' ? 'text-primary' : ''}`} onClick={() => switchLanguage('en')}>
+            <button className={`font-medium opacity-90 cursor-pointer hover:opacity-100 ${locale === 'en' ? 'text-primary2' : ''}`} onClick={() => switchLanguage('en')}>
               EN
             </button>
           </div>
@@ -79,13 +79,13 @@ export function SiteHeader() {
 
       {/* Main Navigation */}
       <div className="border-b border-border bg-card">
-        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto flex h-24 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           {/* Logo */}
           <Link href={`/${locale}`} className="flex shrink-0 items-center gap-3">
             <span className="flex size-10 items-center justify-center rounded-xl bg-primary text-primary-foreground">
               <HeartPulse className="size-5" />
             </span>
-<Image src="/Logo.jpeg" alt="HealthCare Booking" width={80} height={30} />
+<Image src="/Logo1.png" alt="HealthCare Booking" width={120} height={80} />
           </Link>
 
           {/* Desktop Navigation + CTA */}
@@ -102,10 +102,12 @@ export function SiteHeader() {
               ))}
             </nav>
 
+          </div>
+          <div className="hidden xl:block"> 
             <Button className="rounded-full px-6">
               {dict.Buttons.book}
             </Button>
-          </div>
+            </div>
 
           {/* Mobile Actions */}
           <div className="flex items-center gap-2 xl:hidden">

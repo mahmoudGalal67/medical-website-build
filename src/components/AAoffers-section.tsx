@@ -53,7 +53,7 @@ export default function OffersSection() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <span className="text-[#7c3aed] text-sm font-semibold uppercase tracking-widest flex items-center justify-center gap-2">
+          <span className="text-primary2 text-sm font-semibold uppercase tracking-widest flex items-center justify-center gap-2">
             <Tag size={14} />
             Special Offers
           </span>
@@ -84,19 +84,16 @@ export default function OffersSection() {
                   alt={offer.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#2d004d]/80 to-transparent" />
-                {/* Discount badge */}
-                <div className="absolute top-4 left-4 bg-[#c9a227] text-white text-xs font-bold px-3 py-1.5 rounded-full shadow">
-                  {offer.discount}
-                </div>
-                <div className="absolute top-4 right-4 bg-[#3d0066]/80 backdrop-blur-sm text-white text-xs font-medium px-3 py-1.5 rounded-full border border-white/20">
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent" />
+              
+                <div className="absolute top-4 right-4 bg-primary/80 backdrop-blur-sm text-white text-xs font-medium px-3 py-1.5 rounded-full border border-white/20">
                   {offer.badge}
                 </div>
               </div>
 
               {/* Content */}
-              <div className="bg-gradient-to-br from-[#3d0066] to-[#2d004d] p-6">
-                <p className="text-[#c9a227] text-xs font-semibold uppercase tracking-wider mb-1">
+              <div className="bg-gradient-to-br from-primary to-primary2 p-6">
+                <p className="text-primary2 text-xs font-semibold uppercase tracking-wider mb-1">
                   {offer.subtitle}
                 </p>
                 <h3 className="text-white font-bold text-xl mb-3">
@@ -114,7 +111,7 @@ export default function OffersSection() {
                       {offer.originalPrice}
                     </p>
                   </div>
-                  <button className="flex items-center gap-1.5 bg-[#c9a227] hover:bg-[#b8911e] text-white text-sm font-semibold px-4 py-2 rounded-full transition-all duration-300 shadow">
+                  <button className="flex items-center gap-1.5 bg-primary hover:bg-primary2 text-white text-sm font-semibold px-4 py-2 rounded-full transition-all duration-300 shadow">
                     Book Now
                     <ArrowRight size={14} />
                   </button>

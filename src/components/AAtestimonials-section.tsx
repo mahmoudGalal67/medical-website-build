@@ -34,7 +34,7 @@ export default function TestimonialsSection() {
   const { ref, isVisible } = useIntersection(0.15);
 
   return (
-    <section className="bg-gradient-to-br from-[#2d004d] via-[#3d0066] to-[#2d004d] py-24">
+    <section className="bg-gradient-to-br from-primary via-primary to-primary2 py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6" ref={ref}>
         <div
           className={`text-center mb-14 transition-all duration-700 ${

@@ -42,14 +42,14 @@ export default function EquipmentSection() {
   const { ref, isVisible } = useIntersection(0.1);
 
   return (
-    <section className="bg-[#f8f0ff] py-24">
+    <section className="bg-primary/40 py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6" ref={ref}>
         <div
           className={`text-center mb-14 transition-all duration-700 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <span className="text-[#7c3aed] text-sm font-semibold uppercase tracking-widest flex items-center justify-center gap-2">
+          <span className="text-primary text-sm font-semibold uppercase tracking-widest flex items-center justify-center gap-2">
             <ShieldCheck size={14} />
             Medical Technology
           </span>
@@ -79,7 +79,7 @@ export default function EquipmentSection() {
                   alt={item.name}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute top-3 right-3 bg-[#3d0066]/80 backdrop-blur-sm text-white text-xs font-medium px-3 py-1 rounded-full">
+                <div className="absolute top-3 right-3 bg-primary2/80 backdrop-blur-sm text-white text-xs font-medium px-3 py-1 rounded-full">
                   {item.tag}
                 </div>
               </div>
