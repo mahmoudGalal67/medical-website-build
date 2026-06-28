@@ -4,11 +4,10 @@ import { useIntersection } from "@/hooks/use-intersection";
 import { CheckCircle, ArrowRight } from "lucide-react";
 
 const highlights = [
-  "Advanced dental technology & equipment",
-  "Board-certified specialist doctors",
-  "Sterile & comfortable environment",
-  "Affordable treatment packages",
-  "Flexible appointment scheduling",
+  "تقنيات ومعدات طب الأسنان المتطورة",
+  "أطباء متخصصون حاصلون على شهادة البورد",
+  "بيئة معقمة ومريحة",
+
 ];
 
 export default function AboutSection() {
@@ -28,7 +27,7 @@ export default function AboutSection() {
           >
             <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-primary">
               <img
-                src="https://images.pexels.com/photos/3881449/pexels-photo-3881449.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src="/main.jpeg"
                 alt="Doctor"
                 className="w-full h-[480px] object-cover"
               />
@@ -38,12 +37,14 @@ export default function AboutSection() {
             <div className="absolute -bottom-6 md:-right-6 -right-3 bg-primary text-white rounded-2xl p-5 shadow-xl shadow-primary/30">
               <p className="text-3xl font-bold text-white">15+</p>
               <p className="text-xs text-purple-200 mt-0.5">
-                Years of Excellence
+               سنوات من التميز
+
               </p>
             </div>
             <div className="absolute -top-6 md:-left-6 -left-3 bg-primary2 text-white rounded-2xl p-4 shadow-xl">
               <p className="text-2xl font-bold">3K+</p>
-              <p className="text-xs font-medium mt-0.5">Patients Served</p>
+              <p className="text-xs font-medium mt-0.5">خدم المرضى
+</p>
             </div>
           </div>
 
@@ -56,22 +57,20 @@ export default function AboutSection() {
             }`}
           >
             <span className="text-primary text-sm font-semibold uppercase tracking-widest">
-              About Us
+              معلومات عنا
+
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold text-[#2d004d] mt-3 mb-5 leading-tight">
-              Your Trusted Partner in Dental & Aesthetic Health
+             شريكك الموثوق في صحة الأسنان والجمال
+
             </h2>
             <p className="text-gray-500 leading-relaxed mb-6">
-              Al Awali Clinic is a leading dental and beauty center committed to
-              delivering exceptional care through the latest medical
-              technologies. Our team of experienced specialists works with
-              dedication to ensure every patient receives personalized,
-              high-quality treatment in a warm and professional environment.
+        تُعد عيادة "ستد الجزيرة" مركزاً رائداً في مجال طب الأسنان والتجميل، وتلتزم بتقديم رعاية استثنائية باستخدام أحدث التقنيات الطبية. ويعمل فريقنا من المتخصصين ذوي الخبرة بتفانٍ لضمان حصول كل مريض على علاج مخصص وعالي الجودة، وذلك في أجواء تتسم بالدفء والمهنية.
+
             </p>
             <p className="text-gray-500 leading-relaxed mb-8">
-              From routine checkups to complex cosmetic procedures, we offer a
-              comprehensive range of services tailored to meet your unique needs
-              and help you achieve the smile and confidence you deserve.
+             بدءاً من الفحوصات الروتينية ووصولاً إلى الإجراءات التجميلية المعقدة، نقدم مجموعة شاملة من الخدمات المصممة خصيصاً لتلبية احتياجاتك الفريدة، ومساعدتك في الحصول على الابتسامة والثقة اللتين تستحقهما.
+
             </p>
 
             <ul className="space-y-3 mb-10">
@@ -91,9 +90,10 @@ export default function AboutSection() {
 
             <a
               href="#doctors"
-              className="inline-flex items-center gap-2 bg-primary hover:bg-[#2d004d] text-white font-semibold px-7 py-3.5 rounded-full transition-all duration-300 hover:-translate-y-0.5 shadow-lg shadow-primary/30"
+              className="inline-flex flex-row-reverse items-center gap-2 bg-primary hover:bg-primary2 text-white font-semibold px-7 py-3.5 rounded-full transition-all duration-300 hover:-translate-y-0.5 shadow-lg shadow-primary/30"
             >
-              Meet Our Team
+              تعرّف على فريقنا
+
               <ArrowRight size={16} />
             </a>
           </div>

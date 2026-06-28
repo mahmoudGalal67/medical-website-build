@@ -1,26 +1,14 @@
 "use client";
 
 import { useIntersection } from "@/hooks/use-intersection";
-import {
-  Smile,
-  Shield,
-  Zap,
-  Sparkles,
-  Heart,
-  Activity,
-  Stethoscope,
-  Eye,
-} from "lucide-react";
 
-const services = [
-  { icon: Smile, label: "Teeth Whitening", color: "#002125" },
-  { icon: Shield, label: "Dental Implants", color: "#367F8B" },
-  { icon: Zap, label: "Laser Treatment", color: "#002125" },
-  { icon: Sparkles, label: "Cosmetic Dentistry", color: "#367F8B" },
-  { icon: Heart, label: "Gum Care", color: "#002125" },
-  { icon: Activity, label: "Orthodontics", color: "#367F8B" },
-  { icon: Stethoscope, label: "General Checkup", color: "#002125" },
-  { icon: Eye, label: "Aesthetic Medicine", color: "#367F8B" },
+import Image from "next/image";
+
+const clinics = [
+  { img: '/clinics/clinic4.webp', label: "الاسنان", color: "#002125" },
+  { img: '/clinics/clinic2.webp', label: "الليزر", color: "#002125" },
+  { img: '/clinics/clinic3.webp', label: "النسا", color: "#367F8B" },
+  { img: '/clinics/clinic1.webp', label: "الجلدية", color: "#367F8B" },
 ];
 
 export default function ServicesSection() {
@@ -42,16 +30,16 @@ export default function ServicesSection() {
             خدماتنا
           </h2>
           <p className="text-gray-500 mt-3 max-w-xl mx-auto">
-           علاجات شاملة للأسنان وتجميلها يقدمها فريقنا الطبي الخبير.
+           عيادات شاملة للعناية والتجميل يقدمها فريقنا الطبي الخبير.
 
           </p>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4">
-          {services.map((s, i) => (
+        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 gap-4">
+          {clinics.map((s, i) => (
             <div
               key={s.label}
-              className={`flex flex-col items-center gap-3 group cursor-pointer transition-all duration-700 ${
+              className={`flex flex-col items-center  gap-3 group  transition-all duration-700 ${
                 isVisible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-10"
@@ -59,15 +47,15 @@ export default function ServicesSection() {
               style={{ transitionDelay: `${i * 80}ms` }}
             >
               <div
-                className="w-16 h-16 rounded-2xl flex items-center justify-center shadow-md group-hover:scale-110 group-hover:shadow-lg transition-all duration-300"
+                className="w-38 h-38 rounded-2xl flex items-center justify-center shadow-md group-hover:scale-110 group-hover:shadow-lg transition-all duration-300"
                 style={{
                   backgroundColor: `${s.color}18`,
                   border: `1.5px solid ${s.color}35`,
                 }}
               >
-                <s.icon size={26} style={{ color: s.color }} />
+                <Image src={s.img} width={120} height={120} style={{ color: s.color }} alt={s.label}/>
               </div>
-              <span className="text-xs font-medium text-primary text-center leading-tight">
+              <span className="text-md font-medium text-primary text-center leading-tight">
                 {s.label}
               </span>
             </div>

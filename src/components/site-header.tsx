@@ -13,12 +13,12 @@ import { useDictionary } from "@/providers/dictionary-provider";
 
 const navLinks : { en: { title: string; href: string }, ar: { title: string; href: string } }[] = [
  {en:{title: "Home", href: "/"}, ar:{title: "الرئيسية", href: "/"}},
- {en:{title: "sade el-jezera care", href: "en/Departements"}, ar:{title: "ثادق الجزيرة كير", href: "ar/Departements"}},
- {en:{title: "sanad el-jezera taweq", href: "en/doctors"}, ar:{title: "سند الجزيرة فرع طويق", href: "ar/doctors"}},
- {en:{title: "dar el-khyal", href: "en/insurance"}, ar:{title: "دار الخيال", href: "ar/insurance"}},
- {en:{title: "dar el-hoda", href: "en/packages"}, ar:{title: " دار الهدا", href: "ar/packages"}},
- {en:{title: "sanad el-jezera mahdya", href: "en/blog"}, ar:{title: "سند الجزيرة فرع المهدية", href: "ar/blog"}},
- {en:{title: "sanad el--jezera lbn", href: "en/booking"}, ar:{title: "سند الجزيرة فرع لبن", href: "ar/booking"}},
+ {en:{title: "sade el-jezera care", href: "en/branches/1"}, ar:{title: "ثادق الجزيرة كير", href: "ar/branches/1"}},
+ {en:{title: "sanad el-jezera taweq", href: "en/branches/2"}, ar:{title: "سند الجزيرة فرع طويق", href: "ar/branches/2"}},
+ {en:{title: "dar el-khyal", href: "en/branches/3"}, ar:{title: "دار الخيال", href: "ar/branches/3"}},
+ {en:{title: "dar el-hoda", href: "en/branches/4"}, ar:{title: " دار الهدا", href: "ar/branches/4"}},
+ {en:{title: "sanad el-jezera mahdya", href: "en/branches/5"}, ar:{title: "سند الجزيرة فرع المهدية", href: "ar/branches/5"}},
+ {en:{title: "sanad el--jezera lbn", href: "en/branches/6"}, ar:{title: "سند الجزيرة فرع لبن", href: "ar/branches/6"}},
  {en:{title: "Contact Us", href: "en/contact"}, ar:{title: "اتصل بنا", href: "ar/contact"}},
 ];
 

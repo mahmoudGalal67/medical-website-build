@@ -112,8 +112,8 @@ export default function OffersSection() {
                     </p>
                   </div>
                   <button className="flex items-center gap-1.5 bg-primary hover:bg-primary2 text-white text-sm font-semibold px-4 py-2 rounded-full transition-all duration-300 shadow">
-                    Book Now
                     <ArrowRight size={14} />
+                    Book Now
                   </button>
                 </div>
               </div>

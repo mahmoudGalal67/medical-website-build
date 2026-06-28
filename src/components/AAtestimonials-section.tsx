@@ -6,24 +6,24 @@ import { Star, Quote } from "lucide-react";
 const testimonials = [
   {
     name: "Layla Hassan",
-    role: "Patient — Teeth Whitening",
-    text: "I am absolutely thrilled with the results of my teeth whitening treatment. The staff were professional, gentle, and made me feel completely at ease. My smile has never looked better!",
+    role: "المريض — تبييض الأسنان",
+    text: "أنا سعيد للغاية بنتائج علاج تبييض الأسنان؛ فقد كان طاقم العمل محترفاً ولطيفاً، وجعلني أشعر براحة تامة. لم تبدُ ابتسامتي بهذا الروعة من قبل!",
     rating: 5,
     avatar:
       "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=200",
   },
   {
     name: "Mohammed Al-Rashid",
-    role: "Patient — Dental Implants",
-    text: "After losing a tooth in an accident, I was worried about implants. The team at Al Awali walked me through every step. The procedure was painless and the result looks completely natural.",
+    role: "المريض — زراعة الأسنان",
+    text: "بعد فقدان أحد أسناني إثر حادث، كنت قلقاً بشأن زراعة الأسنان؛ إلا أن فريق 'سند الجزيرة' رافقني وشرح لي كل خطوة من الخطوات. لقد كان الإجراء خالياً من الألم، وبدت النتيجة طبيعية تماماً.",
     rating: 5,
     avatar:
       "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=200",
   },
   {
     name: "Sara Al-Anazi",
-    role: "Patient — Orthodontics",
-    text: "My braces journey was smooth thanks to Dr. Ahmed. The clinic is spotless and modern, and the team always made me feel comfortable. Highly recommend Al Awali to everyone!",
+    role: "مريض — تقويم الأسنان",
+    text: "كانت رحلة تقويم الأسنان سلسة بفضل الدكتور أحمد. تتميز العيادة بنظافة فائقة وتصميم عصري، كما أن فريق العمل كان يحرص دائماً على شعوري بالراحة. أوصي بشدة بعيادة 'سند الجزيرة' للجميع!",
     rating: 5,
     avatar:
       "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=200",
@@ -42,14 +42,16 @@ export default function TestimonialsSection() {
           }`}
         >
           <span className="text-[#c9a227] text-sm font-semibold uppercase tracking-widest">
-            Patient Stories
+            قصص المرضى
+
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mt-2">
-            What Our Patients Say
+           ما يقوله مرضانا
+
           </h2>
           <p className="text-purple-200/70 mt-3 max-w-xl mx-auto">
-            Real experiences from real patients who trusted us with their
-            smiles.
+           تجارب حقيقية لمرضى حقيقيين وضعوا ثقتهم بنا وبابتساماتهم.
+
           </p>
         </div>
 
@@ -66,7 +68,7 @@ export default function TestimonialsSection() {
             >
               <Quote
                 size={32}
-                className="text-[#c9a227]/30 absolute top-6 right-6 group-hover:text-[#c9a227]/50 transition-colors duration-300"
+                className="text-[#c9a227]/30 absolute top-6 left-6 group-hover:text-[#c9a227]/50 transition-colors duration-300"
               />
 
               {/* Stars */}

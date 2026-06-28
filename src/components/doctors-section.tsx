@@ -8,62 +8,74 @@ interface Doctor {
   specialty: string;
   clinic: string;
   image: string;
+  branch: string;
 }
 
 const doctors: Doctor[] = [
   {
     id: 1,
-    name: "الدكتورة هبه السيد",
-    title: "ماجستير نساء وولادة جامعة عين شمس",
-    specialty: "14 عام خبرة في النساء والولادة والتجميل النسائي",
+    name: "د. شيماء شمخ ",
+    title: "عضو الكلية الملكية ببريطانيا.",
+    specialty: "",
     clinic: "عيادة النساء والولادة",
     image:
-      "https://images.pexels.com/photos/5452201/pexels-photo-5452201.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "/doctors/doctor1.jpg",
+      branch:'سند الجزيرة'
   },
   {
     id: 2,
-    name: "الدكتور ابراهيم فتحي",
-    title: "دبلوم امراض الباطنية خبرة 22 عام",
+    name: "دكتورة سماح بلتاجي",
+    title: "حاصلة على شهادة ADA لتجميل الأسنان",
     specialty: "",
-    clinic: "عيادة الباطنية",
+    clinic: "عيادة الأسنان",
     image:
-      "https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg?auto=compress&cs=tinysrgb&w=600",
+     "/doctors/doctor2.jpg",
+    branch:'  دار الهدا'
+
   },
   {
     id: 3,
-    name: "الدكتوره هبه سالم",
-    title: "اخصائية الجلدية والتجميل خبرة 10 اعوام",
+   name: "دكتورة رشا نجيب",
+    title: "ماجستير النساء والتوليد – جامعة الأزهر.",
     specialty: "",
-    clinic: "عيادة الجلدية والتجميل والليزر",
+    clinic: " عيادة النساء والتوليد",
     image:
-      "https://images.pexels.com/photos/5214958/pexels-photo-5214958.jpeg?auto=compress&cs=tinysrgb&w=600",
+     "/doctors/doctor3.jpg",
+           branch:'سند الجزيرة'
+
   },
   {
-    id: 1,
-    name: "الدكتورة هبه السيد",
-    title: "ماجستير نساء وولادة جامعة عين شمس",
-    specialty: "14 عام خبرة في النساء والولادة والتجميل النسائي",
-    clinic: "عيادة النساء والولادة",
+    id: 4,
+    name: "د. سارة عمارة",
+    title: "أخصائية طب وجراحة العيون",
+    specialty: "",
+    clinic: "عيادة  الليزر",
     image:
-      "https://images.pexels.com/photos/5452201/pexels-photo-5452201.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "/doctors/doctor4.jpg",
+       branch:'سند الجزيرة'
+
   },
   {
-    id: 2,
-    name: "الدكتور ابراهيم فتحي",
-    title: "دبلوم امراض الباطنية خبرة 22 عام",
+    id: 5,
+    name: "دكتورة فاطمة الخليل",
+    title: "بكالوريوس طب وجراحة",
     specialty: "",
-    clinic: "عيادة الباطنية",
+    clinic: "أخصائية بشرة ",
     image:
-      "https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "/doctors/doctor5.jpg",
+            branch:' دار الخيال'
+
   },
   {
-    id: 3,
-    name: "الدكتوره هبه سالم",
-    title: "اخصائية الجلدية والتجميل خبرة 10 اعوام",
+    id: 6,
+    name: "ايمان حمدان مسلم مرسي",
+    title: "بكالوريوس  طب الفم وتجميل الأسنان",
     specialty: "",
-    clinic: "عيادة الجلدية والتجميل والليزر",
+    clinic: "عيادة الأسنان",
     image:
-      "https://images.pexels.com/photos/5214958/pexels-photo-5214958.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "/doctors/doctor6.jpg",
+           branch:'سند الجزيرة'
+
   },
 ];
 
@@ -85,7 +97,7 @@ function BrandLogo() {
   );
 }
 
-function WatermarkText() {
+function WatermarkText ({title} :{title:string}) {
   return (
     <div className="absolute bottom-0 left-0 right-0 flex items-end justify-center overflow-hidden pointer-events-none select-none h-28">
       <span
@@ -97,8 +109,8 @@ function WatermarkText() {
           fontFamily: "Arial Black, sans-serif",
         }}
       >
-        سند الجزيرة
-      </span>
+{title}
+</span>
     </div>
   );
 }
@@ -115,7 +127,7 @@ function DoctorCard({ doctor }: { doctor: Doctor }) {
   return (
     <div className="flex flex-col rounded-2xl overflow-hidden shadow-2xl" style={{ background: "#367F8B" }}>
       {/* Top image area */}
-      <div className="relative" style={{ background: "#367F8B", minHeight: 320 }}>
+      <div className="relative" style={{ background: "#367F8B", minHeight: 350 }}>
         <BrandLogo />
 
         {/* Doctor photo with gold circle background */}
@@ -123,7 +135,7 @@ function DoctorCard({ doctor }: { doctor: Doctor }) {
           <div
             className="relative"
             style={{
-              width: 220,
+              width: 320,
               height: 240,
               display: "flex",
               alignItems: "flex-end",
@@ -134,9 +146,9 @@ function DoctorCard({ doctor }: { doctor: Doctor }) {
             <div
               className="absolute rounded-full"
               style={{
-                width: 190,
-                height: 190,
-                background: "#D4A017",
+                width: 280,
+                height: 280,
+                background: "#002125",
                 bottom: 0,
                 left: "50%",
                 transform: "translateX(-50%)",
@@ -148,16 +160,15 @@ function DoctorCard({ doctor }: { doctor: Doctor }) {
               alt={doctor.name}
               className="relative z-10 object-cover object-top rounded-full"
               style={{
-                width: 190,
-                height: 210,
-                objectPosition: "top center",
+                width: 280,
+                height: 280,
               }}
             />
           </div>
         </div>
 
         {/* Watermark */}
-        <WatermarkText />
+        <WatermarkText title={doctor.branch} />
       </div>
 
       {/* Divider */}
@@ -192,6 +203,8 @@ export default function DoctorsSection() {
       className="w-full min-h-screen py-16 px-4"
       style={{ background: "#A6DAE3" }}
     >
+      <h2 className="text-2xl text-primary text-center mb-12">الفريق الطبي</h2>
+
       <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
         {doctors.map((doctor) => (
           <DoctorCard key={doctor.id} doctor={doctor} />

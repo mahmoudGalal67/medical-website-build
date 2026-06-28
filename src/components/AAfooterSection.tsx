@@ -37,11 +37,12 @@ export default function FooterSection() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col lg:flex-row items-center justify-between gap-6">
           <div className="text-center lg:text-left">
             <h3 className="text-primary font-bold text-2xl sm:text-3xl">
-              Ready for Your Perfect Smile?
+              هل أنت مستعد لابتسامتك المثالية؟
+
             </h3>
             <p className="text-white mt-1">
-              Book a free consultation today and take the first step toward
-              confidence.
+            احجز استشارة مجانية اليوم واتخذ الخطوة الأولى نحو الثقة.
+
             </p>
           </div>
           <a
@@ -49,7 +50,7 @@ export default function FooterSection() {
             className="flex items-center gap-2 bg-primary hover:bg-primary2 text-white font-semibold px-8 py-3.5 rounded-full transition-all duration-300 whitespace-nowrap shadow-lg"
           >
             <Phone size={16} />
-            Call Now: +966 50 000 0000
+         اتصل الآن: +966 50 000 0000
           </a>
         </div>
       </div>
@@ -61,10 +62,10 @@ export default function FooterSection() {
           <div>
             <div className="flex items-center gap-3 mb-5">
               <div className="w-10 h-10 rounded-full bg-primary2 flex items-center justify-center">
-                <span className="text-white font-bold text-sm">AC</span>
+                <span className="text-white font-bold text-sm">SG</span>
               </div>
               <div>
-                <p className="text-white font-bold">Al Awali</p>
+                <p className="text-white font-bold">Sanad El-Jezera</p>
                 <p className="text-accent text-xs">Dental & Beauty Clinic</p>
               </div>
             </div>
