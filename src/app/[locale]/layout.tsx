@@ -52,6 +52,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
+    width: "device-width",
+  initialScale: 1,
   colorScheme: "light dark",
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "white" },
@@ -74,9 +76,9 @@ export default async function RootLayout({
   return (
     <html lang={locale}
          dir={locale === "ar" ? "rtl" : "ltr"}
-      className={` ${alexandria.variable} h-full antialiased`}
+      className={` ${alexandria.variable} h-full antialiased overflow-x-hidden`}
     >
-      <body className="font-sans antialiased min-h-full flex flex-col">
+      <body className="font-sans antialiased min-h-full flex flex-col overflow-x-hidden">
         <main className="min-h-screen bg-background ">
           <div className="mx-auto border-x ">
             <DictionaryProvider dictionary={dict}>
