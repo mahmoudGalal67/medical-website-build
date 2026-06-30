@@ -79,13 +79,13 @@ export function SiteHeader() {
 
       {/* Main Navigation */}
       <div className="border-b border-border bg-card">
-        <div className="mx-auto flex h-24 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto flex h-26 max-w-8xl items-center justify-between px-4 sm:px-6 md:px-12  xl:px-48 ">
           {/* Logo */}
           <Link href={`/${locale}`} className="flex shrink-0 items-center gap-3">
             <span className="flex size-10 items-center justify-center rounded-xl bg-primary text-primary-foreground">
               <HeartPulse className="size-5" />
             </span>
-<Image src="/logo1.png" alt="HealthCare Booking" width={120} height={80} />
+<Image src="/logo.png" alt="HealthCare Booking" width={140} height={90} />
           </Link>
 
           {/* Desktop Navigation + CTA */}
@@ -104,7 +104,7 @@ export function SiteHeader() {
 
           </div>
           <div className="hidden xl:block"> 
-            <Button className="rounded-full px-6">
+            <Button className="rounded-full px-6 py-6 cursor-pointer">
               {dict.Buttons.book}
             </Button>
             </div>

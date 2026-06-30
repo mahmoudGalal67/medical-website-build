@@ -16,7 +16,7 @@ const stats = [
     value: 9.4,
     decimals: 1,
     label: "تقييم المراجعين",
-    color: "#b42424",
+    color: "#7A1F3D",
     progress: 94,
   },
   {
@@ -31,7 +31,7 @@ const stats = [
     suffix: "+",
     secondLine: "عام",
     label: "خبرات الأطباء",
-    color: "#b42424",
+    color: "#7A1F3D",
     progress: 96,
   },
 ];

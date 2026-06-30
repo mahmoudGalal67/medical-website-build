@@ -7,10 +7,10 @@ export default function HeroSection() {
   const [loaded, setLoaded] = useState(false);
 
   const images = [
-  "/hero/1.webp",
-  "/hero/2.webp",
-  "/hero/3.webp",
-  "/hero/4.webp",
+  "/main.jpeg",
+  "/main.jpeg",
+  "/main.jpeg",
+  "/main.jpeg",
 ];
   useEffect(() => {
     const t = setTimeout(() => setLoaded(true), 100);
@@ -44,7 +44,7 @@ useEffect(() => {
     >
       <img
         src={image}
-        className="w-full h-full object-cover scale-105 animate-slow-zoom"
+        className="w-full h-full object-cover scale-100 animate-slow-zoom"
       />
     </div>
   ))}
@@ -101,7 +101,7 @@ useEffect(() => {
           }`}
         >
           <a
-            href="#about"
+            href="#branches"
             className="inline-flex items-center justify-center gap-2 bg-primary2 hover:bg-primary text-white font-semibold px-8 py-3.5 rounded-full transition-all duration-300 shadow-lg shadow-primary2/30 hover:shadow-primary2/50 hover:-translate-y-0.5"
           >
           اكتشف المزيد

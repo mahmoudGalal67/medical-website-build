@@ -42,21 +42,21 @@ export default function EquipmentSection() {
   const { ref, isVisible } = useIntersection(0.1);
 
   return (
-    <section className="bg-primary/40 py-24">
+    <section className="bg-gradient-to-br from-primary via-primary to-primary2 py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6" ref={ref}>
         <div
           className={`text-center mb-14 transition-all duration-700 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <span className="text-primary text-sm font-semibold uppercase tracking-widest flex items-center justify-center gap-2">
+          <span className="text-primary2 text-sm font-semibold uppercase tracking-widest flex items-center justify-center gap-2">
             <ShieldCheck size={14} />
             Medical Technology
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-[#2d004d] mt-2">
             Our Advanced Equipment
           </h2>
-          <p className="text-gray-500 mt-3 max-w-xl mx-auto">
+          <p className="text-primary2 mt-3 max-w-xl mx-auto">
             We invest in the latest medical technology to deliver safer, faster,
             and more effective treatments.
           </p>

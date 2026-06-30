@@ -17,7 +17,6 @@ import {
   FaTiktok,
   FaSnapchat
 } from "react-icons/fa6";
-import { SiTiktok } from "react-icons/si";
 const footerLinks = {
   الخدمات: [
     "عيادة الأسنان",
@@ -104,7 +103,7 @@ export default function FooterSection() {
 
             {/* استبدلي اللوجو بالمسار الصحيح */}
             <Image
-              src="/Logo1.PNG"
+              src="/Logo.png"
               alt="مجموعة سند الجزيرة الطبية"
               width={180}
               height={70}

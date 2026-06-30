@@ -12,22 +12,22 @@ type Branch = {
 
 const branches: Branch[] = [
   {
-    img: "sanad.jpeg",
+    img: "sanad.png",
     title: "سند الجزيرة - فرع طويق",
     href: "/branches/tuwaiq",
   },
   {
-    img: "sanad.jpeg",
+    img: "sanad.png",
     title: "سند الجزيرة - فرع المهدية",
     href: "/branches/mahdiyah",
   },
   {
-    img: "sanad.jpeg",
+    img: "sanad.png",
     title: "سند الجزيرة - فرع لبن",
     href: "/branches/laban",
   },
   {
-    img: "Care.png",
+    img: "careLogo.jpeg",
     title: "مجمع الجزيرة كير الطبي",
     href: "/branches/care",
   },
@@ -37,7 +37,7 @@ const branches: Branch[] = [
     href: "/branches/hoda",
   },
   {
-    img: "khayal.jpeg",
+    img: "khayalLogo.jpeg",
     title: "دار الخيال الطبي",
     href: "/branches/khayal",
   },
@@ -45,7 +45,7 @@ const branches: Branch[] = [
 
 export default function Branches() {
   return (
-    <section className="relative overflow-hidden pt-20 py-24">
+    <section className="relative overflow-hidden pt-20 py-24" id="branches">
 
       {/* Background */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-rose-50 via-white to-white" />
@@ -120,7 +120,7 @@ export default function Branches() {
                 >
 
                   {/* Badge */}
-                  <span className="absolute left-4 top-4 rounded-full bg-[#7A1F3D] px-3 py-1 text-[11px] font-semibold text-white shadow">
+                  <span className="absolute left-4 top-4 z-10 rounded-full bg-[#7A1F3D] px-3 py-1 text-[11px] font-semibold text-white shadow">
                     فرع
                   </span>
 
