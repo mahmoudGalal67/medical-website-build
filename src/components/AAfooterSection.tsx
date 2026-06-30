@@ -1,24 +1,38 @@
 "use client";
 
 import { useIntersection } from "@/hooks/use-intersection";
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Clock,
+  ChevronLeft,
+} from "lucide-react";
+
+import {
+  FaInstagram,
+  FaTiktok,
+  FaSnapchat
+} from "react-icons/fa6";
+import { SiTiktok } from "react-icons/si";
 const footerLinks = {
-  Services: [
-    "Teeth Whitening",
-    "Dental Implants",
-    "Orthodontics",
-    "Veneers & Crowns",
-    "Laser Treatment",
-    "Aesthetic Medicine",
+  الخدمات: [
+    "عيادة الأسنان",
+    "الجلدية والتجميل",
+    "النساء والولادة",
+    "الليزر",
   ],
-  "Quick Links": [
-    "About Us",
-    "Our Doctors",
-    "Special Offers",
-    "Equipment",
-    "Gallery",
-    "Book Appointment",
+
+  "روابط سريعة": [
+    "من نحن",
+    "الأطباء",
+    "الفروع",
+    "العروض",
+    "احجز موعد",
+    "تواصل معنا",
   ],
 };
 
@@ -26,148 +40,251 @@ export default function FooterSection() {
   const { ref, isVisible } = useIntersection(0.1);
 
   return (
-    <footer id="contact" className="bg-primary">
-      {/* Contact banner */}
-      <div
-        ref={ref}
-        className={`bg-gradient-to-r from-accent to-primary2 py-12 transition-all duration-700 ${
-          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-        }`}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col lg:flex-row items-center justify-between gap-6">
-          <div className="text-center lg:text-left">
-            <h3 className="text-primary font-bold text-2xl sm:text-3xl">
-              هل أنت مستعد لابتسامتك المثالية؟
+    <footer
+      id="contact"
+      dir="rtl"
+      className="relative overflow-hidden bg-[#171717]"
+    >
+      {/* Background */}
 
-            </h3>
-            <p className="text-white mt-1">
-            احجز استشارة مجانية اليوم واتخذ الخطوة الأولى نحو الثقة.
+      <div className="absolute inset-0 bg-gradient-to-br from-[#7A1F3D]/15 via-transparent to-[#367F8B]/10" />
 
-            </p>
+      <div className="absolute -top-32 right-0 h-96 w-96 rounded-full bg-[#7A1F3D]/10 blur-[150px]" />
+
+      <div className="absolute bottom-0 left-0 h-96 w-96 rounded-full bg-[#367F8B]/10 blur-[150px]" />
+
+      {/* CTA */}
+
+      <div className="relative z-10 px-4 pt-14">
+
+        <div
+          ref={ref}
+          className={`mx-auto max-w-7xl rounded-[36px] bg-gradient-to-r from-[#7A1F3D] to-[#367F8B] p-10 shadow-2xl transition-all duration-700 ${
+            isVisible
+              ? "translate-y-0 opacity-100"
+              : "translate-y-10 opacity-0"
+          }`}
+        >
+          <div className="flex flex-col items-center justify-between gap-8 lg:flex-row">
+
+            <div className="text-center lg:text-right">
+
+              <h2 className="text-3xl font-extrabold text-white">
+                احجز موعدك الآن مع نخبة الأطباء
+              </h2>
+
+              <p className="mt-3 max-w-xl text-white/90 leading-8">
+                نوفر رعاية صحية متكاملة بأحدث التقنيات الطبية داخل جميع
+                فروع مجموعة سند الجزيرة الطبية.
+              </p>
+
+            </div>
+
+            <a
+              href="tel:+966500000000"
+              className="rounded-full bg-white px-8 py-4 font-bold text-[#7A1F3D] transition-all duration-300 hover:scale-105 hover:bg-[#7A1F3D] hover:text-white"
+            >
+              اتصل بنا الآن
+            </a>
+
           </div>
-          <a
-            href="tel:+966500000000"
-            className="flex items-center gap-2 bg-primary hover:bg-primary2 text-white font-semibold px-8 py-3.5 rounded-full transition-all duration-300 whitespace-nowrap shadow-lg"
-          >
-            <Phone size={16} />
-         اتصل الآن: +966 50 000 0000
-          </a>
         </div>
+
       </div>
 
-      {/* Main footer */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
-          {/* Brand */}
+      {/* Main Footer */}
+
+      <div className="relative z-10 mx-auto max-w-7xl px-4 py-20">
+
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+
+          {/* Logo */}
+
           <div>
-            <div className="flex items-center gap-3 mb-5">
-              <div className="w-10 h-10 rounded-full bg-primary2 flex items-center justify-center">
-                <span className="text-white font-bold text-sm">SG</span>
-              </div>
-              <div>
-                <p className="text-white font-bold">Sanad El-Jezera</p>
-                <p className="text-accent text-xs">Dental & Beauty Clinic</p>
-              </div>
-            </div>
-            <p className="text-white text-sm leading-relaxed mb-6">
-              Your trusted partner for premium dental and aesthetic care.
-              Delivering excellence with compassion since 2009.
+
+            {/* استبدلي اللوجو بالمسار الصحيح */}
+            <Image
+              src="/Logo1.PNG"
+              alt="مجموعة سند الجزيرة الطبية"
+              width={180}
+              height={70}
+            />
+
+            <p className="mt-6 leading-8 text-gray-300">
+              مجموعة سند الجزيرة الطبية تقدم خدمات صحية متكاملة بأحدث
+              التقنيات وعلى يد نخبة من الأطباء والاستشاريين، لنمنحكم
+              تجربة علاجية آمنة ومتميزة.
             </p>
-            <div className="flex gap-3"></div>
+
+            {/* Social */}
+
+            <div className="mt-8 flex gap-3">
+
+              <a
+                href="https://www.instagram.com/sanad_aljazeera"
+                target="_blank"
+                className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#7A1F3D]"
+              >
+                <FaInstagram size={20} />
+              </a>
+
+              <a
+                href="https://www.tiktok.com/@sanad_aljazeera"
+                target="_blank"
+                className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#7A1F3D]"
+              >
+                <FaTiktok size={18} />
+              </a>
+
+              <a
+                href="https://snapchat.com/t/kGMdQePz"
+                target="_blank"
+                className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#7A1F3D]"
+              >
+                <FaSnapchat size={18} />
+              </a>
+
+            </div>
+
           </div>
 
           {/* Links */}
-          {Object.entries(footerLinks).map(([heading, items]) => (
-            <div key={heading}>
-              <h4 className="text-white font-semibold mb-5 text-sm uppercase tracking-wider">
-                {heading}
-              </h4>
-              <ul className="space-y-2.5">
-                {items.map((item) => (
-                  <li key={item}>
-                    <a
-                      href="#"
-                      className="text-white hover:text-accent text-sm transition-colors duration-200"
-                    >
-                      {item}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
 
-          {/* Contact */}
+          {Object.entries(footerLinks).map(([title, links]) => (
+
+            <div key={title}>
+
+              <h3 className="mb-6 text-xl font-bold text-white">
+                {title}
+              </h3>
+
+              <ul className="space-y-4">
+
+                {links.map((item) => (
+
+                  <li key={item}>
+
+                    <Link
+                      href="#"
+                      className="group flex items-center gap-2 text-gray-300 transition hover:text-white"
+                    >
+                      <ChevronLeft className="h-4 w-4 text-[#B3476B] transition group-hover:-translate-x-1" />
+
+                      {item}
+
+                    </Link>
+
+                  </li>
+
+                ))}
+
+              </ul>
+
+            </div>
+
+          ))}          {/* Contact */}
+
           <div>
-            <h4 className="text-white font-semibold mb-5 text-sm uppercase tracking-wider">
-              Contact Info
-            </h4>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3">
+            <h3 className="mb-6 text-xl font-bold text-white">
+              معلومات التواصل
+            </h3>
+
+            <ul className="space-y-5">
+
+              <li className="flex items-start gap-3 text-gray-300">
                 <MapPin
-                  size={16}
-                  className="text-accent mt-0.5 flex-shrink-0"
+                  className="mt-1 text-[#B3476B]"
+                  size={18}
                 />
-                <span className="text-white text-sm">
-                  Al Awali District, Riyadh, Saudi Arabia
+
+                <span className="leading-7">
+                  المملكة العربية السعودية
+                  <br />
+                  الرياض
                 </span>
               </li>
-              <li className="flex items-center gap-3">
-                <Phone size={16} className="text-accent flex-shrink-0" />
+
+              <li className="flex items-center gap-3 text-gray-300">
+                <Phone
+                  className="text-[#B3476B]"
+                  size={18}
+                />
+
                 <a
                   href="tel:+966500000000"
-                  className="text-white hover:text-accent text-sm transition-colors duration-200"
+                  className="transition hover:text-white"
                 >
                   +966 50 000 0000
                 </a>
               </li>
-              <li className="flex items-center gap-3">
-                <Mail size={16} className="text-accent flex-shrink-0" />
+
+              <li className="flex items-center gap-3 text-gray-300">
+                <Mail
+                  className="text-[#B3476B]"
+                  size={18}
+                />
+
                 <a
-                  href="mailto:info@alawali.com"
-                  className="text-white hover:text-accent text-sm transition-colors duration-200"
+                  href="mailto:info@sanadaljazeera.com"
+                  className="transition hover:text-white"
                 >
-                  info@alawali.com
+                  info@sanadaljazeera.com
                 </a>
               </li>
-              <li className="flex items-start gap-3">
+
+              <li className="flex items-start gap-3 text-gray-300">
                 <Clock
-                  size={16}
-                  className="text-accent mt-0.5 flex-shrink-0"
+                  className="mt-1 text-[#B3476B]"
+                  size={18}
                 />
-                <span className="text-white text-sm">
-                  Sat–Thu: 9:00 AM – 10:00 PM
+
+                <span className="leading-7">
+                  السبت - الخميس
                   <br />
-                  Friday: 4:00 PM – 10:00 PM
+                  9:00 صباحًا - 10:00 مساءً
                 </span>
               </li>
+
             </ul>
+
           </div>
+
         </div>
+
       </div>
 
-      {/* Bottom bar */}
-      <div className="border-t border-white/8 py-6">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-white text-xs">
-            &copy; 2024 Al Awali Dental & Beauty Clinic. All rights reserved.
+      {/* Bottom */}
+
+      <div className="relative z-10 border-t border-white/10">
+
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 py-6 text-center md:flex-row">
+
+          <p className="text-sm text-gray-400">
+            © 2026 مجموعة سند الجزيرة الطبية. جميع الحقوق محفوظة.
           </p>
-          <div className="flex gap-4">
+
+          <div className="flex items-center gap-6">
+
             <a
               href="#"
-              className="text-white hover:text-accent text-xs transition-colors duration-200"
+              className="text-sm text-gray-400 transition hover:text-white"
             >
-              Privacy Policy
+              سياسة الخصوصية
             </a>
+
             <a
               href="#"
-              className="text-white hover:text-accent text-xs transition-colors duration-200"
+              className="text-sm text-gray-400 transition hover:text-white"
             >
-              Terms of Service
+              الشروط والأحكام
             </a>
+
           </div>
+
         </div>
+
       </div>
+
     </footer>
   );
 }
