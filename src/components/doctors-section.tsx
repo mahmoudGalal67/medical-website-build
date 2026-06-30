@@ -24,6 +24,10 @@ const containerVariants = {
   },
 };
 
+const easeCurve: [number, number, number, number] = [0.22, 1, 0.36, 1];
+
+
+
 const cardVariants = {
   hidden: {
     opacity: 0,
@@ -34,10 +38,10 @@ const cardVariants = {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: {
-      duration: 0.6,
-      ease: [0.22, 1, 0.36, 1],
-    },
+  transition: {
+  duration: 0.6,
+  ease: easeCurve,
+}
   },
 };
 
