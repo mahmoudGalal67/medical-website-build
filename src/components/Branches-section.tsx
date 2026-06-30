@@ -1,60 +1,213 @@
-import {
-  HeartPulse,
-  Baby,
-  Sparkles,
-  Bone,
-  Stethoscope,
-  ScanLine,
-  type LucideIcon,
-} from "lucide-react"
-import Image from "next/image"
-import Link from "next/link"
+"use client";
 
-type Service = {
-  img: string
-  title: string
-  desc: string
-}
+import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
 
-const services: Service[] = [
-  { img: 'sanad.png', title:"ثادق الجزيرة كير", desc: "Dental Care & Implants" },
-  { img: 'hoda.png', title: " دار الهدا", desc: "Heart & Vascular Care" },
-  { img: 'sanad.png', title: "سند الجزيرة فرع طويق", desc: "Skin, Hair & Nail Treatments" },
-  { img: 'sanad.png', title: "سند الجزيرة فرع المهدية", desc: "Bone & Joint Care" },
-  { img: 'khayal.png', title: "دار الخيال", desc: "Child Care & Vaccination" },
-  { img: 'sanad.png', title: "سند الجزيرة فرع لبن", desc: "X-Ray, MRI & Ultrasound" },
-]
+type Branch = {
+  img: string;
+  title: string;
+  href: string;
+};
+
+const branches: Branch[] = [
+  {
+    img: "sanad.jpeg",
+    title: "سند الجزيرة - فرع طويق",
+    href: "/branches/tuwaiq",
+  },
+  {
+    img: "sanad.jpeg",
+    title: "سند الجزيرة - فرع المهدية",
+    href: "/branches/mahdiyah",
+  },
+  {
+    img: "sanad.jpeg",
+    title: "سند الجزيرة - فرع لبن",
+    href: "/branches/laban",
+  },
+  {
+    img: "Care.png",
+    title: "مجمع الجزيرة كير الطبي",
+    href: "/branches/care",
+  },
+  {
+    img: "hoda.png",
+    title: "دار الهدى الطبي",
+    href: "/branches/hoda",
+  },
+  {
+    img: "khayal.jpeg",
+    title: "دار الخيال الطبي",
+    href: "/branches/khayal",
+  },
+];
 
 export default function Branches() {
   return (
-    <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-      <div className="flex items-end justify-between gap-4">
-          <h2 className="text-2xl font-bold text-foreground">
-            فروعنا
+    <section className="relative overflow-hidden pt-20 py-24">
+
+      {/* Background */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-rose-50 via-white to-white" />
+
+      <div className="absolute -top-40 left-0 -z-10 h-96 w-96 rounded-full bg-[#7A1F3D]/10 blur-[150px]" />
+
+      <div className="absolute bottom-0 right-0 -z-10 h-96 w-96 rounded-full bg-[#B3476B]/10 blur-[150px]" />
+
+      <div className="mx-auto max-w-8xl px-4">
+
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center"
+        >
+          <h2 className="text-4xl font-extrabold text-[#7A1F3D] [text-shadow:0_2px_8px_rgba(122,31,61,.15)]">
+            فروع مجموعة سند الجزيرة الطبية
           </h2>
-          <p className="mt-1 text-sm text-muted-foreground">
-خدمات رعاية صحية شاملة لك ولعائلتك.
+
+          <p className="mx-auto mt-4 max-w-2xl text-slate-500 leading-8">
+            اختر أقرب فرع إليك وتمتع بخدمات طبية متكاملة بأحدث التقنيات وعلى يد
+            نخبة من الأطباء والاستشاريين.
           </p>
-       
+        </motion.div>
+
+        {/* Grid */}
+        <div className="mt-18 flex justify-center">
+
+          <div className="grid grid-cols-2 gap-7 md:grid-cols-3 xl:grid-cols-6">
+
+            {branches.map((branch, index) => (
+
+              <motion.div
+                key={branch.title}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.6,
+                  delay: index * 0.08,
+                }}
+              >
+
+                <Link
+                  href={branch.href}
+                  className="
+                  group
+                  relative
+                  flex
+                  h-[270px]
+                  w-44
+                  flex-col
+                  overflow-hidden
+                  rounded-3xl
+                  border
+                  border-slate-200
+                  bg-white/90
+                  p-5
+                  text-center
+                  backdrop-blur
+                  shadow-[0_8px_25px_rgba(0,0,0,.08)]
+                  transition-all
+                  duration-500
+                  hover:-translate-y-3
+                  hover:scale-105
+                  hover:border-[#7A1F3D]
+                  hover:shadow-[0_20px_45px_rgba(122,31,61,.18)]
+                  "
+                >
+
+                  {/* Badge */}
+                  <span className="absolute left-4 top-4 rounded-full bg-[#7A1F3D] px-3 py-1 text-[11px] font-semibold text-white shadow">
+                    فرع
+                  </span>
+
+                  {/* Glow */}
+                  <div className="absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100">
+
+                    <div className="absolute -top-10 -right-10 h-40 w-40 rounded-full bg-[#7A1F3D]/15 blur-3xl" />
+
+                    <div className="absolute -bottom-10 -left-10 h-40 w-40 rounded-full bg-[#B3476B]/15 blur-3xl" />
+
+                  </div>
+
+                  {/* Image */}
+                  <div className="
+                    relative
+                    flex
+                    h-32
+                    items-center
+                    justify-center
+                    rounded-2xl
+                    bg-slate-50
+                    transition-all
+                    duration-500
+                    group-hover:bg-[#FAF4F6]
+                  ">
+
+                    <Image
+                      src={`/branches/${branch.img}`}
+                      alt={branch.title}
+                      width={160}
+                      height={110}
+                      className="
+                        object-contain
+                        transition-all
+                        duration-500
+                        group-hover:scale-110
+                      "
+                    />
+
+                  </div>
+
+                  {/* Title */}
+                  <h3
+                    className="
+                    mt-5
+                    flex-1
+                    text-[15px]
+                    font-bold
+                    leading-6
+                    text-slate-800
+                    transition-all
+                    duration-300
+                    group-hover:text-[#7A1F3D]
+                    "
+                  >
+                    {branch.title}
+                  </h3>
+
+                  {/* Animated Line */}
+                  <div
+                    className="
+                    mx-auto
+                    h-1
+                    w-0
+                    rounded-full
+                    bg-gradient-to-r
+                    from-[#7A1F3D]
+                    via-[#8B1E3F]
+                    to-[#B3476B]
+                    transition-all
+                    duration-500
+                    group-hover:w-20
+                    "
+                  />
+
+                </Link>
+
+              </motion.div>
+
+            ))}
+
+          </div>
+
+        </div>
+
       </div>
 
-      <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
-        {services.map((service) => (
-          <Link href={'/'}
-          key={service.title}
-            className="group flex flex-col items-center justify-between gap-3 rounded-xl border border-border bg-card p-5 text-center transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-md"
-          >
-
-            <span className="flex items-center justify-center rounded-xl bg-secondary text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-              <Image src={`/branches/${service.img}`} alt={service.title} width={120} height={80} />
-            </span>
-            <h3 className="text-sm font-semibold text-foreground">
-              {service.title}
-            </h3>
-          
-          </Link>
-        ))}
-      </div>
     </section>
-  )
+  );
 }
