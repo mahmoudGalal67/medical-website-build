@@ -85,7 +85,7 @@ const scrollToBranches = () => {
             loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          سند الجزبرة
+          مجموعة سند الجزيرة الطبية
           <br />
           <span className="text-primary2">الجمال والعناية</span>
           <br />
