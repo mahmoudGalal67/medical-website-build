@@ -189,7 +189,7 @@ export default function FooterSection() {
               <li className="flex items-start gap-3 text-gray-300">
                 <Clock className="mt-1 text-[#B3476B]" size={18} />
                 <span className="leading-7">
-طوارئ على مدار الساعة (24 / 7)
+طوارئ على مدار الساعة (24/7)
                 </span>
               </li>
             </ul>
