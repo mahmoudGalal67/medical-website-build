@@ -8,9 +8,9 @@ export default function HeroSection() {
 
   const images = [
   "/public/branches/pages/tweq.jpeg",
-  "/main.jpeg",
-  "/main.jpeg",
-  "/main.jpeg",
+  "public/branches/pages/tweq.jpeg",
+  "public/branches/pages/tweq.jpeg",
+  "public/branches/pages/tweq.jpeg",
 ];
   useEffect(() => {
     const t = setTimeout(() => setLoaded(true), 100);
