@@ -9,9 +9,10 @@ import OffersSection from "@/components/AAoffers-section";
 import EquipmentSection from "@/components/AAequipment-section";
 import GallerySection from "@/components/AAgallary-section";
 import FooterSection from "@/components/AAfooterSection";
-import { FeatureStrip } from "@/components/feature-strip";
 
 export default function Home() {
+const doctors = Array.from({ length: 18 }, () => ('' as String));
+
   return (
     <main className="min-h-screen">
       <HeroSection />
@@ -20,7 +21,7 @@ export default function Home() {
       <Branches />
       <ServicesSection />
       <AboutSection />
-      <DoctorsSection  />
+      <DoctorsSection doctors={doctors} params={'main'} />
       <TestimonialsSection />
       <OffersSection />
       <EquipmentSection />

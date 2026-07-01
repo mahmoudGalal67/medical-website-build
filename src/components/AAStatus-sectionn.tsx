@@ -45,6 +45,7 @@ export default function StatsSection() {
   return (
     <section
       ref={ref}
+      id="stats"
       className="bg-gray-100 py-20"
       dir="rtl"
     >

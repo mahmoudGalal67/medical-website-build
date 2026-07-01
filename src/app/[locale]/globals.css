@@ -122,16 +122,17 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+
+
 body{
   scroll-behavior: smooth;
 }
-
-html[lang="en"] {
-  font-family: var(--font-en);
+html[lang="ar"] body {
+  font-family: var(--font-arabic);
 }
 
-html[lang="ar"] {
-  font-family: var(--font-ar);
+html[lang="en"] body {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 @layer base {
@@ -144,6 +145,24 @@ html[lang="ar"] {
   html {
     @apply font-sans;
   }
+}
+
+
+.swiper {
+  padding-bottom: 55px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--primary2);
+}
+
+.swiper-pagination-bullet {
+  background: rgba(255,255,255,.35);
+}
+
+.swiper-pagination-bullet-active {
+  background:var(--primary2);
 }
 
 @keyframes slowZoom {

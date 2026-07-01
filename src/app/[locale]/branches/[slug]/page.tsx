@@ -13,98 +13,72 @@ import {
 } from "@/components/ui/accordion";
 
 import Image from "next/image";
-import { id } from "date-fns/locale";
+
+import DoctorsSection from "@/components/doctors-section";
+import TestimonialsSection from "@/components/AAtestimonials-section";
 
 
 const branches = [{
   id:'1',
-  title:'ثادق الجزيرة كير',
+  slug:'care',
+  title:'مجمع الجزيره كير الطبي',
   desc:"رعاية متقدمة   على يد أخصائيين يتمتعون بخبرة دولية، وباستخدام تقنيات تشخيصية حديثة وخطط علاجية تتمحور حول المريض.",
-  logo:"/branches/sanad.png",
-  doctors:[]
+  logo:"/branches/pages/care.jpeg",
+  doctors:8
 },
 {
   id:'2',
+  slug:'tweq',
   title:'سند الجزيرة فرع طويق',
   desc:"رعاية متقدمة   على يد أخصائيين يتمتعون بخبرة دولية، وباستخدام تقنيات تشخيصية حديثة وخطط علاجية تتمحور حول المريض.",
-  logo:"/branches/sanad.png",
-  doctors:[]
+  logo:"/branches/pages/tweq.jpeg",
+  doctors:10
 }
 ,{
   id:'3',
+  slug:'khayal',
   title:'دار الخيال',
   desc:"رعاية متقدمة   على يد أخصائيين يتمتعون بخبرة دولية، وباستخدام تقنيات تشخيصية حديثة وخطط علاجية تتمحور حول المريض.",
-  logo:"/branches/khayal.png",
-  doctors:[]
+  logo:"/branches/pages/khayal.jpeg",
+  doctors:8
 }
 ,{
   id:'4',
+  slug:'hoda',
   title:' دار الهدا',
   desc:"رعاية متقدمة   على يد أخصائيين يتمتعون بخبرة دولية، وباستخدام تقنيات تشخيصية حديثة وخطط علاجية تتمحور حول المريض.",
-  logo:"/branches/hoda.png",
-  doctors:[]
+  logo:"/branches/pages/hoda.jpeg",
+  doctors:3
 }
 ,{
   id:'5',
+  slug:'mahdya',
   title:'سند الجزيرة فرع المهدية',
   desc:"رعاية متقدمة   على يد أخصائيين يتمتعون بخبرة دولية، وباستخدام تقنيات تشخيصية حديثة وخطط علاجية تتمحور حول المريض.",
-  logo:"/branches/sanad.png",
-  doctors:[]
+  logo:"/branches/pages/mahdya.jpeg",
+  doctors:5
 }
 ,{
   id:'6',
+  slug:'lbn',
   title:'سند الجزيرة فرع لبن',
   desc:"رعاية متقدمة   على يد أخصائيين يتمتعون بخبرة دولية، وباستخدام تقنيات تشخيصية حديثة وخطط علاجية تتمحور حول المريض.",
-  logo:"/branches/sanad.png",
-  doctors:[]
+  logo:"/branches/pages/lbn.jpeg",
+  doctors:6
 }]
 
-const doctors = [
-  {
-    id: 1,
-    name: "Dr. Ahmed Al Harbi",
-    specialty: "Consultant Cardiologist",
-    experience: "15 Years",
-    rating: "4.9",
-    image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d",
-  },
-  {
-    id: 2,
-    name: "Dr. Sara Al Mutairi",
-    specialty: "Cardiologist",
-    experience: "12 Years",
-    rating: "4.8",
-    image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f",
-  },
-  {
-    id: 3,
-    name: "Dr. Mohammed Ali",
-    specialty: "Heart Surgeon",
-    experience: "18 Years",
-    rating: "4.9",
-    image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2",
-  },
-  {
-    id: 4,
-    name: "Dr. Huda Al Enazi",
-    specialty: "Pediatric Cardiologist",
-    experience: "10 Years",
-    rating: "4.8",
-    image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54",
-  },
-];
+
 
 const services = [
-  "Heart Checkup",
-  "ECG",
-  "Echocardiogram",
-  "Stress Test",
-  "Cardiac MRI",
-  "Heart Surgery",
-  "Angiography",
-  "Hypertension Clinic",
+  "فحص القلب",
+  "تخطيط القلب (ECG)",
+  "تخطيط صدى القلب (الإيكو)",
+  "اختبار الجهد",
+  "تصوير القلب بالرنين المغناطيسي",
+  "جراحة القلب",
+  "تصوير الأوعية الدموية",
+  "عيادة ارتفاع ضغط الدم",
 ];
-
 type Props = {
   params: Promise<{
     slug: string;
@@ -112,9 +86,11 @@ type Props = {
 };
 
 export default async function Page({ params }: Props) {
-    const { slug } = await params;
-    const branch = branches.find((p)=>p.id==slug)
-    console.log(branch)
+  const { slug } = await params;
+  const branch = branches.find((p)=>p.slug==slug)
+
+   const doctors = Array.from({ length: branch?.doctors || 0 }, () => (''));
+console.log('doctors', doctors)
   return (
     <div className="bg-slate-50">
       {/* HERO */}
@@ -127,41 +103,38 @@ export default async function Page({ params }: Props) {
                 {branch?.title}
               </span>
 
-              <h1 className="text-5xl lg:text-6xl font-bold text-slate-900 mt-6 leading-tight">
-                Cardiology
-                <span className="text-primary block">Department</span>
+              <h1 className="text-5xl lg:text-6xl font-bold text-primary2 mt-6 leading-tight">
+                عناية
+                <span className="text-primary block">مميزة باحدث الاساليب الطبية</span>
               </h1>
 
               <p className="mt-6 text-lg text-slate-600 leading-8">
-                Advanced heart and vascular care with internationally
-                experienced specialists, modern diagnostic technologies and
-                patient-centered treatment plans.
               </p>
 
               <div className="flex flex-wrap gap-4 mt-8">
                 <button className="bg-primary text-white px-8 py-4 rounded-xl font-medium">
-                  Book Appointment
+                  حجز موعد
                 </button>
 
                 <button className="border px-8 py-4 rounded-xl font-medium">
-                  Contact Department
+                  التواصل مع الفرع
                 </button>
               </div>
 
               <div className="grid grid-cols-3 gap-6 mt-12">
                 <div>
                   <h3 className="font-bold text-3xl text-primary">15+</h3>
-                  <p className="text-slate-500">Specialists</p>
+                  <p className="text-slate-500">متخصصون</p>
                 </div>
 
                 <div>
                   <h3 className="font-bold text-3xl text-primary">20K+</h3>
-                  <p className="text-slate-500">Patients</p>
+                  <p className="text-slate-500">مرضى</p>
                 </div>
 
                 <div>
                   <h3 className="font-bold text-3xl text-primary">98%</h3>
-                  <p className="text-slate-500">Satisfaction</p>
+                  <p className="text-slate-500">إشباع</p>
                 </div>
               </div>
             </div>
@@ -186,26 +159,23 @@ export default async function Page({ params }: Props) {
       <section className="container mx-auto px-4 py-20">
         <div className="grid lg:grid-cols-2 gap-12">
           <div>
-            <h2 className="text-4xl font-bold mb-6">About Department</h2>
+            <h2 className="text-4xl text-primary2 font-bold mb-6">عن الفرع </h2>
 
             <p className="text-slate-600 leading-8">
-              Our Cardiology Department provides comprehensive care for
-              cardiovascular diseases using advanced diagnostic and therapeutic
-              technologies.
+            يوفر فرعنا رعاية شاملة باستخدام تقنيات تشخيصية وعلاجية متطورة.
             </p>
 
             <p className="text-slate-600 leading-8 mt-4">
-              We focus on prevention, diagnosis, treatment, rehabilitation and
-              long-term management of heart conditions.
+           نركز على الوقاية وإعادة التأهيل  على المدى الطويل.
             </p>
           </div>
 
           <div className="grid grid-cols-2 gap-6">
             {[
-              "Advanced Diagnostics",
-              "Heart Surgery",
-              "Cardiac MRI",
-              "Emergency Care",
+           "التشخيص المتقدم",
+              "جراحة القلب",
+              "التصوير بالرنين المغناطيسي للقلب",
+              "الرعاية الطارئة",
             ].map((item) => (
               <div key={item} className="bg-white p-6 rounded-2xl shadow-sm">
                 <Heart className="text-primary mb-4" />
@@ -220,8 +190,8 @@ export default async function Page({ params }: Props) {
 
       <section className="bg-white py-20">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12">
-            Treatments & Services
+          <h2 className="text-4xl text-primary2 font-bold text-center mb-12">
+            العلاجات والخدمات
           </h2>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -241,65 +211,23 @@ export default async function Page({ params }: Props) {
 
       {/* DOCTORS */}
 
-      <section className="container mx-auto px-4 py-20">
-        <div className="flex justify-between items-center mb-12">
-          <h2 className="text-4xl font-bold">Department Specialists</h2>
-
-          <button className="text-primary font-medium">
-            View All Doctors
-          </button>
-        </div>
-
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
-          {doctors.map((doctor) => (
-            <div
-              key={doctor.id}
-              className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition"
-            >
-              <Image
-                src={doctor.image}
-                alt={doctor.name}
-                width={400}
-                height={400}
-                className="h-72 w-full object-cover"
-              />
-
-              <div className="p-6">
-                <h3 className="font-bold">{doctor.name}</h3>
-
-                <p className="text-slate-500 mt-2">{doctor.specialty}</p>
-
-                <div className="flex justify-between mt-4 text-sm">
-                  <span>{doctor.experience}</span>
-
-                  <span className="text-yellow-500">⭐ {doctor.rating}</span>
-                </div>
-
-                <button className="w-full mt-6 bg-primary text-white py-3 rounded-xl">
-                  Book Appointment
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
+<DoctorsSection doctors={doctors} params={branch?.slug} />
       {/* WHY CHOOSE */}
 
       <section className="bg-white py-20">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16">
             <div>
-              <h2 className="text-4xl font-bold mb-8">Why Choose Us</h2>
+              <h2 className="text-4xl text-primary2 font-bold mb-8">لماذا تختارنا</h2>
 
               <div className="space-y-6">
                 {[
-                  "Experienced Cardiologists",
-                  "Modern Equipment",
-                  "Insurance Accepted",
-                  "24/7 Emergency Services",
-                  "Fast Appointment Scheduling",
-                  "Advanced Diagnostics",
+                 "أطباء قلب ذوو خبرة",
+"معدات حديثة",
+"قبول التأمين",
+"خدمات طوارئ على مدار الساعة",
+"سرعة تحديد المواعيد",
+"تشخيصات متطورة",
                 ].map((item) => (
                   <div key={item} className="flex items-center gap-4">
 
@@ -313,13 +241,12 @@ export default async function Page({ params }: Props) {
             <div className="bg-slate-50 rounded-3xl p-10">
               <Building2 className="h-12 w-12 text-primary" />
 
-              <h3 className="font-bold text-2xl mt-6">
-                World-Class Facilities
+              <h3 className="font-bold text-primary2 text-2xl mt-6">
+                مرافق عالمية المستوى
               </h3>
 
               <p className="text-slate-600 mt-4 leading-8">
-                Equipped with modern technology for accurate diagnosis and
-                treatment.
+                مُجهَّز بأحدث التقنيات للتشخيص والعلاج الدقيق.
               </p>
             </div>
           </div>
@@ -327,19 +254,19 @@ export default async function Page({ params }: Props) {
       </section>
 
       {/* FAQ */}
-
+<TestimonialsSection
+ />
       {/* FAQ */}
 
       <section className="container mx-auto px-4 py-20">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-slate-900">
-              Frequently Asked Questions
+            <h2 className="text-4xl font-bold text-primary2">
+              الأسئلة الشائعة
             </h2>
 
             <p className="mt-4 text-slate-600">
-              Find answers to the most common questions about our Cardiology
-              Department.
+            اعثر على إجابات للأسئلة الأكثر شيوعاً حول قسم أمراض القلب لدينا.
             </p>
           </div>
 
@@ -350,14 +277,14 @@ export default async function Page({ params }: Props) {
                 className="border-b last:border-b-0 px-2 " 
               >
                 <AccordionTrigger className="px-6 text-left text-lg font-semibold hover:no-underline">
-                  What conditions do you treat?
+                  <span className="flex-1 text-right">
+  
+                 ما هي الحالات التي تعالجها؟
+                  </span>
                 </AccordionTrigger>
 
                 <AccordionContent className="px-6 text-slate-600 leading-7">
-                  We diagnose and treat a wide range of cardiovascular
-                  conditions including coronary artery disease, heart failure,
-                  arrhythmias, hypertension, congenital heart defects, and
-                  valvular heart diseases.
+           نقوم بتشخيص وعلاج مجموعة واسعة من أمراض القلب والأوعية الدموية، بما في ذلك مرض الشريان التاجي، وفشل القلب، واضطرابات نظم القلب، وارتفاع ضغط الدم، وعيوب القلب الخلقية، وأمراض صمامات القلب.
                 </AccordionContent>
               </AccordionItem>
 
@@ -366,13 +293,15 @@ export default async function Page({ params }: Props) {
                 className="border-b last:border-b-0 px-2"
               >
                 <AccordionTrigger className="px-6 text-left text-lg font-semibold hover:no-underline">
-                  Do you accept insurance?
+                  <span className="flex-1 text-right">
+
+                 هل تقبلون التأمين؟
+                  </span>
+
                 </AccordionTrigger>
 
                 <AccordionContent className="px-6 text-slate-600 leading-7">
-                  Yes, we work with most major insurance providers. Please
-                  contact our support team or check the insurance section for a
-                  complete list of accepted plans.
+             نعم، نحن نتعاون مع معظم شركات التأمين الكبرى. يرجى التواصل مع فريق الدعم لدينا أو الاطلاع على قسم التأمين للحصول على قائمة كاملة بالخطط المقبولة.
                 </AccordionContent>
               </AccordionItem>
 
@@ -381,13 +310,15 @@ export default async function Page({ params }: Props) {
                 className="border-b last:border-b-0 px-2"
               >
                 <AccordionTrigger className="px-6 text-left text-lg font-semibold hover:no-underline">
-                  How do I book an appointment?
+                  <span className="flex-1 text-right">
+
+                  كيف أحجز موعداً؟
+                  </span>
+
                 </AccordionTrigger>
 
                 <AccordionContent className="px-6 text-slate-600 leading-7">
-                  You can book an appointment online through our booking system,
-                  by calling our reception desk, or by visiting the hospital
-                  directly.
+               يمكنك حجز موعد عبر الإنترنت من خلال نظام الحجز لدينا، أو عن طريق الاتصال بمكتب الاستقبال، أو بزيارة المستشفى مباشرةً.
                 </AccordionContent>
               </AccordionItem>
 
@@ -396,12 +327,15 @@ export default async function Page({ params }: Props) {
                 className="border-b last:border-b-0 px-2"
               >
                 <AccordionTrigger className="px-6 text-left text-lg font-semibold hover:no-underline">
-                  Can I consult online?
+                  <span className="flex-1 text-right">
+
+                  هل يمكنني الحصول على استشارة عبر الإنترنت؟
+                  </span>
+
                 </AccordionTrigger>
 
                 <AccordionContent className="px-6 text-slate-600 leading-7">
-                  Yes. Many of our specialists offer telemedicine consultations
-                  for follow-up visits and selected medical assessments.
+            نعم، يقدم العديد من المتخصصين لدينا استشارات عبر الطب الاتصالي لزيارات المتابعة وبعض التقييمات الطبية المحددة.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
@@ -414,15 +348,15 @@ export default async function Page({ params }: Props) {
       <section className="container mx-auto px-4 pb-20">
         <div className="bg-primary rounded-[40px] p-12 text-white text-center">
           <h2 className="md:text-5xl text-3xl font-bold">
-            Need Medical Consultation?
+          هل تحتاج إلى استشارة طبية؟
           </h2>
 
           <p className="mt-4 text-blue-100 text-lg">
-            Schedule your appointment with our specialists today.
+            احجز موعدك مع أخصائيينا اليوم.
           </p>
 
           <button className="bg-white text-primary px-10 py-4 rounded-xl mt-8 font-semibold">
-            Book Appointment
+           حجز موعد
           </button>
         </div>
       </section>
@@ -430,22 +364,3 @@ export default async function Page({ params }: Props) {
   );
 }
 
-function StatCard({
-  icon,
-  value,
-  title,
-}: {
-  icon: React.ReactNode;
-  value: string;
-  title: string;
-}) {
-  return (
-    <div className="text-center">
-      <div className="flex justify-center mb-3 text-primary">{icon}</div>
-
-      <h3 className="text-3xl font-bold">{value}</h3>
-
-      <p className="text-slate-500 mt-2">{title}</p>
-    </div>
-  );
-}

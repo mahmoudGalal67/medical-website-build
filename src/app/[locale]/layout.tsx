@@ -1,6 +1,10 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono , Alexandria, Inter} from "next/font/google";
-import { StatsBar } from "@/components/stats-bar";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import {  Alexandria} from "next/font/google";
+
+
 import { SiteHeader } from "@/components/site-header";
 
 import "./globals.css";
@@ -9,17 +13,6 @@ import FloatingContact from "@/components/FloatingContact";
 import { getDictionary } from "@/i18n/config";
 import { DictionaryProvider } from "@/providers/dictionary-provider";
 
-const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-});
 
 const alexandria = Alexandria({
   subsets: ["arabic"],
@@ -78,7 +71,7 @@ export default async function RootLayout({
          dir={locale === "ar" ? "rtl" : "ltr"}
       className={` ${alexandria.variable} h-full antialiased overflow-x-hidden`}
     >
-      <body className="font-sans antialiased min-h-full flex flex-col overflow-x-hidden">
+      <body className="font-sans antialiased min-h-full flex flex-col overflow-x-hidden scroll-smooth">
         <main className="min-h-screen bg-background ">
           <div className="mx-auto border-x ">
             <DictionaryProvider dictionary={dict}>

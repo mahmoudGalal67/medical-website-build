@@ -30,6 +30,6 @@
     ".next/dev/types/**/*.ts",
     "**/*.mts",
     "types/**/*.d.ts"
-  ],
+, "src/data/reviwes.ts"  ],
   "exclude": ["node_modules"]
 }

@@ -28,6 +28,13 @@ useEffect(() => {
   return () => clearInterval(interval);
 }, []);
 
+const scrollToBranches = () => {
+  document.getElementById("branches")?.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+};
+
   return (
     <section
       id="hero"
@@ -37,7 +44,7 @@ useEffect(() => {
     <div className="absolute inset-0 overflow-hidden">
   {images.map((image, index) => (
     <div
-      key={image}
+      key={index}
       className={`absolute inset-0 transition-opacity duration-[1800ms] ease-in-out ${
         current === index ? "opacity-100" : "opacity-0"
       }`}
@@ -65,7 +72,7 @@ useEffect(() => {
           }`}
         >
           <span
-            className="inline-block bg-primary2/20 border border-primary2/40 text-primary2 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6"
+            className="inline-block bg-primary2/20 border border-primary2/40 text-primary2 text-md font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6"
             style={{ transitionDelay: "200ms" }}
           >
            رعاية طبية متميزة
@@ -74,7 +81,7 @@ useEffect(() => {
         </div>
 
         <h1
-          className={`text-2xl sm:text-5xl lg:text-5xl font-bold text-white leading-tight mb-6 transition-all duration-1000 delay-200 ${
+          className={`text-4xl sm:text-5xl lg:text-5xl font-bold text-white leading-tight mb-6 transition-all duration-1000 delay-200 ${
             loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
@@ -88,7 +95,7 @@ useEffect(() => {
         </h1>
 
         <p
-          className={`text-white/75 text-base sm:text-sm max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed transition-all duration-1000 delay-300 ${
+          className={`text-white/75 text-base sm:text-md max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed transition-all duration-1000 delay-300 ${
             loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
@@ -100,13 +107,13 @@ useEffect(() => {
             loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <a
-            href="#branches"
-            className="inline-flex items-center justify-center gap-2 bg-primary2 hover:bg-primary text-white font-semibold px-8 py-3.5 rounded-full transition-all duration-300 shadow-lg shadow-primary2/30 hover:shadow-primary2/50 hover:-translate-y-0.5"
+          <button
+  onClick={scrollToBranches}
+            className="inline-flex cursor-pointer items-center justify-center gap-2 bg-primary2 hover:bg-primary text-white font-semibold px-8 py-3.5 rounded-full transition-all duration-300 shadow-lg shadow-primary2/30 hover:shadow-primary2/50 hover:-translate-y-0.5"
           >
           اكتشف المزيد
 
-          </a>
+          </button>
           <a
             href="#contact"
             className="inline-flex items-center justify-center gap-2 border-2 border-white/40 hover:bg-primary2 text-white hover:text-primary font-semibold px-8 py-3.5 rounded-full transition-all duration-300 hover:-translate-y-0.5"
@@ -129,12 +136,12 @@ useEffect(() => {
 </div>
 
       {/* Scroll indicator */}
-      <a
-        href="#stats"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/60 hover:text-primary2 transition-colors duration-200 animate-bounce"
+  <button
+         onClick={scrollToBranches}
+        className="absolute bottom-8 left-1/2 cursor-pointer -translate-x-1/2 text-white/60 hover:text-primary2 transition-colors duration-200 animate-bounce"
       >
         <ChevronDown size={32} />
-      </a>
+      </button>
     </section>
   );
 }

@@ -14,20 +14,20 @@ const branches: Branch[] = [
   {
     img: "sanad.png",
     title: "سند الجزيرة - فرع طويق",
-    href: "/branches/tuwaiq",
+    href: "/branches/tweq",
   },
   {
     img: "sanad.png",
     title: "سند الجزيرة - فرع المهدية",
-    href: "/branches/mahdiyah",
+    href: "/branches/mahdya",
   },
   {
     img: "sanad.png",
     title: "سند الجزيرة - فرع لبن",
-    href: "/branches/laban",
+    href: "/branches/lbn",
   },
   {
-    img: "careLogo.jpeg",
+    img: "carelogo.jpeg",
     title: "مجمع الجزيرة كير الطبي",
     href: "/branches/care",
   },

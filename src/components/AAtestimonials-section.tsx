@@ -1,107 +1,102 @@
 "use client";
 
 import { useIntersection } from "@/hooks/use-intersection";
-import { Star, Quote } from "lucide-react";
+import { reviews } from "@/data/reviwes";
+import { Quote, Star } from "lucide-react";
 
-const testimonials = [
-  {
-    name: "Layla Hassan",
-    role: "المريض — تبييض الأسنان",
-    text: "أنا سعيد للغاية بنتائج علاج تبييض الأسنان؛ فقد كان طاقم العمل محترفاً ولطيفاً، وجعلني أشعر براحة تامة. لم تبدُ ابتسامتي بهذا الروعة من قبل!",
-    rating: 5,
-    avatar:
-      "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=200",
-  },
-  {
-    name: "Mohammed Al-Rashid",
-    role: "المريض — زراعة الأسنان",
-    text: "بعد فقدان أحد أسناني إثر حادث، كنت قلقاً بشأن زراعة الأسنان؛ إلا أن فريق 'سند الجزيرة' رافقني وشرح لي كل خطوة من الخطوات. لقد كان الإجراء خالياً من الألم، وبدت النتيجة طبيعية تماماً.",
-    rating: 5,
-    avatar:
-      "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=200",
-  },
-  {
-    name: "Sara Al-Anazi",
-    role: "مريض — تقويم الأسنان",
-    text: "كانت رحلة تقويم الأسنان سلسة بفضل الدكتور أحمد. تتميز العيادة بنظافة فائقة وتصميم عصري، كما أن فريق العمل كان يحرص دائماً على شعوري بالراحة. أوصي بشدة بعيادة 'سند الجزيرة' للجميع!",
-    rating: 5,
-    avatar:
-      "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=200",
-  },
-];
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
 export default function TestimonialsSection() {
   const { ref, isVisible } = useIntersection(0.15);
 
   return (
-    <section className="bg-gradient-to-br from-primary via-primary to-primary2 py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6" ref={ref}>
+    <section className="bg-gradient-to-br from-primary via-primary to-primary2 py-24 overflow-hidden" id="testimonials">
+      <div className="max-w-7xl mx-auto px-4" ref={ref}>
         <div
           className={`text-center mb-14 transition-all duration-700 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            isVisible
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-8"
           }`}
         >
-          <span className="text-[#c9a227] text-sm font-semibold uppercase tracking-widest">
+          <span className="text-primary2 text-sm font-semibold uppercase tracking-widest">
             قصص المرضى
-
           </span>
+
           <h2 className="text-3xl sm:text-4xl font-bold text-white mt-2">
-           ما يقوله مرضانا
-
+            ما يقوله مرضانا
           </h2>
-          <p className="text-purple-200/70 mt-3 max-w-xl mx-auto">
-           تجارب حقيقية لمرضى حقيقيين وضعوا ثقتهم بنا وبابتساماتهم.
 
+          <p className="text-purple-200/70 mt-3 max-w-xl mx-auto">
+            تجارب حقيقية لمرضى حقيقيين وضعوا ثقتهم بنا وبابتساماتهم.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((t, i) => (
-            <div
-              key={t.name}
-              className={`relative bg-white/8 backdrop-blur-sm border border-white/10 rounded-3xl p-7 hover:bg-white/12 transition-all duration-500 group ${
-                isVisible
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-12"
-              }`}
-              style={{ transitionDelay: `${i * 120}ms` }}
-            >
-              <Quote
-                size={32}
-                className="text-[#c9a227]/30 absolute top-6 left-6 group-hover:text-[#c9a227]/50 transition-colors duration-300"
-              />
+        <Swiper
+          modules={[Navigation, Pagination, Autoplay]}
+          spaceBetween={30}
+          loop
+          navigation
+          pagination={{ clickable: true }}
+          autoplay={{
+            delay: 4500,
+            disableOnInteraction: false,
+          }}
+          breakpoints={{
+            0: {
+              slidesPerView: 1,
+            },
+            768: {
+              slidesPerView: 2,
+            },
+            1200: {
+              slidesPerView: 3,
+            },
+          }}
+        >
+          {reviews.map((review) => (
+            <SwiperSlide key={review.id}>
+              <div className="relative h-full rounded-3xl border border-white/10 bg-white/10 backdrop-blur-lg p-8 hover:bg-white/15 transition-all duration-300">
 
-              {/* Stars */}
-              <div className="flex gap-1 mb-5">
-                {Array.from({ length: t.rating }).map((_, j) => (
-                  <Star
-                    key={j}
-                    size={15}
-                    className="text-[#c9a227] fill-[#c9a227]"
-                  />
-                ))}
-              </div>
+                <Quote
+                  size={36}
+                  className="absolute top-6 left-6 text-primary2"
+                />
 
-              <p className="text-purple-100/85 text-sm leading-relaxed mb-7 italic">
-                &ldquo;{t.text}&rdquo;
-              </p>
-
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-[#c9a227]/50">
-                  <img
-                    src={t.avatar}
-                    alt={t.name}
-                    className="w-full h-full object-cover"
-                  />
+                <div className="flex gap-1 mb-5">
+                  {Array.from({ length: review.rating }).map((_, index) => (
+                    <Star
+                      key={index}
+                      size={16}
+                      className="fill-[#FFD700] text-[#FFD700]"
+                    />
+                  ))}
                 </div>
-                <div>
-                  <p className="text-white font-semibold text-sm">{t.name}</p>
-                  <p className="text-purple-300/70 text-xs">{t.role}</p>
+
+                <p className="text-white/90 leading-8 mb-8 min-h-[170px]">
+                  "{review.review}"
+                </p>
+
+                <div className="border-t border-white/10 pt-5 flex items-center justify-between">
+                  <div>
+                    <h4 className="font-semibold text-white">
+                      {review.name}
+                    </h4>
+
+                    <span className="text-sm text-white/60">
+                      {review.date}
+                    </span>
+                  </div>
+
+                  <div className="h-12 w-12 rounded-full bg-primary2 flex items-center justify-center font-bold text-primary text-lg">
+                    {review.name.charAt(0)}
+                  </div>
                 </div>
               </div>
-            </div>
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
       </div>
     </section>
   );

@@ -6,40 +6,40 @@ import { Camera } from "lucide-react";
 const photos = [
   {
     src: "https://images.pexels.com/photos/3845625/pexels-photo-3845625.jpeg?auto=compress&cs=tinysrgb&w=600",
-    alt: "Clinic interior",
+    alt: "داخل العيادة",
     span: "col-span-2 row-span-2",
   },
   {
     src: "https://images.pexels.com/photos/3881449/pexels-photo-3881449.jpeg?auto=compress&cs=tinysrgb&w=400",
-    alt: "Doctor consultation",
+    alt: "استشارة طبية",
   },
   {
     src: "https://images.pexels.com/photos/3762453/pexels-photo-3762453.jpeg?auto=compress&cs=tinysrgb&w=400",
-    alt: "Dental treatment",
+    alt: "علاج الأسنان",
   },
   {
     src: "https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg?auto=compress&cs=tinysrgb&w=400",
-    alt: "Doctor team",
+    alt: "فريق الأطباء",
   },
   {
     src: "https://images.pexels.com/photos/3845547/pexels-photo-3845547.jpeg?auto=compress&cs=tinysrgb&w=400",
-    alt: "Treatment room",
+    alt: "غرفة العلاج",
   },
   {
     src: "https://images.pexels.com/photos/4386466/pexels-photo-4386466.jpeg?auto=compress&cs=tinysrgb&w=400",
-    alt: "Equipment",
+    alt: "الأجهزة الطبية",
   },
   {
     src: "https://images.pexels.com/photos/3997989/pexels-photo-3997989.jpeg?auto=compress&cs=tinysrgb&w=400",
-    alt: "Aesthetic treatment",
+    alt: "جلسة تجميل",
   },
   {
     src: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400",
-    alt: "Happy patient",
+    alt: "مريض سعيد",
   },
   {
     src: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=400",
-    alt: "Satisfied patient",
+    alt: "مريض راضٍ عن الخدمة",
   },
 ];
 
@@ -56,14 +56,13 @@ export default function GallerySection() {
         >
           <span className="text-primary text-sm font-semibold uppercase tracking-widest flex items-center justify-center gap-2">
             <Camera size={14} />
-            Gallery
+            معرض الصور
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#2d004d] mt-2">
-            Inside Our Clinic
+          <h2 className="text-3xl sm:text-4xl font-bold text-primary2 mt-2">
+           داخل عيادتنا
           </h2>
           <p className="text-gray-500 mt-3 max-w-xl mx-auto">
-            A glimpse into our modern facilities, expert team, and happy
-            patients.
+         لمحة عن مرافقنا العصرية، وفريقنا الخبير، ومرضانا السعداء.
           </p>
         </div>
 

@@ -3,42 +3,42 @@
 import { useIntersection } from "@/hooks/use-intersection";
 import { Tag, ArrowRight } from "lucide-react";
 
-const offers = [
+const offers =[
   {
-    title: "Teeth Whitening",
-    subtitle: "Professional Laser Whitening",
+    title: "تبييض الأسنان",
+    subtitle: "تبييض الأسنان بالليزر",
     description:
-      "Get a brilliant white smile with our advanced laser whitening technology. Safe, effective, and long-lasting results guaranteed.",
-    discount: "30% OFF",
-    price: "From SAR 699",
-    originalPrice: "SAR 999",
+      "احصل على ابتسامة ناصعة البياض باستخدام أحدث تقنيات تبييض الأسنان بالليزر. نتائج آمنة وفعالة تدوم طويلاً.",
+    discount: "خصم 30%",
+    price: "ابتداءً من 699 ريال",
+    originalPrice: "999 ريال",
     image:
       "https://images.pexels.com/photos/3762453/pexels-photo-3762453.jpeg?auto=compress&cs=tinysrgb&w=600",
-    badge: "Most Popular",
+    badge: "الأكثر طلباً",
   },
   {
-    title: "Dental Veneers",
-    subtitle: "Hollywood Smile Package",
+    title: "عدسات الأسنان",
+    subtitle: "باقة ابتسامة هوليوود",
     description:
-      "Transform your smile with custom porcelain veneers crafted to perfection. Natural look, lasting confidence.",
-    discount: "20% OFF",
-    price: "From SAR 2,499",
-    originalPrice: "SAR 3,199",
+      "غيّر ابتسامتك مع عدسات الأسنان الخزفية المصممة خصيصاً لك لتمنحك مظهراً طبيعياً وثقة تدوم.",
+    discount: "خصم 20%",
+    price: "ابتداءً من 2,499 ريال",
+    originalPrice: "3,199 ريال",
     image:
       "https://images.pexels.com/photos/3762454/pexels-photo-3762454.jpeg?auto=compress&cs=tinysrgb&w=600",
-    badge: "Limited Time",
+    badge: "لفترة محدودة",
   },
   {
-    title: "Teeth Cleaning",
-    subtitle: "Deep Scaling & Polishing",
+    title: "تنظيف الأسنان",
+    subtitle: "تنظيف عميق وإزالة الجير وتلميع الأسنان",
     description:
-      "Comprehensive deep cleaning session that removes tartar, plaque, and stains for a healthier mouth.",
-    discount: "40% OFF",
-    price: "From SAR 299",
-    originalPrice: "SAR 499",
+      "جلسة تنظيف احترافية لإزالة الجير والبلاك والتصبغات، مما يمنحك أسناناً أكثر صحة ولمعاناً.",
+    discount: "خصم 40%",
+    price: "ابتداءً من 299 ريال",
+    originalPrice: "499 ريال",
     image:
       "https://images.pexels.com/photos/3845547/pexels-photo-3845547.jpeg?auto=compress&cs=tinysrgb&w=600",
-    badge: "Best Value",
+    badge: "أفضل قيمة",
   },
 ];
 
@@ -46,7 +46,7 @@ export default function OffersSection() {
   const { ref, isVisible } = useIntersection(0.1);
 
   return (
-    <section id="offers" className="bg-white py-24">
+    <section id="offers" className="bg-gradient-to-t from-primary/80 to-transparent py-24" >
       <div className="max-w-7xl mx-auto px-4 sm:px-6" ref={ref}>
         <div
           className={`text-center mb-14 transition-all duration-700 ${
@@ -55,14 +55,15 @@ export default function OffersSection() {
         >
           <span className="text-primary2 text-sm font-semibold uppercase tracking-widest flex items-center justify-center gap-2">
             <Tag size={14} />
-            Special Offers
+            عروض خاصة
+
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-[#2d004d] mt-2">
-            Exclusive Deals for You
+            عروض حصرية لك
+
           </h2>
           <p className="text-gray-500 mt-3 max-w-xl mx-auto">
-            Take advantage of our limited-time offers on premium dental and
-            aesthetic treatments.
+         استفد من عروضنا المتاحة لفترة محدودة على علاجات الأسنان والتجميل المتميزة.
           </p>
         </div>
 
@@ -70,7 +71,7 @@ export default function OffersSection() {
           {offers.map((offer, i) => (
             <div
               key={offer.title}
-              className={`group relative rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-purple-200/50 transition-all duration-500 hover:-translate-y-1 ${
+              className={`group relative rounded-3xl overflow-hidden bg-gradient-to-t from-primary2/80 to-primary2 shadow-lg hover:shadow-2xl hover:shadow-purple-200/50 transition-all duration-500 hover:-translate-y-1 ${
                 isVisible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-12"
@@ -93,7 +94,7 @@ export default function OffersSection() {
 
               {/* Content */}
               <div className="bg-gradient-to-br from-primary to-primary2 p-6">
-                <p className="text-primary2 text-xs font-semibold uppercase tracking-wider mb-1">
+                <p className="text-gray-300 text-xs font-semibold uppercase tracking-wider mb-1">
                   {offer.subtitle}
                 </p>
                 <h3 className="text-white font-bold text-xl mb-3">

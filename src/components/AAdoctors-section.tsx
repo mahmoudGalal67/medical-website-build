@@ -54,7 +54,7 @@ const doctors = [
   },
 ];
 
-export default function DoctorsSection() {
+export default function DoctorsSection({ doctors }: { doctors: any[] }) {
   const { ref, isVisible } = useIntersection(0.1);
 
   return (
