@@ -7,7 +7,7 @@ export default function HeroSection() {
   const [loaded, setLoaded] = useState(false);
 
   const images = [
-  "/main.jpeg",
+  "/public/branches/pages/tweq.jpeg",
   "/main.jpeg",
   "/main.jpeg",
   "/main.jpeg",
