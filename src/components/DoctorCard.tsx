@@ -1,29 +1,31 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
+export default function DoctorCard({
+  i,
+  params,
+}: {
+  i: number;
+  params?: string;
+}) {
+  const easeCurve: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
-export default function DoctorCard({ i, params }: {  i: number; params?: string }) {
-
-const easeCurve: [number, number, number, number] = [0.22, 1, 0.36, 1];
-
-
-
-const cardVariants = {
-  hidden: {
-    opacity: 0,
-    y: 50,
-    scale: 0.95,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-  transition: {
-  duration: 0.6,
-  ease: easeCurve,
-}
-  },
-};
+  const cardVariants = {
+    hidden: {
+      opacity: 0,
+      y: 50,
+      scale: 0.95,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.6,
+        ease: easeCurve,
+      },
+    },
+  };
 
   return (
     <motion.div

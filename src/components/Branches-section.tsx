@@ -46,7 +46,6 @@ const branches: Branch[] = [
 export default function Branches() {
   return (
     <section className="relative overflow-hidden pt-20 py-24" id="branches">
-
       {/* Background */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-rose-50 via-white to-white" />
 
@@ -54,8 +53,7 @@ export default function Branches() {
 
       <div className="absolute bottom-0 right-0 -z-10 h-96 w-96 rounded-full bg-[#B3476B]/10 blur-[150px]" />
 
-      <div className="mx-auto max-w-8xl px-4">
-
+      <div className="mx-auto max-w-8xl lg:px-4 px-2">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 25 }}
@@ -76,11 +74,8 @@ export default function Branches() {
 
         {/* Grid */}
         <div className="mt-18 flex justify-center">
-
-          <div className="grid grid-cols-2 gap-7 md:grid-cols-3 xl:grid-cols-6">
-
+          <div className="grid grid-cols-2 lg:gap-7 gap-3 md:grid-cols-3 xl:grid-cols-6">
             {branches.map((branch, index) => (
-
               <motion.div
                 key={branch.title}
                 initial={{ opacity: 0, y: 40 }}
@@ -91,7 +86,6 @@ export default function Branches() {
                   delay: index * 0.08,
                 }}
               >
-
                 <Link
                   href={branch.href}
                   className="
@@ -99,7 +93,8 @@ export default function Branches() {
                   relative
                   flex
                   h-[270px]
-                  w-44
+                  md:w-44
+                  w-40
                   flex-col
                   overflow-hidden
                   rounded-3xl
@@ -118,7 +113,6 @@ export default function Branches() {
                   hover:shadow-[0_20px_45px_rgba(122,31,61,.18)]
                   "
                 >
-
                   {/* Badge */}
                   <span className="absolute left-4 top-4 z-10 rounded-full bg-[#7A1F3D] px-3 py-1 text-[11px] font-semibold text-white shadow">
                     فرع
@@ -126,15 +120,14 @@ export default function Branches() {
 
                   {/* Glow */}
                   <div className="absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100">
-
                     <div className="absolute -top-10 -right-10 h-40 w-40 rounded-full bg-[#7A1F3D]/15 blur-3xl" />
 
                     <div className="absolute -bottom-10 -left-10 h-40 w-40 rounded-full bg-[#B3476B]/15 blur-3xl" />
-
                   </div>
 
                   {/* Image */}
-                  <div className="
+                  <div
+                    className="
                     relative
                     flex
                     h-32
@@ -145,8 +138,8 @@ export default function Branches() {
                     transition-all
                     duration-500
                     group-hover:bg-[#FAF4F6]
-                  ">
-
+                  "
+                  >
                     <Image
                       src={`/branches/${branch.img}`}
                       alt={branch.title}
@@ -159,7 +152,6 @@ export default function Branches() {
                         group-hover:scale-110
                       "
                     />
-
                   </div>
 
                   {/* Title */}
@@ -195,19 +187,12 @@ export default function Branches() {
                     group-hover:w-20
                     "
                   />
-
                 </Link>
-
               </motion.div>
-
             ))}
-
           </div>
-
         </div>
-
       </div>
-
     </section>
   );
 }
