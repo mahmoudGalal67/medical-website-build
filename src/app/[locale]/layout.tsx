@@ -20,10 +20,9 @@ const alexandria = Alexandria({
 });
 
 export const metadata: Metadata = {
-  title: "Al Refah Medical Center | Your Health Is Our Priority",
+  title: "مجموعة سند الجزيرة الطبية | صحتكم هي أولويتنا",
   description:
-    "Advanced medical care with compassion and excellence. Book appointments, find doctors, verify insurance and explore health packages at Al Refah Medical Center.",
-  generator: "v0.app",
+    "رعاية طبية متطورة تتسم بالتعاطف والتميز. احجز المواعيد، وابحث عن الأطباء، وتحقق من بيانات التأمين، واستكشف الباقات الصحية في مركز الرفاه الطبي.",
   icons: {
     icon: [
       {
