@@ -82,9 +82,7 @@ export function SiteHeader() {
         <div className="mx-auto flex h-26 max-w-8xl items-center justify-between px-4 sm:px-6 md:px-12  xl:px-48 ">
           {/* Logo */}
           <Link href={`/${locale}`} className="flex shrink-0 items-center gap-3">
-            <span className="flex size-10 items-center justify-center rounded-xl bg-primary text-primary-foreground">
-              <HeartPulse className="size-5" />
-            </span>
+
 <Image src="/logo.png" alt="HealthCare Booking" width={140} height={90} />
           </Link>
 
