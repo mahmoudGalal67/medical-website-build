@@ -8,6 +8,8 @@ type Branch = {
   img: string;
   title: string;
   href: string;
+  mobileOrder: string; 
+  order: string;  
 };
 
 const branches: Branch[] = [
@@ -15,31 +17,43 @@ const branches: Branch[] = [
     img: "sanad.png",
     title: "سند الجزيرة - فرع طويق",
     href: "/branches/tweq",
+    mobileOrder: "order-1",
+    order: "md:order-1",
   },
   {
     img: "sanad.png",
     title: "سند الجزيرة - فرع المهدية",
     href: "/branches/mahdya",
+    mobileOrder: "order-3",
+    order: "md:order-2",
   },
   {
     img: "sanad.png",
     title: "سند الجزيرة - فرع لبن",
     href: "/branches/lbn",
+    mobileOrder: "order-5",
+    order: "md:order-3",
   },
   {
     img: "carelogo.jpeg",
     title: "مجمع الجزيرة كير الطبي",
     href: "/branches/care",
+    mobileOrder: "order-2",
+    order: "md:order-4",
   },
   {
     img: "hoda.png",
-    title: "دار الهدى الطبي",
+    title: "دار الهدا الطبي",
     href: "/branches/hoda",
+    mobileOrder: "order-4",
+    order: "md:order-5",
   },
   {
     img: "khayalLogo.jpeg",
     title: "دار الخيال الطبي",
     href: "/branches/khayal",
+    mobileOrder: "order-6",
+    order: "md:order-6",
   },
 ];
 
@@ -85,6 +99,7 @@ export default function Branches() {
                   duration: 0.6,
                   delay: index * 0.08,
                 }}
+                className={`${branch.mobileOrder} ${branch.order}`}
               >
                 <Link
                   href={branch.href}

@@ -35,7 +35,7 @@ export default function AboutSection() {
             </div>
             {/* Floating badge */}
             <div className="absolute -bottom-6 md:-right-6 -right-3 bg-primary text-white rounded-2xl p-5 shadow-xl shadow-primary/30">
-              <p className="text-3xl font-bold text-white">15+</p>
+              <p className="text-3xl font-bold text-white">30+</p>
               <p className="text-xs text-purple-200 mt-0.5">
                سنوات من التميز
 
