@@ -11,22 +11,21 @@ import GallerySection from "@/components/AAgallary-section";
 import FooterSection from "@/components/AAfooterSection";
 
 export default function Home() {
-const doctors = Array.from({ length: 18 }, () => ('' as String));
+  const doctors = Array.from({ length: 18 }, () => "" as String);
 
   return (
     <main className="min-h-screen">
       <HeroSection />
-      
-      <StatsSection  />
+
+      <StatsSection />
       <Branches />
       <ServicesSection />
       <AboutSection />
-      <DoctorsSection doctors={doctors} params={'main'} />
+      <DoctorsSection doctors={doctors} params={"main"} />
       <TestimonialsSection />
       <OffersSection />
       <EquipmentSection />
       <GallerySection />
-      <FooterSection />
     </main>
   );
 }

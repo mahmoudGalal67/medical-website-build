@@ -2,8 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import {  Alexandria} from "next/font/google";
-
+import { Alexandria } from "next/font/google";
 
 import { SiteHeader } from "@/components/site-header";
 
@@ -12,7 +11,7 @@ import "./globals.css";
 import FloatingContact from "@/components/FloatingContact";
 import { getDictionary } from "@/i18n/config";
 import { DictionaryProvider } from "@/providers/dictionary-provider";
-
+import FooterSection from "@/components/AAfooterSection";
 
 const alexandria = Alexandria({
   subsets: ["arabic"],
@@ -45,7 +44,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-    width: "device-width",
+  width: "device-width",
   initialScale: 1,
   colorScheme: "light dark",
   themeColor: [
@@ -63,21 +62,23 @@ export default async function RootLayout({
     locale: string;
   }>;
 }>) {
-    const { locale } = await params;
+  const { locale } = await params;
   const lang = locale === "ar" ? "ar" : "en";
   const dict = await getDictionary(locale);
   return (
-    <html lang={locale}
-         dir={locale === "ar" ? "rtl" : "ltr"}
+    <html
+      lang={locale}
+      dir={locale === "ar" ? "rtl" : "ltr"}
       className={` ${alexandria.variable} h-full antialiased overflow-x-hidden`}
     >
       <body className="font-sans antialiased min-h-full flex flex-col overflow-x-hidden scroll-smooth">
         <main className="min-h-screen bg-background ">
           <div className="mx-auto border-x ">
             <DictionaryProvider dictionary={dict}>
-            <SiteHeader />
-            <FloatingContact/>
-            {children}
+              <SiteHeader />
+              <FloatingContact />
+              {children}
+              <FooterSection />
             </DictionaryProvider>
           </div>
         </main>
