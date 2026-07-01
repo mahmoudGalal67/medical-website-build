@@ -151,7 +151,7 @@ export function SiteHeader() {
               {navLinks.map((link, index) => (
                 <Link
                   key={link[locale].href}
-                  href={link[locale].href}
+                   href={`/${link[locale].href}`}
                   onClick={() => setIsOpen(false)}
                   className="translate-y-0 px-6 py-3 text-sm font-medium text-foreground/80 transition-all duration-300 hover:bg-muted hover:text-primary"
                   style={{
