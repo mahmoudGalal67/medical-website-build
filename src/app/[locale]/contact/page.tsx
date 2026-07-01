@@ -1,5 +1,6 @@
 // app/contact/page.tsx
 
+import Link from "next/link";
 import { Mail, Phone, MapPin, Clock3, Send, MessageCircle } from "lucide-react";
 
 export default function ContactPage() {
@@ -23,6 +24,22 @@ export default function ContactPage() {
               سواء كان لديك استفسار، أو كنت بحاجة إلى مساعدة طبية، أو ترغب في
               حجز موعد، فإن فريقنا مستعد للمساعدة.
             </p>
+
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+              <a
+                href="tel:+966500000000"
+                className="rounded-full bg-white px-8 py-4 font-bold text-[#7A1F3D] transition-all duration-300 hover:scale-105 hover:bg-[#7A1F3D] hover:text-white"
+              >
+                اتصل بنا الآن
+              </a>
+
+              <Link
+                href="/contact"
+                className="rounded-full border-2 border-white bg-transparent px-8 py-4 font-bold text-white transition-all duration-300 hover:scale-105 hover:bg-white hover:text-[#7A1F3D]"
+              >
+                تواصل معنا
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -61,7 +78,7 @@ export default function ContactPage() {
 
                   <input
                     type="tel"
-                    placeholder="+966..."
+                    placeholder="+966 500 000 000"
                     className="w-full rounded-xl border px-4 py-3 outline-none transition focus:border-cyan-500 focus:ring-4 focus:ring-cyan-100"
                   />
                 </div>
@@ -74,7 +91,7 @@ export default function ContactPage() {
 
                 <input
                   type="email"
-                  placeholder="example@email.com"
+                  placeholder="info@hospital.com"
                   className="w-full rounded-xl border px-4 py-3 outline-none transition focus:border-cyan-500 focus:ring-4 focus:ring-cyan-100"
                 />
               </div>
@@ -149,7 +166,9 @@ export default function ContactPage() {
                   <div>
                     <p className="font-semibold">موقع</p>
                     <p className="text-cyan-100">
-                      الرياض، المملكة العربية السعودية
+                      الرياض - حي طويق - شارع خديجة بنت خويلد
+                      <br />
+                      بجوار القرية الشعبية
                     </p>
                   </div>
                 </div>
@@ -200,9 +219,11 @@ export default function ContactPage() {
           <div className="overflow-hidden rounded-3xl shadow-2xl">
             <iframe
               title="Google Map"
-              src="https://www.google.com/maps/embed?pb="
-              className="h-[450px] w-full"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3628.1593731021103!2d46.58035547509661!3d24.583695456276956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f1991e910ab05%3A0xb88a7b6fd7e9431b!2sSanad%20Al-Jazeera%20Medical%20Complex%20and%20the%20Center%20for%20Medical%20Certificate%20for%20Iqama%20And%20Health%20Certificate!5e0!3m2!1sen!2seg!4v1782905713092!5m2!1sen!2seg"
+              className="h-[450px] w-full border-0"
               loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
             />
           </div>
         </div>
