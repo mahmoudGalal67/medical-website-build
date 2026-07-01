@@ -65,14 +65,14 @@ const scrollToBranches = () => {
       <div className="absolute bottom-32 left-16 w-32 h-32 rounded-full bg-[#c9a227]/10 blur-xl hidden lg:block" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 pt-24 pb-16 text-center lg:text-left">
+      <div className="relative text-ccenter z-10 max-w-7xl mx-auto px-4 sm:px-6 pt-24 pb-16 text-center lg:text-left">
         <div
-          className={`transition-all duration-1000 ${
+          className={`transition-all duration-1000 flex justify-center ${
             loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
           <span
-            className="inline-block bg-primary2/20 border border-primary2/40 text-primary2 text-md font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6"
+            className="inline-block bg-primary2/20 border  border-primary2/40 text-primary2 text-md font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6"
             style={{ transitionDelay: "200ms" }}
           >
            رعاية طبية متميزة
@@ -81,7 +81,7 @@ const scrollToBranches = () => {
         </div>
 
         <h1
-          className={`text-4xl sm:text-5xl lg:text-5xl font-bold text-white leading-tight mb-6 transition-all duration-1000 delay-200 ${
+                    className={`text-4xl sm:text-5xl text-center lg:text-5xl font-bold text-white leading-tight mb-6 transition-all duration-1000 delay-200 ${
             loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
