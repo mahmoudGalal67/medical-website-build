@@ -7,10 +7,10 @@ export default function HeroSection() {
   const [loaded, setLoaded] = useState(false);
 
   const images = [
-  "tweq.jpeg",
-  "tweq.jpeg",
-  "tweq.jpeg",
-  "tweq.jpeg",
+  "/branches/pages/tweq.jpeg",
+  "/branches/pages/tweq.jpeg",
+  "/branches/pages/tweq.jpeg",
+  "/branches/pages/tweq.jpeg",
 ];
   useEffect(() => {
     const t = setTimeout(() => setLoaded(true), 100);
