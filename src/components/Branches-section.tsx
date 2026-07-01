@@ -8,8 +8,8 @@ type Branch = {
   img: string;
   title: string;
   href: string;
-  mobileOrder: string; // class order للموبايل
-  order: string; // class order من md لفوق (الترتيب الأصلي)
+  mobileOrder: string; 
+  order: string;  
 };
 
 const branches: Branch[] = [
