@@ -27,7 +27,7 @@ export default function AboutSection() {
           >
             <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-primary">
               <img
-                src="/main.jpeg"
+                src="/branches/pages/tweq.jpeg",
                 alt="Doctor"
                 className="w-full h-[480px] object-cover"
               />
