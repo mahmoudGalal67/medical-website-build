@@ -1,7 +1,7 @@
 export const reviews = [
   {
     id: 1,
-    name: "غير ظاهر",
+    name: "مريم",
     rating: 5,
     date: "قبل 8 أشهر",
     review:
@@ -37,7 +37,7 @@ export const reviews = [
   },
   {
     id: 5,
-    name: "غير ظاهر",
+    name: "نورة",
     rating: 5,
     date: "قبل 7 أشهر",
     review:
@@ -73,7 +73,7 @@ export const reviews = [
   },
   {
     id: 9,
-    name: "غير ظاهر",
+    name: "خالد",
     rating: 5,
     date: "قبل 8 أشهر",
     review:
@@ -127,7 +127,7 @@ export const reviews = [
   },
   {
     id: 15,
-    name: "غير ظاهر",
+    name: "فهد",
     rating: 5,
     date: "قبل شهرين",
     review:
