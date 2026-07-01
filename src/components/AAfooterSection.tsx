@@ -216,7 +216,7 @@ export default function FooterSection() {
             </Link>
 
             <Link
-              href="/terms"
+              href="/privacy"
               className="text-sm text-gray-400 transition hover:text-white"
             >
               الشروط والأحكام
