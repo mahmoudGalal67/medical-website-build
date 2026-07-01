@@ -33,7 +33,7 @@ const branches: Branch[] = [
   },
   {
     img: "hoda.png",
-    title: "دار الهدى الطبي",
+    title: "دار الهدا الطبي",
     href: "/branches/hoda",
   },
   {
