@@ -209,7 +209,7 @@ export default function FooterSection() {
 
           <div className="flex items-center gap-6">
             <Link
-              href="/privacy-policy"
+              href="/privacy"
               className="text-sm text-gray-400 transition hover:text-white"
             >
               سياسة الخصوصية
