@@ -18,7 +18,6 @@ const links = [
   { name: "الفروع", href: "#branches" },
   { name: "العروض", href: "#offers" },
   { name: "احجز موعد", href: "#contact" },
-  { name: "تواصل معنا", href: "#contact" },
 ];
 
 export default function FooterSection() {

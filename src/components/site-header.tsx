@@ -9,40 +9,60 @@ import Image from "next/image";
 import { useParams, usePathname, useRouter } from "next/navigation";
 import { useDictionary } from "@/providers/dictionary-provider";
 
-
-
-const navLinks : { en: { title: string; href: string }, ar: { title: string; href: string } }[] = [
- {en:{title: "Home", href: "/"}, ar:{title: "الرئيسية", href: "/"}},
- {en:{title: "sanad el-jezera taweq", href: "en/branches/tweq"}, ar:{title: "سند الجزيرة فرع طويق", href: "ar/branches/tweq"}},
- {en:{title: "sanad el-jezera mahdya", href: "en/branches/mahdya"}, ar:{title: "سند الجزيرة فرع المهدية", href: "ar/branches/mahdya"}},
- {en:{title: "sanad el--jezera lbn", href: "en/branches/lbn"}, ar:{title: "سند الجزيرة فرع لبن", href: "ar/branches/lbn"}},
- {en:{title: "sade el-jezera care", href: "en/branches/care"}, ar:{title: "مجمع الجزيره كير الطبي", href: "ar/branches/care"}},
- {en:{title: "dar el-khyal", href: "en/branches/khayal"}, ar:{title: "دار الخيال الطبي", href: "ar/branches/khayal"}},
- {en:{title: "dar el-hoda", href: "en/branches/hoda"}, ar:{title: " دار الهدا الطبي", href: "ar/branches/hoda"}},
- {en:{title: "Contact Us", href: "en/contact"}, ar:{title: "اتصل بنا", href: "ar/contact"}},
+const navLinks: {
+  en: { title: string; href: string };
+  ar: { title: string; href: string };
+}[] = [
+  { en: { title: "Home", href: "/" }, ar: { title: "الرئيسية", href: "/" } },
+  {
+    en: { title: "sanad el-jezera taweq", href: "en/branches/tweq" },
+    ar: { title: "سند الجزيرة فرع طويق", href: "ar/branches/tweq" },
+  },
+  {
+    en: { title: "sanad el-jezera mahdya", href: "en/branches/mahdya" },
+    ar: { title: "سند الجزيرة فرع المهدية", href: "ar/branches/mahdya" },
+  },
+  {
+    en: { title: "sanad el--jezera lbn", href: "en/branches/lbn" },
+    ar: { title: "سند الجزيرة فرع لبن", href: "ar/branches/lbn" },
+  },
+  {
+    en: { title: "sade el-jezera care", href: "en/branches/care" },
+    ar: { title: "مجمع الجزيره كير الطبي", href: "ar/branches/care" },
+  },
+  {
+    en: { title: "dar el-khyal", href: "en/branches/khayal" },
+    ar: { title: "دار الخيال الطبي", href: "ar/branches/khayal" },
+  },
+  {
+    en: { title: "dar el-hoda", href: "en/branches/hoda" },
+    ar: { title: " دار الهدا الطبي", href: "ar/branches/hoda" },
+  },
+  {
+    en: { title: "Contact Us", href: "en/contact" },
+    ar: { title: "اتصل بنا", href: "ar/contact" },
+  },
 ];
-
 
 export function SiteHeader() {
   const [isOpen, setIsOpen] = useState(false);
   const params = useParams();
   const router = useRouter();
   const pathname = usePathname();
-  const [locale, setLocale] =  useState<"en" | "ar">(  params.locale === "ar" ? "ar" : "en");
+  const [locale, setLocale] = useState<"en" | "ar">(
+    params.locale === "ar" ? "ar" : "en",
+  );
   const dict = useDictionary();
 
   const switchLanguage = (lang: "en" | "ar") => {
     const newPath = `/${lang}${pathname.substring(3)}`;
     router.push(newPath);
 
-    setLocale(lang)
-
+    setLocale(lang);
   };
 
-
-
   return (
-    <header className="mx-auto" >
+    <header className="mx-auto">
       {/* Top Utility Bar */}
       <div className="text-white" dir="ltr">
         <div className="bg-primary mx-auto flex h-9  items-center justify-between rounded-t-xl px-4 text-xs sm:px-6 lg:px-36">
@@ -64,13 +84,20 @@ export function SiteHeader() {
           </div>
 
           <div className="flex items-center gap-3">
-            <button dir="rtl" className={`opacity-90 cursor-pointer hover:opacity-100 ${locale === 'ar' ? 'text-primary2' : ''}`} onClick={() => switchLanguage('ar')}>
+            <button
+              dir="rtl"
+              className={`opacity-90 cursor-pointer hover:opacity-100 ${locale === "ar" ? "text-primary2" : ""}`}
+              onClick={() => switchLanguage("ar")}
+            >
               العربية
             </button>
 
             <span className="opacity-40">|</span>
 
-            <button className={`font-medium opacity-90 cursor-pointer hover:opacity-100 ${locale === 'en' ? 'text-primary2' : ''}`} onClick={() => switchLanguage('en')}>
+            <button
+              className={`font-medium opacity-90 cursor-pointer hover:opacity-100 ${locale === "en" ? "text-primary2" : ""}`}
+              onClick={() => switchLanguage("en")}
+            >
               EN
             </button>
           </div>
@@ -81,9 +108,16 @@ export function SiteHeader() {
       <div className="border-b border-border bg-card">
         <div className="mx-auto flex h-26 max-w-8xl items-center justify-between px-4 sm:px-6 md:px-12  xl:px-48 ">
           {/* Logo */}
-          <Link href={`/${locale}`} className="flex shrink-0 items-center gap-3">
-
-<Image src="/logo.png" alt="HealthCare Booking" width={140} height={90} />
+          <Link
+            href={`/${locale}`}
+            className="flex shrink-0 items-center gap-3"
+          >
+            <Image
+              src="/logo.png"
+              alt="HealthCare Booking"
+              width={140}
+              height={90}
+            />
           </Link>
 
           {/* Desktop Navigation + CTA */}
@@ -99,19 +133,17 @@ export function SiteHeader() {
                 </Link>
               ))}
             </nav>
-
           </div>
-          <div className="hidden xl:block"> 
+          <div className="hidden xl:block">
             <Button className="rounded-full px-6 py-6 cursor-pointer">
               {dict.Buttons.book}
             </Button>
-            </div>
+          </div>
 
           {/* Mobile Actions */}
           <div className="flex items-center gap-2 xl:hidden">
             <Button size="sm" className="rounded-full px-4">
-              {locale === "en" ? "Book" : "احجز"
-              }
+              {locale === "en" ? "Book" : "احجز"}
             </Button>
 
             <button
