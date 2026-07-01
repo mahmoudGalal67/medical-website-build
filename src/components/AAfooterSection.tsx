@@ -38,7 +38,7 @@ export default function FooterSection() {
       <div className="relative z-10 px-4 pt-14">
         <div
           ref={ref}
-          className={`mx-auto max-w-7xl rounded-[36px] bg-gradient-to-r from-[#7A1F3D] to-[#367F8B] p-10 shadow-2xl transition-all duration-700 ${
+          className={`mx-auto max-w-7xl rounded-[36px] bg-gradient-to-r from-primary2 to-primary p-10 shadow-2xl transition-all duration-700 ${
             isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
           }`}
         >

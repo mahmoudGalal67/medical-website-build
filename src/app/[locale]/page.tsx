@@ -11,12 +11,11 @@ import GallerySection from "@/components/AAgallary-section";
 import FooterSection from "@/components/AAfooterSection";
 
 export default function Home() {
-  const doctors = Array.from({ length: 15 }, () => "" as String);
+  const doctors = Array.from({ length: 17 }, () => "" as String);
 
   return (
     <main className="min-h-screen">
       <HeroSection />
-
       <StatsSection />
       <Branches />
       <ServicesSection />

@@ -34,7 +34,7 @@ export default function DoctorCard({
         y: -10,
         transition: { duration: 0.25 },
       }}
-      className="group overflow-hidden rounded-3xl shadow-xl bg-white"
+      className="group overflow-hidden rounded-3xl shadow-xl bg-gradient-to-r from-primary2 to-primary"
     >
       <div className="overflow-hidden">
         <motion.div
