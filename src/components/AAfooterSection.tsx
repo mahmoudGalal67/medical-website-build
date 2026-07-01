@@ -18,7 +18,6 @@ const links = [
   { name: "الفروع", href: "#branches" },
   { name: "العروض", href: "#offers" },
   { name: "احجز موعد", href: "#contact" },
-  { name: "تواصل معنا", href: "#contact" },
 ];
 
 export default function FooterSection() {
@@ -39,7 +38,7 @@ export default function FooterSection() {
       <div className="relative z-10 px-4 pt-14">
         <div
           ref={ref}
-          className={`mx-auto max-w-7xl rounded-[36px] bg-gradient-to-r from-[#7A1F3D] to-[#367F8B] p-10 shadow-2xl transition-all duration-700 ${
+          className={`mx-auto max-w-7xl rounded-[36px] bg-gradient-to-r from-primary2 to-primary p-10 shadow-2xl transition-all duration-700 ${
             isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
           }`}
         >
@@ -166,7 +165,7 @@ export default function FooterSection() {
                 <span className="leading-7">
                   المملكة العربية السعودية
                   <br />
-                  الرياض
+                  الرياض - حي طويق - شارع خديجة بنت خويلد بجوار القرية الشعبيه
                 </span>
               </li>
 
@@ -192,7 +191,7 @@ export default function FooterSection() {
                 <span className="leading-7">
                   السبت - الخميس
                   <br />
-                  9:00 صباحًا - 10:00 مساءً
+                  8:00 صباحًا - 10:00 مساءً
                 </span>
               </li>
             </ul>
