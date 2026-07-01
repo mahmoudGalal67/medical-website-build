@@ -165,7 +165,7 @@ export default function FooterSection() {
                 <span className="leading-7">
                   المملكة العربية السعودية
                   <br />
-                  الرياض
+                  الرياض - حي طويق - شارع خديجة بنت خويلد بجوار القرية الشعبيه
                 </span>
               </li>
 
@@ -191,7 +191,7 @@ export default function FooterSection() {
                 <span className="leading-7">
                   السبت - الخميس
                   <br />
-                  9:00 صباحًا - 10:00 مساءً
+                  8:00 صباحًا - 10:00 مساءً
                 </span>
               </li>
             </ul>
