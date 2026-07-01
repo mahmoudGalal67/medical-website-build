@@ -4,27 +4,12 @@ import { useIntersection } from "@/hooks/use-intersection";
 import Image from "next/image";
 import Link from "next/link";
 
-import {
-  Phone,
-  Mail,
-  MapPin,
-  Clock,
-  ChevronLeft,
-} from "lucide-react";
+import { Phone, Mail, MapPin, Clock, ChevronLeft } from "lucide-react";
 
-import {
-  FaInstagram,
-  FaTiktok,
-  FaSnapchat,
-} from "react-icons/fa6";
+import { FaInstagram, FaTiktok, FaSnapchat } from "react-icons/fa6";
 
 const footerLinks = {
-  الخدمات: [
-    "عيادة الأسنان",
-    "الجلدية والتجميل",
-    "النساء والولادة",
-    "الليزر",
-  ],
+  الخدمات: ["عيادة الأسنان", "الجلدية والتجميل", "النساء والولادة", "الليزر"],
 };
 
 const links = [
@@ -55,9 +40,7 @@ export default function FooterSection() {
         <div
           ref={ref}
           className={`mx-auto max-w-7xl rounded-[36px] bg-gradient-to-r from-[#7A1F3D] to-[#367F8B] p-10 shadow-2xl transition-all duration-700 ${
-            isVisible
-              ? "translate-y-0 opacity-100"
-              : "translate-y-10 opacity-0"
+            isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
           }`}
         >
           <div className="flex flex-col items-center justify-between gap-8 lg:flex-row">
@@ -67,8 +50,8 @@ export default function FooterSection() {
               </h2>
 
               <p className="mt-3 max-w-xl leading-8 text-white/90">
-                نوفر رعاية صحية متكاملة بأحدث التقنيات الطبية داخل جميع
-                فروع مجموعة سند الجزيرة الطبية.
+                نوفر رعاية صحية متكاملة بأحدث التقنيات الطبية داخل جميع فروع
+                مجموعة سند الجزيرة الطبية.
               </p>
             </div>
 
@@ -88,16 +71,16 @@ export default function FooterSection() {
           {/* Logo */}
           <div>
             <Image
-              src="/Logo.png"
+              src="/logo.png"
               alt="مجموعة سند الجزيرة الطبية"
               width={180}
               height={70}
             />
 
             <p className="mt-6 leading-8 text-gray-300">
-              مجموعة سند الجزيرة الطبية تقدم خدمات صحية متكاملة بأحدث
-              التقنيات وعلى يد نخبة من الأطباء والاستشاريين، لنمنحكم
-              تجربة علاجية آمنة ومتميزة.
+              مجموعة سند الجزيرة الطبية تقدم خدمات صحية متكاملة بأحدث التقنيات
+              وعلى يد نخبة من الأطباء والاستشاريين، لنمنحكم تجربة علاجية آمنة
+              ومتميزة.
             </p>
 
             <div className="mt-8 flex gap-3">
@@ -132,9 +115,7 @@ export default function FooterSection() {
 
           {/* Services */}
           <div>
-            <h3 className="mb-6 text-xl font-bold text-white">
-              الخدمات
-            </h3>
+            <h3 className="mb-6 text-xl font-bold text-white">الخدمات</h3>
 
             <ul className="space-y-4">
               {footerLinks["الخدمات"].map((item) => (
@@ -150,22 +131,20 @@ export default function FooterSection() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="mb-6 text-xl font-bold text-white">
-              روابط سريعة
-            </h3>
+            <h3 className="mb-6 text-xl font-bold text-white">روابط سريعة</h3>
 
             <ul className="space-y-4">
               {links.map((link) => (
                 <li key={link.name}>
                   <button
-                      onClick={() => {
-    const id = link.href.replace("#", "");
-    document.getElementById(id)?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-  }}
-                   className="group flex cursor-pointer items-center gap-2 text-gray-300 transition hover:text-white"
+                    onClick={() => {
+                      const id = link.href.replace("#", "");
+                      document.getElementById(id)?.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                      });
+                    }}
+                    className="group flex cursor-pointer items-center gap-2 text-gray-300 transition hover:text-white"
                   >
                     <ChevronLeft className="h-4 w-4 text-[#B3476B] transition group-hover:-translate-x-1" />
                     {link.name}
@@ -183,10 +162,7 @@ export default function FooterSection() {
 
             <ul className="space-y-5">
               <li className="flex items-start gap-3 text-gray-300">
-                <MapPin
-                  className="mt-1 text-[#B3476B]"
-                  size={18}
-                />
+                <MapPin className="mt-1 text-[#B3476B]" size={18} />
                 <span className="leading-7">
                   المملكة العربية السعودية
                   <br />
@@ -196,10 +172,7 @@ export default function FooterSection() {
 
               <li className="flex items-center gap-3 text-gray-300">
                 <Phone className="text-[#B3476B]" size={18} />
-                <a
-                  href="tel:+966500000000"
-                  className="hover:text-white"
-                >
+                <a href="tel:+966500000000" className="hover:text-white">
                   +966 50 000 0000
                 </a>
               </li>
@@ -215,10 +188,7 @@ export default function FooterSection() {
               </li>
 
               <li className="flex items-start gap-3 text-gray-300">
-                <Clock
-                  className="mt-1 text-[#B3476B]"
-                  size={18}
-                />
+                <Clock className="mt-1 text-[#B3476B]" size={18} />
                 <span className="leading-7">
                   السبت - الخميس
                   <br />
