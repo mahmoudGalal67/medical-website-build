@@ -46,10 +46,6 @@ const navLinks: {
     en: { title: "Laboratory and Radiology", href: "#" },
     ar: { title: "المعمل والأشعة", href: "#" },
   },
-  {
-    en: { title: "Contact Us", href: "en/contact" },
-    ar: { title: "اتصل بنا", href: "ar/contact" },
-  },
 ];
 
 export function SiteHeader() {
