@@ -109,11 +109,10 @@ const scrollToBranches = () => {
         >
           <button
   onClick={scrollToBranches}
-            className="inline-flex cursor-pointer items-center justify-center gap-2 bg-primary2 hover:bg-primary text-white font-semibold px-8 py-3.5 rounded-full transition-all duration-300 shadow-lg shadow-primary2/30 hover:shadow-primary2/50 hover:-translate-y-0.5"
-          >
-          اكتشف المزيد
-
-          </button>
+  className="inline-flex cursor-pointer items-center justify-center gap-2 bg-[#dc3433] hover:bg-[#c52d2c] text-white font-semibold px-8 py-3.5 rounded-full transition-all duration-300 shadow-lg shadow-[#dc3433]/30 hover:shadow-[#dc3433]/50 hover:-translate-y-0.5"
+>
+  اكتشف المزيد
+</button>
           <a
             href="#contact"
             className="inline-flex items-center justify-center gap-2 border-2 border-white/40 hover:bg-primary2 text-white hover:text-primary font-semibold px-8 py-3.5 rounded-full transition-all duration-300 hover:-translate-y-0.5"
