@@ -8,8 +8,8 @@ type Branch = {
   img: string;
   title: string;
   href: string;
-  mobileOrder: string; 
-  order: string;  
+  mobileOrder: string;
+  order: string;
 };
 
 const branches: Branch[] = [
@@ -63,9 +63,9 @@ export default function Branches() {
       {/* Background */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-rose-50 via-white to-white" />
 
-      <div className="absolute -top-40 left-0 -z-10 h-96 w-96 rounded-full bg-[#7A1F3D]/10 blur-[150px]" />
+      <div className="absolute -top-40 left-0 -z-10 h-96 w-96 rounded-full bg-[#dc3433]/10 blur-[150px]" />
 
-      <div className="absolute bottom-0 right-0 -z-10 h-96 w-96 rounded-full bg-[#B3476B]/10 blur-[150px]" />
+      <div className="absolute bottom-0 right-0 -z-10 h-96 w-96 rounded-full bg-[#dc3433]/10 blur-[150px]" />
 
       <div className="mx-auto max-w-8xl lg:px-4 px-2">
         {/* Header */}
@@ -76,7 +76,7 @@ export default function Branches() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <h2 className="text-4xl font-extrabold text-[#7A1F3D] [text-shadow:0_2px_8px_rgba(122,31,61,.15)]">
+          <h2 className="text-4xl font-extrabold text-[#dc3433] [text-shadow:0_2px_8px_rgba(220,52,51,.15)]">
             فروع مجموعة سند الجزيرة الطبية
           </h2>
 
@@ -124,20 +124,20 @@ export default function Branches() {
                   duration-500
                   hover:-translate-y-3
                   hover:scale-105
-                  hover:border-[#7A1F3D]
-                  hover:shadow-[0_20px_45px_rgba(122,31,61,.18)]
+                  hover:border-[#dc3433]
+                  hover:shadow-[0_20px_45px_rgba(220,52,51,.18)]
                   "
                 >
                   {/* Badge */}
-                  <span className="absolute left-4 top-4 z-10 rounded-full bg-[#7A1F3D] px-3 py-1 text-[11px] font-semibold text-white shadow">
+                  <span className="absolute left-4 top-4 z-10 rounded-full bg-[#dc3433] px-3 py-1 text-[11px] font-semibold text-white shadow">
                     فرع
                   </span>
 
                   {/* Glow */}
                   <div className="absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100">
-                    <div className="absolute -top-10 -right-10 h-40 w-40 rounded-full bg-[#7A1F3D]/15 blur-3xl" />
+                    <div className="absolute -top-10 -right-10 h-40 w-40 rounded-full bg-[#dc3433]/15 blur-3xl" />
 
-                    <div className="absolute -bottom-10 -left-10 h-40 w-40 rounded-full bg-[#B3476B]/15 blur-3xl" />
+                    <div className="absolute -bottom-10 -left-10 h-40 w-40 rounded-full bg-[#dc3433]/15 blur-3xl" />
                   </div>
 
                   {/* Image */}
@@ -180,7 +180,7 @@ export default function Branches() {
                     text-slate-800
                     transition-all
                     duration-300
-                    group-hover:text-[#7A1F3D]
+                    group-hover:text-[#dc3433]
                     "
                   >
                     {branch.title}
@@ -194,9 +194,9 @@ export default function Branches() {
                     w-0
                     rounded-full
                     bg-gradient-to-r
-                    from-[#7A1F3D]
-                    via-[#8B1E3F]
-                    to-[#B3476B]
+                    from-[#dc3433]
+                    via-[#dc3433]
+                    to-[#dc3433]
                     transition-all
                     duration-500
                     group-hover:w-20
