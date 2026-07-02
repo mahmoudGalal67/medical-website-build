@@ -147,7 +147,7 @@ export function SiteHeader() {
           scrolled ? "shadow-md" : "shadow-none"
         }`}
       >
-        <div className="mx-auto flex min-h-26 max-w-8xl flex-wrap items-center justify-between gap-y-3 px-4 py-3 sm:px-6 md:px-12 xl:px-10 2xl:px-16">
+        <div className="mx-auto flex h-26 max-w-8xl items-center justify-between px-4 sm:px-6 md:px-10 xl:px-6 2xl:px-12">
           {/* Logo */}
           <Link
             href={`/${locale}`}
@@ -163,13 +163,13 @@ export function SiteHeader() {
           </Link>
 
           {/* Desktop Navigation + CTA */}
-          <div className="hidden min-w-0 flex-1 items-center px-4 xl:flex">
-            <nav className="flex w-full flex-wrap items-center gap-x-4 gap-y-2 py-2 2xl:gap-x-6">
+          <div className="hidden min-w-0 flex-1 items-center overflow-hidden px-3 xl:flex">
+            <nav className="flex w-full flex-nowrap items-center justify-between gap-x-2 py-2 2xl:gap-x-4">
               {navLinks.map((link) => (
                 <Link
                   key={link[locale].href}
                   href={`/${link[locale].href}`.replace(/\/{2,}/g, "/")}
-                  className="group relative shrink-0 whitespace-nowrap py-2 text-sm font-medium text-foreground/80 transition-colors hover:text-primary"
+                  className="group relative shrink-0 whitespace-nowrap py-2 text-[11px] font-medium text-foreground/80 transition-colors hover:text-primary xl:text-xs 2xl:text-sm"
                 >
                   {link[locale].title}
                   <span className="absolute inset-x-0 -bottom-0.5 h-0.5 origin-center scale-x-0 rounded-full bg-primary transition-transform duration-300 group-hover:scale-x-100" />
@@ -178,18 +178,18 @@ export function SiteHeader() {
             </nav>
           </div>
 
-          <div className="hidden shrink-0 flex-col items-end gap-2 xl:flex">
+          <div className="hidden shrink-0 flex-col items-end gap-1.5 xl:flex">
             <Link href={`/${locale}/contact`}>
               <Button
                 variant="outline"
                 size="sm"
-                className="cursor-pointer gap-1.5 rounded-full px-5 shadow-sm transition-all hover:shadow-md"
+                className="h-7 cursor-pointer gap-1.5 rounded-full px-4 text-xs shadow-sm transition-all hover:shadow-md"
               >
                 <MessageSquare className="size-3.5" />
                 {locale === "en" ? "Contact Us" : "اتصل بنا"}
               </Button>
             </Link>
-            <Button className="cursor-pointer rounded-full px-6 py-6 shadow-sm transition-all hover:shadow-md hover:brightness-105">
+            <Button className="cursor-pointer rounded-full px-6 py-5 shadow-sm transition-all hover:shadow-md hover:brightness-105">
               {dict.Buttons.book}
             </Button>
           </div>
