@@ -43,8 +43,8 @@ const navLinks: {
     ar: { title: "التأمينات", href: "#" },
   },
   {
-    en: { title: "Equipment and Radiology", href: "#" },
-    ar: { title: "ألاجهزة والاشعة", href: "#" },
+    en: { title: "Laboratory and Radiology", href: "#" },
+    ar: { title: "المعمل والأشعة", href: "#" },
   },
   {
     en: { title: "Contact Us", href: "en/contact" },
