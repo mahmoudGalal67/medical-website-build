@@ -39,6 +39,14 @@ const navLinks: {
     ar: { title: " دار الهدا الطبي", href: "ar/branches/hoda" },
   },
   {
+    en: { title: "Insurance", href: "#" },
+    ar: { title: "التأمينات", href: "#" },
+  },
+  {
+    en: { title: "Equipment and Radiology", href: "#" },
+    ar: { title: "ألاجهزة والاشعة", href: "#" },
+  },
+  {
     en: { title: "Contact Us", href: "en/contact" },
     ar: { title: "اتصل بنا", href: "ar/contact" },
   },

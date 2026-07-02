@@ -8,8 +8,8 @@ type Branch = {
   img: string;
   title: string;
   href: string;
-  mobileOrder: string; 
-  order: string;  
+  mobileOrder: string;
+  order: string;
 };
 
 const branches: Branch[] = [
@@ -137,7 +137,7 @@ export default function Branches() {
                   <div className="absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100">
                     <div className="absolute -top-10 -right-10 h-40 w-40 rounded-full bg-primary2/15 blur-3xl" />
 
-                    <div className="absolute -bottom-10 -left-10 h-40 w-40 rounded-full bg-[#B3476B]/15 blur-3xl" />
+                    <div className="absolute -bottom-10 -left-10 h-40 w-40 rounded-full bg-[#dc3433]/15 blur-3xl" />
                   </div>
 
                   {/* Image */}
@@ -194,9 +194,15 @@ export default function Branches() {
                     w-0
                     rounded-full
                     bg-gradient-to-r
+<<<<<<< HEAD
                     from-primary2
                     via-primary2
                     to-[#B3476B]
+=======
+                    from-[#dc3433]
+                    via-[#dc3433]
+                    to-[#dc3433]
+>>>>>>> 7674d6fb9c30ba154a52c48b1bb8af1438318414
                     transition-all
                     duration-500
                     group-hover:w-20

@@ -7,7 +7,6 @@ const highlights = [
   "تقنيات ومعدات طب الأسنان المتطورة",
   "أطباء متخصصون حاصلون على شهادة البورد",
   "بيئة معقمة ومريحة",
-
 ];
 
 export default function AboutSection() {
@@ -25,7 +24,7 @@ export default function AboutSection() {
                 : "opacity-0 -translate-x-12"
             }`}
           >
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-primary">
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-[#dc3433]/30">
               <img
                 src="/branches/pages/tweq.jpeg"
                 alt="Doctor"
@@ -33,18 +32,20 @@ export default function AboutSection() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#2d004d]/30 to-transparent" />
             </div>
-            {/* Floating badge */}
-            <div className="absolute -bottom-6 md:-right-6 -right-3 bg-primary text-white rounded-2xl p-5 shadow-xl shadow-primary/30">
-              <p className="text-3xl font-bold text-white">30+</p>
-              <p className="text-xs text-purple-200 mt-0.5">
-               سنوات من التميز
 
+            {/* Floating badge */}
+            <div className="absolute -bottom-6 md:-right-6 -right-3 bg-[#dc3433] text-white rounded-2xl p-5 shadow-xl shadow-[#dc3433]/30">
+              <p className="text-3xl font-bold text-white">30+</p>
+              <p className="text-xs text-white/80 mt-0.5">
+                سنوات من التميز
               </p>
             </div>
-            <div className="absolute -top-6 md:-left-6 -left-3 bg-primary2 text-white rounded-2xl p-4 shadow-xl">
+
+            <div className="absolute -top-6 md:-left-6 -left-3 bg-[#dc3433] text-white rounded-2xl p-4 shadow-xl shadow-[#dc3433]/30">
               <p className="text-2xl font-bold">3K+</p>
-              <p className="text-xs font-medium mt-0.5">خدم المرضى
-</p>
+              <p className="text-xs font-medium mt-0.5">
+                خدم المرضى
+              </p>
             </div>
           </div>
 
@@ -56,21 +57,27 @@ export default function AboutSection() {
                 : "opacity-0 translate-x-12"
             }`}
           >
-            <span className="text-primary text-sm font-semibold uppercase tracking-widest">
+            <span className="text-[#dc3433] text-sm font-semibold uppercase tracking-widest">
               معلومات عنا
-
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold text-primary2 mt-3 mb-5 leading-tight">
              شريكك الموثوق في صحة الأسنان والجمال
 
             </h2>
+
             <p className="text-gray-500 leading-relaxed mb-6">
-        تُعد عيادة "سند الجزيرة" مركزاً رائداً في مجال طب الأسنان والتجميل، وتلتزم بتقديم رعاية استثنائية باستخدام أحدث التقنيات الطبية. ويعمل فريقنا من المتخصصين ذوي الخبرة بتفانٍ لضمان حصول كل مريض على علاج مخصص وعالي الجودة، وذلك في أجواء تتسم بالدفء والمهنية.
-
+              تُعد عيادة "ستد الجزيرة" مركزاً رائداً في مجال طب الأسنان
+              والتجميل، وتلتزم بتقديم رعاية استثنائية باستخدام أحدث التقنيات
+              الطبية. ويعمل فريقنا من المتخصصين ذوي الخبرة بتفانٍ لضمان حصول كل
+              مريض على علاج مخصص وعالي الجودة، وذلك في أجواء تتسم بالدفء
+              والمهنية.
             </p>
-            <p className="text-gray-500 leading-relaxed mb-8">
-             بدءاً من الفحوصات الروتينية ووصولاً إلى الإجراءات التجميلية المعقدة، نقدم مجموعة شاملة من الخدمات المصممة خصيصاً لتلبية احتياجاتك الفريدة، ومساعدتك في الحصول على الابتسامة والثقة اللتين تستحقهما.
 
+            <p className="text-gray-500 leading-relaxed mb-8">
+              بدءاً من الفحوصات الروتينية ووصولاً إلى الإجراءات التجميلية
+              المعقدة، نقدم مجموعة شاملة من الخدمات المصممة خصيصاً لتلبية
+              احتياجاتك الفريدة، ومساعدتك في الحصول على الابتسامة والثقة اللتين
+              تستحقهما.
             </p>
 
             <ul className="space-y-3 mb-10">
@@ -81,7 +88,7 @@ export default function AboutSection() {
                 >
                   <CheckCircle
                     size={18}
-                    className="text-white flex-shrink-0"
+                    className="text-[#dc3433] flex-shrink-0"
                   />
                   {h}
                 </li>
@@ -90,10 +97,9 @@ export default function AboutSection() {
 
             <a
               href="#doctors"
-              className="inline-flex flex-row-reverse items-center gap-2 bg-primary hover:bg-primary2 text-white font-semibold px-7 py-3.5 rounded-full transition-all duration-300 hover:-translate-y-0.5 shadow-lg shadow-primary/30"
+              className="inline-flex flex-row-reverse items-center gap-2 bg-[#dc3433] hover:bg-[#c52d2c] text-white font-semibold px-7 py-3.5 rounded-full transition-all duration-300 hover:-translate-y-0.5 shadow-lg shadow-[#dc3433]/30"
             >
               تعرّف على فريقنا
-
               <ArrowRight size={16} />
             </a>
           </div>

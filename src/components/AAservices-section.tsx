@@ -4,9 +4,9 @@ import { useIntersection } from "@/hooks/use-intersection";
 import Image from "next/image";
 
 const clinics = [
-  { img: "/clinics/clinic4.webp", label: "الأسنان", color: "#7A1F3D" },
+  { img: "/clinics/clinic4.webp", label: "الأسنان", color: "#dc3433" },
   { img: "/clinics/clinic2.webp", label: "الليزر", color: "#367F8B" },
-  { img: "/clinics/clinic3.webp", label: "النساء والولادة", color: "#7A1F3D" },
+  { img: "/clinics/clinic3.webp", label: "النساء والولادة", color: "#dc3433" },
   { img: "/clinics/clinic1.webp", label: "الجلدية", color: "#367F8B" },
 ];
 
