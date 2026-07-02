@@ -30,8 +30,8 @@ export default function FooterSection() {
       className="relative overflow-hidden bg-[#171717]"
     >
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#7A1F3D]/15 via-transparent to-[#367F8B]/10" />
-      <div className="absolute -top-32 right-0 h-96 w-96 rounded-full bg-[#7A1F3D]/10 blur-[150px]" />
+      <div className="absolute inset-0 bg-gradient-to-br from-primary2/15 via-transparent to-[#367F8B]/10" />
+      <div className="absolute -top-32 right-0 h-96 w-96 rounded-full bg-primary2/10 blur-[150px]" />
       <div className="absolute bottom-0 left-0 h-96 w-96 rounded-full bg-[#367F8B]/10 blur-[150px]" />
 
       {/* CTA */}
@@ -56,7 +56,7 @@ export default function FooterSection() {
 
             <a
               href="tel:+966500000000"
-              className="rounded-full bg-white px-8 py-4 font-bold text-[#7A1F3D] transition-all duration-300 hover:scale-105 hover:bg-[#7A1F3D] hover:text-white"
+              className="rounded-full bg-white px-8 py-4 font-bold text-primary2 transition-all duration-300 hover:scale-105 hover:bg-primary2 hover:text-white"
             >
               اتصل بنا الآن
             </a>
@@ -87,7 +87,7 @@ export default function FooterSection() {
                 href="https://www.instagram.com/sanad_aljazeera"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#7A1F3D]"
+                className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white transition-all duration-300 hover:-translate-y-1 hover:bg-primary2"
               >
                 <FaInstagram size={20} />
               </a>
@@ -96,7 +96,7 @@ export default function FooterSection() {
                 href="https://www.tiktok.com/@sanad_aljazeera"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#7A1F3D]"
+                className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white transition-all duration-300 hover:-translate-y-1 hover:bg-primary2"
               >
                 <FaTiktok size={18} />
               </a>
@@ -105,7 +105,7 @@ export default function FooterSection() {
                 href="https://snapchat.com/t/kGMdQePz"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#7A1F3D]"
+                className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white transition-all duration-300 hover:-translate-y-1 hover:bg-primary2"
               >
                 <FaSnapchat size={18} />
               </a>
@@ -120,7 +120,7 @@ export default function FooterSection() {
               {footerLinks["الخدمات"].map((item) => (
                 <li key={item}>
                   <button className="group flex items-center gap-2 text-gray-300 transition hover:text-white">
-                    <ChevronLeft className="h-4 w-4 text-[#B3476B] transition group-hover:-translate-x-1" />
+                    <ChevronLeft className="h-4 w-4 text-primary2 transition group-hover:-translate-x-1" />
                     {item}
                   </button>
                 </li>
@@ -145,7 +145,7 @@ export default function FooterSection() {
                     }}
                     className="group flex cursor-pointer items-center gap-2 text-gray-300 transition hover:text-white"
                   >
-                    <ChevronLeft className="h-4 w-4 text-[#B3476B] transition group-hover:-translate-x-1" />
+                    <ChevronLeft className="h-4 w-4 text-primary2 transition group-hover:-translate-x-1" />
                     {link.name}
                   </button>
                 </li>
@@ -161,7 +161,7 @@ export default function FooterSection() {
 
             <ul className="space-y-5">
               <li className="flex items-start gap-3 text-gray-300">
-                <MapPin className="mt-1 text-[#B3476B]" size={18} />
+                <MapPin className="mt-1 text-primary2" size={18} />
                 <span className="leading-7">
                   المملكة العربية السعودية
                   <br />
@@ -170,14 +170,14 @@ export default function FooterSection() {
               </li>
 
               <li className="flex items-center gap-3 text-gray-300">
-                <Phone className="text-[#B3476B]" size={18} />
+                <Phone className="text-primary2" size={18} />
                 <a href="tel:+966500000000" className="hover:text-white">
                   +966 50 000 0000
                 </a>
               </li>
 
               <li className="flex items-center gap-3 text-gray-300">
-                <Mail className="text-[#B3476B]" size={18} />
+                <Mail className="text-primary2" size={18} />
                 <a
                   href="mailto:info@sanadaljazeera.com"
                   className="hover:text-white"
@@ -187,7 +187,7 @@ export default function FooterSection() {
               </li>
 
               <li className="flex items-start gap-3 text-gray-300">
-                <Clock className="mt-1 text-[#B3476B]" size={18} />
+                <Clock className="mt-1 text-primary2" size={18} />
                 <span className="leading-7">
 طوارئ على مدار الساعة (24/7)
                 </span>
