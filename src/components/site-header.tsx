@@ -167,13 +167,13 @@ export function SiteHeader() {
           </Link>
 
           {/* Desktop Navigation + CTA */}
-          <div className="hidden min-w-0 items-center gap-6 xl:flex">
-            <nav className="flex min-w-0 items-center gap-4 2xl:gap-6">
+          <div className="hidden min-w-0 flex-1 items-center px-4 xl:flex">
+            <nav className="flex w-full items-center gap-4 overflow-x-auto py-2 [-ms-overflow-style:none] [scrollbar-width:none] 2xl:gap-6 [&::-webkit-scrollbar]:hidden">
               {navLinks.map((link) => (
                 <Link
                   key={link[locale].href}
                   href={`/${link[locale].href}`.replace(/\/{2,}/g, "/")}
-                  className="group relative whitespace-nowrap py-2 text-sm font-medium text-foreground/80 transition-colors hover:text-primary"
+                  className="group relative shrink-0 whitespace-nowrap py-2 text-sm font-medium text-foreground/80 transition-colors hover:text-primary"
                 >
                   {link[locale].title}
                   <span className="absolute inset-x-0 -bottom-0.5 h-0.5 origin-center scale-x-0 rounded-full bg-primary transition-transform duration-300 group-hover:scale-x-100" />
