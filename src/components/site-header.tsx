@@ -160,9 +160,9 @@ export function SiteHeader() {
             <Image
               src="/logo.png"
               alt="HealthCare Booking"
-              width={140}
-              height={90}
-              className="transition-transform duration-300 group-hover:scale-105"
+              width={120}
+              height={78}
+              className="h-auto w-28 transition-transform duration-300 group-hover:scale-105 2xl:w-36"
             />
           </Link>
 
