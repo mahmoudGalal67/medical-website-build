@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { Phone, MessageCircle, ChevronDown } from "lucide-react";
+import { Phone, MessageCircle, ChevronDown, MessageSquare } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
@@ -151,7 +151,7 @@ export function SiteHeader() {
           scrolled ? "shadow-md" : "shadow-none"
         }`}
       >
-        <div className="mx-auto flex h-26 max-w-8xl items-center justify-between px-4 sm:px-6 md:px-12 xl:px-10 2xl:px-16">
+        <div className="mx-auto flex min-h-26 max-w-8xl flex-wrap items-center justify-between gap-y-3 px-4 py-3 sm:px-6 md:px-12 xl:px-10 2xl:px-16">
           {/* Logo */}
           <Link
             href={`/${locale}`}
@@ -168,7 +168,7 @@ export function SiteHeader() {
 
           {/* Desktop Navigation + CTA */}
           <div className="hidden min-w-0 flex-1 items-center px-4 xl:flex">
-            <nav className="flex w-full items-center gap-4 overflow-x-auto py-2 [-ms-overflow-style:none] [scrollbar-width:none] 2xl:gap-6 [&::-webkit-scrollbar]:hidden">
+            <nav className="flex w-full flex-wrap items-center gap-x-4 gap-y-2 py-2 2xl:gap-x-6">
               {navLinks.map((link) => (
                 <Link
                   key={link[locale].href}
@@ -182,7 +182,17 @@ export function SiteHeader() {
             </nav>
           </div>
 
-          <div className="hidden shrink-0 xl:block">
+          <div className="hidden shrink-0 flex-col items-end gap-2 xl:flex">
+            <Link href={`/${locale}/contact`}>
+              <Button
+                variant="outline"
+                size="sm"
+                className="cursor-pointer gap-1.5 rounded-full px-5 shadow-sm transition-all hover:shadow-md"
+              >
+                <MessageSquare className="size-3.5" />
+                {locale === "en" ? "Contact Us" : "اتصل بنا"}
+              </Button>
+            </Link>
             <Button className="cursor-pointer rounded-full px-6 py-6 shadow-sm transition-all hover:shadow-md hover:brightness-105">
               {dict.Buttons.book}
             </Button>
@@ -190,9 +200,20 @@ export function SiteHeader() {
 
           {/* Mobile Actions */}
           <div className="flex items-center gap-2 xl:hidden">
-            <Button size="sm" className="rounded-full px-4 shadow-sm">
-              {locale === "en" ? "Book" : "احجز"}
-            </Button>
+            <div className="flex flex-col items-end gap-1.5">
+              <Link href={`/${locale}/contact`}>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="h-7 cursor-pointer rounded-full px-3 text-xs shadow-sm"
+                >
+                  {locale === "en" ? "Contact Us" : "اتصل بنا"}
+                </Button>
+              </Link>
+              <Button size="sm" className="rounded-full px-4 shadow-sm">
+                {locale === "en" ? "Book" : "احجز"}
+              </Button>
+            </div>
 
             <button
               onClick={() => setIsOpen(!isOpen)}
