@@ -56,11 +56,8 @@ export default function HeroSection() {
           </div>
         ))}
 
-        {/* Overlay */}
-        <div
-          className="absolute inset-0"
-          style={{ backgroundColor: "rgba(220, 52, 51, 0.7)" }}
-        />
+        {/* رجعت الخلفية زي ما كانت */}
+        <div className="absolute inset-0 bg-primary/70" />
       </div>
 
       {/* Decorative circles */}
@@ -90,7 +87,9 @@ export default function HeroSection() {
         >
           مجموعة سند الجزيرة الطبية
           <br />
-          <span className="text-[#dc3433]">الجمال والعناية</span>
+          <span className="text-[#dc3433]">
+            الجمال والعناية
+          </span>
           <br />
           <span className="text-white/90 text-2xl sm:text-4xl lg:text-4xl font-light"></span>
         </h1>
@@ -101,7 +100,7 @@ export default function HeroSection() {
           }`}
         >
           نقدم علاجات أسنان وتجميل بمستوى عالمي، معتمدين على تقنيات متطورة
-          ورعاية تتسم بالاهتمام والتعاطف؛ فابتسامتك المثالية هي غايتنا.
+          ورعاية تتسم بالاهتمام والتعاطف؛ فابتسامتك المثالية هي غايتنا
         </p>
 
         <div
