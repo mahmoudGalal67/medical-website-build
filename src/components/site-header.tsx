@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { Phone, MessageCircle, Siren, HeartPulse, ChevronDown } from "lucide-react";
+import { Phone, MessageCircle, ChevronDown } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
@@ -91,10 +91,10 @@ export function SiteHeader() {
       <div className="text-white" dir="ltr">
         <div className="mx-auto flex h-9 items-center justify-between gap-4 rounded-t-xl bg-gradient-to-r from-primary to-primary/85 px-4 text-xs shadow-sm sm:px-6 lg:px-36">
           <div className="flex items-center gap-4 sm:gap-6">
-            <span className="flex items-center gap-1.5 font-medium text-red-100">
+            <span className="flex items-center gap-1.5 font-medium text-[#dc3433]">
               <span className="relative flex size-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-300 opacity-75" />
-                <span className="relative inline-flex size-2 rounded-full bg-red-300" />
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#dc3433] opacity-75" />
+                <span className="relative inline-flex size-2 rounded-full bg-[#dc3433]" />
               </span>
               Emergency 24/7
             </span>
@@ -151,7 +151,7 @@ export function SiteHeader() {
           scrolled ? "shadow-md" : "shadow-none"
         }`}
       >
-        <div className="mx-auto flex h-26 max-w-8xl items-center justify-between px-4 sm:px-6 md:px-12 xl:px-48">
+        <div className="mx-auto flex h-26 max-w-8xl items-center justify-between px-4 sm:px-6 md:px-12 xl:px-10 2xl:px-16">
           {/* Logo */}
           <Link
             href={`/${locale}`}
@@ -167,13 +167,13 @@ export function SiteHeader() {
           </Link>
 
           {/* Desktop Navigation + CTA */}
-          <div className="hidden items-center gap-8 xl:flex">
-            <nav className="flex items-center gap-6">
+          <div className="hidden min-w-0 items-center gap-6 xl:flex">
+            <nav className="flex min-w-0 items-center gap-4 2xl:gap-6">
               {navLinks.map((link) => (
                 <Link
                   key={link[locale].href}
                   href={`/${link[locale].href}`.replace(/\/{2,}/g, "/")}
-                  className="group relative py-2 text-sm font-medium text-foreground/80 transition-colors hover:text-primary"
+                  className="group relative whitespace-nowrap py-2 text-sm font-medium text-foreground/80 transition-colors hover:text-primary"
                 >
                   {link[locale].title}
                   <span className="absolute inset-x-0 -bottom-0.5 h-0.5 origin-center scale-x-0 rounded-full bg-primary transition-transform duration-300 group-hover:scale-x-100" />
@@ -182,9 +182,8 @@ export function SiteHeader() {
             </nav>
           </div>
 
-          <div className="hidden xl:block">
-            <Button className="cursor-pointer gap-2 rounded-full px-6 py-6 shadow-sm transition-all hover:shadow-md hover:brightness-105">
-              <HeartPulse className="size-4" />
+          <div className="hidden shrink-0 xl:block">
+            <Button className="cursor-pointer rounded-full px-6 py-6 shadow-sm transition-all hover:shadow-md hover:brightness-105">
               {dict.Buttons.book}
             </Button>
           </div>
@@ -272,8 +271,7 @@ export function SiteHeader() {
                 </a>
               </div>
 
-              <Button className="w-full gap-2 rounded-full py-6 shadow-sm">
-                <HeartPulse className="size-4" />
+              <Button className="w-full rounded-full py-6 shadow-sm">
                 {dict.Buttons.book}
               </Button>
             </div>
