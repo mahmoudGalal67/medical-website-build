@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { ChevronDown } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function HeroSection() {
   const [loaded, setLoaded] = useState(false);
@@ -13,6 +14,86 @@ export default function HeroSection() {
     "/branches/pages/tweq.jpeg",
   ];
 
+
+  type Branch = {
+  img: string;
+  title: string;
+  href: string;
+  mobileOrder: string;
+  order: string;
+};
+
+const branches: Branch[] = [
+  {
+    img: "sanad.png",
+    title: "سند الجزيرة - فرع طويق",
+    href: "/branches/tweq",
+    mobileOrder: "order-1",
+    order: "md:order-1",
+  },
+  {
+    img: "sanad.png",
+    title: "سند الجزيرة - فرع المهدية",
+    href: "/branches/mahdya",
+    mobileOrder: "order-3",
+    order: "md:order-2",
+  },
+  {
+    img: "sanad.png",
+    title: "سند الجزيرة - فرع لبن",
+    href: "/branches/lbn",
+    mobileOrder: "order-5",
+    order: "md:order-3",
+  },
+  {
+    img: "carelogo.jpeg",
+    title: "مجمع الجزيرة كير الطبي",
+    href: "/branches/care",
+    mobileOrder: "order-2",
+    order: "md:order-4",
+  },
+  {
+    img: "hoda.png",
+    title: "دار الهدا الطبي",
+    href: "/branches/hoda",
+    mobileOrder: "order-4",
+    order: "md:order-5",
+  },
+  {
+    img: "khayalLogo.jpeg",
+    title: "دار الخيال الطبي",
+    href: "/branches/khayal",
+    mobileOrder: "order-6",
+    order: "md:order-6",
+  },
+];
+
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.8,
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: {
+    opacity: 0,
+    y: 40,
+    scale: 0.9,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+};
   useEffect(() => {
     const t = setTimeout(() => setLoaded(true), 100);
     return () => clearTimeout(t);
@@ -81,26 +162,50 @@ export default function HeroSection() {
         </div>
 
         <h1
-          className={`text-4xl sm:text-5xl text-center lg:text-5xl font-bold text-white leading-tight mb-6 transition-all duration-1000 delay-200 ${
+          className={`text-4xl sm:text-5xl text-center lg:text-5xl font-bold text-primary2 leading-tight mb-6 transition-all duration-1000 delay-200 ${
             loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
           مجموعة سند الجزيرة الطبية
-          <br />
-          <span className="text-[#dc3433]">
-            الجمال والعناية
-          </span>
+     
           <br />
           <span className="text-white/90 text-2xl sm:text-4xl lg:text-4xl font-light"></span>
         </h1>
+        <motion.div
+  variants={containerVariants}
+  initial="hidden"
+  animate={loaded ? "visible" : "hidden"}
+  className="mt-16 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-5"
+>
+  {branches.map((branch) => (
+    <motion.div
+      key={branch.title}
+      variants={cardVariants}
+      whileHover={{
+        y: -8,
+        scale: 1.05,
+      }}
+      className="bg-white border border-white/20 rounded-2xl p-5 flex flex-col items-center justify-center shadow-xl hover:border-[#dc3433]/60 transition-all"
+    >
+      <img
+         src={`/branches/${branch.img}`}
+        alt={branch.title}
+        className="w-24 h-24 object-contain mb-4"
+      />
+
+      <span className="text-primary font-semibold text-center">
+        {branch.title}
+      </span>
+    </motion.div>
+  ))}
+</motion.div>
 
         <p
-          className={`text-white/75 text-base sm:text-md max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed transition-all duration-1000 delay-300 ${
+          className={`text-white/75 text-center sm:text-md lg:px-[20%] mx-auto lg:mx-0 my-10 leading-relaxed transition-all duration-1000 delay-300 ${
             loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          نقدم علاجات أسنان وتجميل بمستوى عالمي، معتمدين على تقنيات متطورة
-          ورعاية تتسم بالاهتمام والتعاطف؛ فابتسامتك المثالية هي غايتنا
+          صحتك وصحة عائلتك في ايد أمينة في مجموعة سند الجزيرة الطبية رعاية متكاملة بوجود نخبة من الاطباء في ستة فروع متخصصة بالاضافة الي قسم الاشعة والمختبر
         </p>
 
         <div
@@ -110,16 +215,16 @@ export default function HeroSection() {
         >
           <button
             onClick={scrollToBranches}
-            className="inline-flex cursor-pointer items-center justify-center gap-2 bg-[#dc3433] hover:bg-[#c52d2c] text-white font-semibold px-8 py-3.5 rounded-full transition-all duration-300 shadow-lg shadow-[#dc3433]/30 hover:shadow-[#dc3433]/50 hover:-translate-y-0.5"
+            className="inline-flex cursor-pointer items-center justify-center gap-2 bg-[#dc3433] hover:bg-[#c52d2c] text-white font-semibold px-12 py-3.5 rounded-lg transition-all duration-300 shadow-lg shadow-[#dc3433]/30 hover:shadow-[#dc3433]/50 hover:-translate-y-0.5"
           >
-            اكتشف المزيد
+              اتصل بنا الان
           </button>
 
           <a
             href="#contact"
-            className="inline-flex items-center justify-center gap-2 border-2 border-white/40 hover:bg-[#dc3433] text-white hover:text-white font-semibold px-8 py-3.5 rounded-full transition-all duration-300 hover:-translate-y-0.5"
+            className="inline-flex items-center justify-center gap-2 border-2 border-white/40 hover:bg-[#dc3433] text-white hover:text-white font-semibold px-12 py-3.5 rounded-lg transition-all duration-300 hover:-translate-y-0.5"
           >
-            حجز موعد
+            حجز موعد واتساب
           </a>
         </div>
       </div>
