@@ -175,7 +175,7 @@ const cardVariants: Variants = {
   variants={containerVariants}
   initial="hidden"
   animate={loaded ? "visible" : "hidden"}
-  className="mt-16 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-5"
+  className="mt-16 grid grid-cols-2  md:grid-cols-3 xl:grid-cols-6 gap-5"
 >
   {branches.map((branch) => (
     <motion.div
@@ -185,7 +185,7 @@ const cardVariants: Variants = {
         y: -8,
         scale: 1.05,
       }}
-      className="bg-white border border-white/20 rounded-2xl p-5 flex flex-col items-center justify-center shadow-xl hover:border-[#dc3433]/60 transition-all"
+      className={`${branch.mobileOrder} ${branch.order} bg-white border border-white/20 rounded-2xl p-5 flex flex-col items-center justify-center shadow-xl hover:border-[#dc3433]/60 transition-all`}
     >
       <img
          src={`/branches/${branch.img}`}
