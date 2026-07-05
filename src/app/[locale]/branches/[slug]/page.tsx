@@ -23,7 +23,7 @@ const branches = [
       ar: "رعاية متقدمة   على يد أخصائيين يتمتعون بخبرة دولية، وباستخدام تقنيات تشخيصية حديثة وخطط علاجية تتمحور حول المريض.",
       en: "Advanced care delivered by specialists with international experience, using modern diagnostic technologies and patient-centered treatment plans.",
     },
-    logo: "/branches/pages/care.jpeg",
+    logo: "/branches/pages/care.png",
     doctors: 2,
     address: {
       ar: "محافظة ثادق، حي الخالدية، طريق الملك فهد",
