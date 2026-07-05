@@ -149,7 +149,6 @@ const uiText = {
     heroTitle: "عناية",
     heroTitleHighlight: "مميزة باحدث الاساليب الطبية",
     bookAppointment: "راسلنا واتساب",
-    contactBranch: "التواصل مع الفرع",
     ourLocation: "موقعنا",
     stats: { specialists: "متخصصون", patients: "مرضى", satisfaction: "إشباع" },
     aboutTitle: "عن الفرع",
@@ -189,7 +188,6 @@ const uiText = {
     heroTitle: "Distinguished",
     heroTitleHighlight: "Care with the Latest Medical Methods",
     bookAppointment: "Book Appointment",
-    contactBranch: "Contact Branch",
     ourLocation: "Our Location",
     stats: { specialists: "Specialists", patients: "Patients", satisfaction: "Satisfaction" },
     aboutTitle: "About the Branch",
@@ -269,13 +267,12 @@ export default async function Page({ params }: Props) {
               <p className="mt-6 text-lg text-slate-600 leading-8"></p>
 
               <div className="flex flex-wrap gap-4 mt-8">
-                <button className="bg-primary text-white px-8 py-4 rounded-xl font-medium">
+                <a
+                  href="tel:+966500000000"
+                  className="bg-primary text-white px-8 py-4 rounded-xl font-medium flex items-center justify-center"
+                >
                   {t.bookAppointment}
-                </button>
-
-                <button className="border px-8 py-4 rounded-xl font-medium">
-                  {t.contactBranch}
-                </button>
+                </a>
 
                 <a
                   href="#location"
