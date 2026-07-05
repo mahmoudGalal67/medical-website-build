@@ -3,135 +3,165 @@ export const reviews = [
     id: 1,
     name: "مريم",
     rating: 5,
-    date: "قبل 8 أشهر",
-    review:
-      "المستوصف قديم في الحي والمعروف لا يعرف. الشكر للإدارة لاختيارها الكوادر المؤهلة طبياً وإدارياً. تجربتنا مع الوالد مع الدكتور ماهر وهو من الكفاءات القديمة في المركز ومن أروع ما يكون، وكذلك من الاستقبال الأخت عبير قمة في الاحترام والذوق والأسلوب.",
+    date: { ar: "قبل 8 أشهر", en: "8 months ago" },
+    review: {
+      ar: "المستوصف قديم في الحي والمعروف لا يعرف. الشكر للإدارة لاختيارها الكوادر المؤهلة طبياً وإدارياً. تجربتنا مع الوالد مع الدكتور ماهر وهو من الكفاءات القديمة في المركز ومن أروع ما يكون، وكذلك من الاستقبال الأخت عبير قمة في الاحترام والذوق والأسلوب.",
+      en: "The clinic has long been established in the neighborhood and is well known. Thanks to the management for choosing medically and administratively qualified staff. Our experience with my father and Dr. Maher, one of the center's long-standing and most excellent specialists, was wonderful, and receptionist Abeer was the epitome of respect, taste, and professionalism.",
+    },
     likes: 2,
   },
   {
     id: 2,
     name: "Suda A",
     rating: 5,
-    date: "قبل 7 أشهر",
-    review:
-      "أفضل عيادة أسنان وتعاملهم ممتاز جداً، وأشكر مديرة المركز على حسن التعامل والاهتمام بالمراجعين. أنصح أي شخص يريد تقويم أسنان ألا يذهب إلى غير دار الهداء.",
+    date: { ar: "قبل 7 أشهر", en: "7 months ago" },
+    review: {
+      ar: "أفضل عيادة أسنان وتعاملهم ممتاز جداً، وأشكر مديرة المركز على حسن التعامل والاهتمام بالمراجعين. أنصح أي شخص يريد تقويم أسنان ألا يذهب إلى غير دار الهداء.",
+      en: "The best dental clinic with excellent service. I thank the center's manager for her great treatment and attention to patients. I recommend anyone wanting braces to go to Dar Al Hoda and nowhere else.",
+    },
     likes: 0,
   },
   {
     id: 3,
     name: "Asem Saad",
     rating: 5,
-    date: "قبل 5 أشهر",
-    review:
-      "أشكركم على التعامل الطيب والأمانة، وأخص بالشكر الدكتور أماني.",
+    date: { ar: "قبل 5 أشهر", en: "5 months ago" },
+    review: {
+      ar: "أشكركم على التعامل الطيب والأمانة، وأخص بالشكر الدكتور أماني.",
+      en: "Thank you for the kind and honest treatment, and special thanks to Dr. Amani.",
+    },
     likes: 0,
   },
   {
     id: 4,
     name: "BADER",
     rating: 5,
-    date: "قبل 3 أشهر",
-    review:
-      "من عرفت نفسي وأنا أراجع عند مستوصف الهداء للأسنان. شكراً خاص للدكتور رامي أفضل دكتور 👍، وأشكر مديرة المركز إيمان النعمي على جهودها، بصراحة المركز يستاهلون خمس نجوم.",
+    date: { ar: "قبل 3 أشهر", en: "3 months ago" },
+    review: {
+      ar: "من عرفت نفسي وأنا أراجع عند مستوصف الهداء للأسنان. شكراً خاص للدكتور رامي أفضل دكتور 👍، وأشكر مديرة المركز إيمان النعمي على جهودها، بصراحة المركز يستاهلون خمس نجوم.",
+      en: "I've been visiting Al Hoda Dental Clinic for as long as I can remember. Special thanks to Dr. Rami, the best doctor 👍, and thanks to the center's manager Eman Al Nuaimi for her efforts. Honestly, the center deserves five stars.",
+    },
     likes: 2,
   },
   {
     id: 5,
     name: "نورة",
     rating: 5,
-    date: "قبل 7 أشهر",
-    review:
-      "شكراً للدكتورة أماني، من أعماق قلبي شفاك صح لدرجة سويت لي سن وبعد 10 سنوات صار فيه مشكلة بسيطة ورجعت وسوته، شكراً لكِ حرفياً.",
+    date: { ar: "قبل 7 أشهر", en: "7 months ago" },
+    review: {
+      ar: "شكراً للدكتورة أماني، من أعماق قلبي شفاك صح لدرجة سويت لي سن وبعد 10 سنوات صار فيه مشكلة بسيطة ورجعت وسوته، شكراً لكِ حرفياً.",
+      en: "Thank you Dr. Amani, from the bottom of my heart, may God heal you. She did a tooth for me, and after 10 years a minor issue came up, I went back and she fixed it. Thank you, literally.",
+    },
     likes: 0,
   },
   {
     id: 6,
     name: "منى",
     rating: 5,
-    date: "قبل يوم واحد",
-    review:
-      "مرة أشكر بنت الاستقبال اللي كانت في يوم الجمعة وكيف تعاملت مع ضغط المرضى واللي بصراحة الله يرفع قدرها على روحها الحلوة رغم كل الظروف المعاكسة. تعاملت بكل احترافية معهم. مثال مشرف للبنات السعوديات، الله يجزاها كل خير، ودكتورة هدى ما قصرت مع أختي، الله يسعدهم.",
+    date: { ar: "قبل يوم واحد", en: "1 day ago" },
+    review: {
+      ar: "مرة أشكر بنت الاستقبال اللي كانت في يوم الجمعة وكيف تعاملت مع ضغط المرضى واللي بصراحة الله يرفع قدرها على روحها الحلوة رغم كل الظروف المعاكسة. تعاملت بكل احترافية معهم. مثال مشرف للبنات السعوديات، الله يجزاها كل خير، ودكتورة هدى ما قصرت مع أختي، الله يسعدهم.",
+      en: "I really want to thank the receptionist who was working on Friday and how she handled the pressure of patients — honestly, may God elevate her for her lovely spirit despite all the difficult circumstances. She handled everything very professionally. A wonderful example of Saudi women, may God reward her with all good. Dr. Huda also went above and beyond for my sister, may God make them happy.",
+    },
     likes: 0,
   },
   {
     id: 7,
     name: "Zahraa",
     rating: 5,
-    date: "قبل شهر",
-    review:
-      "الدكتورة آلاء رائعة بكل معنى الكلمة، علاجها يستحق الثناء والتقدير. إنها جديرة بالثقة ولطيفة. الحمد لله تم أشكرها، شكراً جزيلاً.",
+    date: { ar: "قبل شهر", en: "1 month ago" },
+    review: {
+      ar: "الدكتورة آلاء رائعة بكل معنى الكلمة، علاجها يستحق الثناء والتقدير. إنها جديرة بالثقة ولطيفة. الحمد لله تم أشكرها، شكراً جزيلاً.",
+      en: "Dr. Alaa is wonderful in every sense of the word; her treatment deserves praise and appreciation. She is trustworthy and kind. Thank God, I thank her very much.",
+    },
     likes: 1,
   },
   {
     id: 8,
     name: "M Fahad",
     rating: 5,
-    date: "قبل 8 أشهر",
-    review:
-      "كل الشكر للإدارة أيمان النعمي والاستقبال صالحة الشهري على جميع ما يقدمونه للمرضى، والمركز كامل من جهد وعمل. ولا ننسى الدكتورة أماني على جميع ما تقدمه من مجهود ورعاية للمرضى، كل الاحترام والتقدير.",
+    date: { ar: "قبل 8 أشهر", en: "8 months ago" },
+    review: {
+      ar: "كل الشكر للإدارة أيمان النعمي والاستقبال صالحة الشهري على جميع ما يقدمونه للمرضى، والمركز كامل من جهد وعمل. ولا ننسى الدكتورة أماني على جميع ما تقدمه من مجهود ورعاية للمرضى، كل الاحترام والتقدير.",
+      en: "All thanks to management Eman Al Nuaimi and receptionist Saleha Al Shehri for everything they provide to patients — the center is full of effort and hard work. We also don't forget Dr. Amani for all the effort and care she provides to patients. All respect and appreciation.",
+    },
     likes: 0,
   },
   {
     id: 9,
     name: "خالد",
     rating: 5,
-    date: "قبل 8 أشهر",
-    review:
-      "المستوصف يجنن والبنات السعوديات والله أنهم عسل أسلوب وتعامل، ولكن دكتور سماح حقت التقويم تعاملت معه زفت... شكراً أبداً للمديرة اللي تجبر الخاطر.",
+    date: { ar: "قبل 8 أشهر", en: "8 months ago" },
+    review: {
+      ar: "المستوصف يجنن والبنات السعوديات والله أنهم عسل أسلوب وتعامل، ولكن دكتور سماح حقت التقويم تعاملت معه زفت... شكراً أبداً للمديرة اللي تجبر الخاطر.",
+      en: "The clinic is amazing and the Saudi staff, I swear, are sweet in manner and treatment. However, my experience with the orthodontics doctor was not good... but many thanks to the manager who made things right.",
+    },
     likes: 4,
   },
   {
     id: 10,
     name: "سارة",
     rating: 5,
-    date: "قبل شهرين",
-    review:
-      "الريسبشن كانت مرة عسل وتعاملها جداً راقي، للأسف نسيت اسمها. وتجربتي العلاجية حلوة ومريحة، والدكتورة الإنجين وبعدها هدى جداً خفيفة، تبارك الرحمن.",
+    date: { ar: "قبل شهرين", en: "2 months ago" },
+    review: {
+      ar: "الريسبشن كانت مرة عسل وتعاملها جداً راقي، للأسف نسيت اسمها. وتجربتي العلاجية حلوة ومريحة، والدكتورة الإنجين وبعدها هدى جداً خفيفة، تبارك الرحمن.",
+      en: "The receptionist was so sweet and her manner was very refined, unfortunately I forgot her name. My treatment experience was pleasant and comfortable, and Dr. Enjeen, then Dr. Huda, were very gentle, God bless.",
+    },
     likes: 1,
   },
   {
     id: 11,
     name: "Amany Eldeeb",
     rating: 5,
-    date: "قبل 4 أشهر",
-    review:
-      "عيادة الأطفال ولا أروع، بارك الله في دكتورة بسمة، الله يحفظها ويبارك في علمها.",
+    date: { ar: "قبل 4 أشهر", en: "4 months ago" },
+    review: {
+      ar: "عيادة الأطفال ولا أروع، بارك الله في دكتورة بسمة، الله يحفظها ويبارك في علمها.",
+      en: "The pediatric clinic is wonderful, may God bless Dr. Basma, may He protect her and bless her knowledge.",
+    },
     likes: 0,
   },
   {
     id: 12,
     name: "نهلة الحربي",
     rating: 5,
-    date: "قبل 4 أشهر",
-    review:
-      "صراحة أفضل عيادة بالليزر وتنظيف البشرة، أنصحكم فيهم وبقوتهم. 🤍🤍",
+    date: { ar: "قبل 4 أشهر", en: "4 months ago" },
+    review: {
+      ar: "صراحة أفضل عيادة بالليزر وتنظيف البشرة، أنصحكم فيهم وبقوتهم. 🤍🤍",
+      en: "Honestly the best clinic for laser and skin cleansing treatments, I highly recommend them and their effectiveness. 🤍🤍",
+    },
     likes: 1,
   },
   {
     id: 13,
     name: "Mohand kamil",
     rating: 5,
-    date: "قبل شهرين",
-    review:
-      "دار الخيال الطبي ممتاز جداً، تعامل راقٍ واهتمام كبير. نشكر دكتورة ريم محمود على التعامل الراقي.",
+    date: { ar: "قبل شهرين", en: "2 months ago" },
+    review: {
+      ar: "دار الخيال الطبي ممتاز جداً، تعامل راقٍ واهتمام كبير. نشكر دكتورة ريم محمود على التعامل الراقي.",
+      en: "Dar Al Khayal Medical Center is excellent, with refined treatment and great attention. We thank Dr. Reem Mahmoud for her professional and courteous manner.",
+    },
     likes: 0,
   },
   {
     id: 14,
     name: "أبو لمياء",
     rating: 5,
-    date: "قبل 4 أشهر",
-    review:
-      "تمت مراجعتي اليوم، أفضل دكتورة أسنان منى منصور، أخصائية الباطنية، من أروع من قابلت من حيث حسن الأدب والأخلاق، وحسن التعامل والشرح لكل التفاصيل. بصراحة جداً أنصح الجميع بمراجعتها. كذلك أشكر جميع الموظفين بما فيهم من كل أعماق قلبي، كل الشكر والاحترام والتقدير، وأتمنى لها التوفيق من خالص أعماق فؤادي.",
+    date: { ar: "قبل 4 أشهر", en: "4 months ago" },
+    review: {
+      ar: "تمت مراجعتي اليوم، أفضل دكتورة أسنان منى منصور، أخصائية الباطنية، من أروع من قابلت من حيث حسن الأدب والأخلاق، وحسن التعامل والشرح لكل التفاصيل. بصراحة جداً أنصح الجميع بمراجعتها. كذلك أشكر جميع الموظفين بما فيهم من كل أعماق قلبي، كل الشكر والاحترام والتقدير، وأتمنى لها التوفيق من خالص أعماق فؤادي.",
+      en: "I had my appointment today. Dr. Mona Mansour, an internal medicine specialist, is one of the most wonderful people I've met in terms of manners, ethics, and how she explains every detail. I honestly recommend everyone see her. I also thank all the staff from the bottom of my heart, with all thanks, respect, and appreciation, and I wish her every success from the depths of my heart.",
+    },
     likes: 1,
   },
   {
     id: 15,
     name: "فهد",
     rating: 5,
-    date: "قبل شهرين",
-    review:
-      "دار الخيال الطبي ممتاز جداً، تعامل راقٍ واهتمام كبير. نشكر دكتورة ريم محمود على التعامل الراقي.",
+    date: { ar: "قبل شهرين", en: "2 months ago" },
+    review: {
+      ar: "دار الخيال الطبي ممتاز جداً، تعامل راقٍ واهتمام كبير. نشكر دكتورة ريم محمود على التعامل الراقي.",
+      en: "Dar Al Khayal Medical Center is excellent, with refined treatment and great attention. We thank Dr. Reem Mahmoud for her professional and courteous manner.",
+    },
     likes: 0,
   },
 ];
