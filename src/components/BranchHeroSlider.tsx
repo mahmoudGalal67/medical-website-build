@@ -24,13 +24,13 @@ export default function BranchHeroSlider({ cover }: Props) {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % images.length);
-    }, 3000);
+    }, 2000);
 
     return () => clearInterval(timer);
   }, [images.length]);
 
   return (
-    <div className="relative h-[500px] w-full overflow-hidden rounded-3xl">
+    <div className="relative h-[600px] w-full overflow-hidden rounded-3xl">
       {images.map((img, index) => (
         <Image
           key={index}
