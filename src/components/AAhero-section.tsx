@@ -115,9 +115,13 @@ export default function HeroSection() {
 
   const images = [
     "/branches/pages/tweq.jpeg",
-    "/branches/pages/tweq.jpeg",
-    "/branches/pages/tweq.jpeg",
-    "/branches/pages/tweq.jpeg",
+    "/gallary/gallary1.jpeg",
+    "/gallary/gallary2.jpeg",
+    "/gallary/gallary3.jpeg",
+    "/gallary/gallary4.jpeg",
+    "/gallary/gallary5.jpeg",
+    "/gallary/gallary6.jpeg",
+    "/gallary/gallary7.jpeg"
   ];
 
   useEffect(() => {
