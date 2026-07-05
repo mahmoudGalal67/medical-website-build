@@ -34,7 +34,7 @@ const branches = [
   {
     id: "2",
     slug: "tweq",
-    title: { ar: "سند الجزيرة فرع طويق", en: "Sanad Aljazeera - Tuwaiq Branch" },
+    title: { ar: "مجمع سند الجزيرة فرع طويق", en: "Sanad Aljazeera - Tuwaiq Branch" },
     desc: {
       ar: "رعاية متقدمة   على يد أخصائيين يتمتعون بخبرة دولية، وباستخدام تقنيات تشخيصية حديثة وخطط علاجية تتمحور حول المريض.",
       en: "Advanced care delivered by specialists with international experience, using modern diagnostic technologies and patient-centered treatment plans.",
@@ -50,7 +50,7 @@ const branches = [
   {
     id: "3",
     slug: "khayal",
-    title: { ar: "دار الخيال الطبي", en: "Dar Al Khayal Medical Center" },
+    title: { ar: "مجمع دار الخيال الطبي", en: "Dar Al Khayal Medical Center" },
     desc: {
       ar: "رعاية متقدمة   على يد أخصائيين يتمتعون بخبرة دولية، وباستخدام تقنيات تشخيصية حديثة وخطط علاجية تتمحور حول المريض.",
       en: "Advanced care delivered by specialists with international experience, using modern diagnostic technologies and patient-centered treatment plans.",
@@ -63,7 +63,7 @@ const branches = [
   {
     id: "4",
     slug: "hoda",
-    title: { ar: " دار الهدا الطبي", en: "Dar Al Hoda Medical Center" },
+    title: { ar: "مجمع دار الهدا الطبي", en: "Dar Al Hoda Medical Center" },
     desc: {
       ar: "رعاية متقدمة   على يد أخصائيين يتمتعون بخبرة دولية، وباستخدام تقنيات تشخيصية حديثة وخطط علاجية تتمحور حول المريض.",
       en: "Advanced care delivered by specialists with international experience, using modern diagnostic technologies and patient-centered treatment plans.",
@@ -76,7 +76,7 @@ const branches = [
   {
     id: "5",
     slug: "mahdya",
-    title: { ar: "سند الجزيرة فرع المهدية", en: "Sanad Aljazeera - Al Mahdiyah Branch" },
+    title: { ar: "مجمع سند الجزيرة فرع المهدية", en: "Sanad Aljazeera - Al Mahdiyah Branch" },
     desc: {
       ar: "رعاية متقدمة   على يد أخصائيين يتمتعون بخبرة دولية، وباستخدام تقنيات تشخيصية حديثة وخطط علاجية تتمحور حول المريض.",
       en: "Advanced care delivered by specialists with international experience, using modern diagnostic technologies and patient-centered treatment plans.",
@@ -89,7 +89,7 @@ const branches = [
   {
     id: "6",
     slug: "lbn",
-    title: { ar: "سند الجزيرة فرع لبن", en: "Sanad Aljazeera - Laban Branch" },
+    title: { ar: "مجمع سند الجزيرة فرع لبن", en: "Sanad Aljazeera - Laban Branch" },
     desc: {
       ar: "رعاية متقدمة   على يد أخصائيين يتمتعون بخبرة دولية، وباستخدام تقنيات تشخيصية حديثة وخطط علاجية تتمحور حول المريض.",
       en: "Advanced care delivered by specialists with international experience, using modern diagnostic technologies and patient-centered treatment plans.",
