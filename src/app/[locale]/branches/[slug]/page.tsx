@@ -96,7 +96,7 @@ const branches = [
     },
     logo: "/branches/pages/lbn.jpeg",
     doctors: 6,
-    address: { ar: "حي ظهرة لبن، حي عسير", en: "Dhahrat Laban District, Asir District" },
+    address: { ar: "حي لبن شارع عسير", en: "Laban neighborhood, Asir Street" },
     location: 'https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3627.0748994759865!2d46.5330276753632!3d24.62110327808628!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjTCsDM3JzE2LjAiTiA0NsKwMzInMDguMiJF!5e0!3m2!1sen!2seg!4v1783178687747!5m2!1sen!2seg'
   },
 ];
