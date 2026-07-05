@@ -39,6 +39,10 @@ const navLinks: {
     ar: { title: " دار الهدا الطبي", href: "ar/branches/hoda" },
   },
   {
+    en: { title: "Offers", href: "en/offers" },
+    ar: { title: "العروض", href: "ar/offers" },
+  },
+  {
     en: { title: "Insurance", href: "#" },
     ar: { title: "التأمينات", href: "#" },
   },
@@ -147,7 +151,7 @@ export function SiteHeader() {
           scrolled ? "shadow-md" : "shadow-none"
         }`}
       >
-        <div className="mx-auto flex h-26 max-w-8xl items-center justify-between px-4 sm:px-6 md:px-10 xl:px-6 2xl:px-12">
+        <div className="mx-auto flex h-26 max-w-8xl items-center justify-between px-3 sm:px-6 md:px-8 xl:px-4 2xl:px-10">
           {/* Logo */}
           <Link
             href={`/${locale}`}
@@ -163,13 +167,13 @@ export function SiteHeader() {
           </Link>
 
           {/* Desktop Navigation + CTA */}
-          <div className="hidden min-w-0 flex-1 items-center overflow-hidden px-3 xl:flex">
-            <nav className="flex w-full flex-nowrap items-center justify-between gap-x-2 py-2 2xl:gap-x-4">
+          <div className="hidden min-w-0 flex-1 items-center overflow-hidden px-1.5 xl:flex">
+            <nav className="flex w-full flex-nowrap items-center justify-between gap-x-1 py-2 lg:gap-x-1.5 2xl:gap-x-2.5">
               {navLinks.map((link) => (
                 <Link
                   key={link[locale].href}
                   href={`/${link[locale].href}`.replace(/\/{2,}/g, "/")}
-                  className="group relative shrink-0 whitespace-nowrap py-2 text-[11px] font-medium text-foreground/80 transition-colors hover:text-primary xl:text-xs 2xl:text-sm"
+                  className="group relative shrink-0 whitespace-nowrap py-2 text-[10px] font-medium text-foreground/80 transition-colors hover:text-primary xl:text-[11px] 2xl:text-xs"
                 >
                   {link[locale].title}
                   <span className="absolute inset-x-0 -bottom-0.5 h-0.5 origin-center scale-x-0 rounded-full bg-primary transition-transform duration-300 group-hover:scale-x-100" />
