@@ -1,12 +1,21 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
+type Lang = "ar" | "en";
+
+const altText = {
+  ar: "طبيب",
+  en: "Doctor",
+};
+
 export default function DoctorCard({
   i,
   params,
+  locale = "ar",
 }: {
   i: number;
   params?: string;
+  locale?: Lang;
 }) {
   const easeCurve: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
@@ -43,7 +52,7 @@ export default function DoctorCard({
         >
           <Image
             src={`/doctors/${params}/${i + 1}.jpeg`}
-            alt={`Doctor ${i + 1}`}
+            alt={`${altText[locale]} ${i + 1}`}
             width={400}
             height={600}
             className="w-full h-auto object-cover"
