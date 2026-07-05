@@ -5,12 +5,11 @@
         "description": "Advanced medical care with compassion and excellence."
     },
     "Buttons": {
-        "book": "Book Appointment",
+        "book": "Message us on WhatsApp",
         "findDoctor": "Find a Doctor",
         "findTime": "Find Available Time",
         "view": "View All",
         "cancel": "Cancel"
-
     },
     "heroBookingForm":{
         "title": "Book Your Appointment",
