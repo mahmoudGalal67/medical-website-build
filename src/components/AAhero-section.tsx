@@ -18,21 +18,21 @@ type Branch = {
 const branches: Branch[] = [
   {
     img: "sanad.png",
-    title: { ar: "سند الجزيرة - فرع طويق", en: "Sanad Aljazeera - Tuwaiq Branch" },
+    title: { ar: "مجمع سند الجزيرة - فرع طويق", en: "Sanad Aljazeera - Tuwaiq Branch" },
     href: "branches/tweq",
     mobileOrder: "order-1",
     order: "md:order-1",
   },
   {
     img: "sanad.png",
-    title: { ar: "سند الجزيرة - فرع المهدية", en: "Sanad Aljazeera - Al Mahdiyah Branch" },
+    title: { ar: "مجمع سند الجزيرة - فرع المهدية", en: "Sanad Aljazeera - Al Mahdiyah Branch" },
     href: "branches/mahdya",
     mobileOrder: "order-3",
     order: "md:order-2",
   },
   {
     img: "sanad.png",
-    title: { ar: "سند الجزيرة - فرع لبن", en: "Sanad Aljazeera - Laban Branch" },
+    title: { ar: "مجمع سند الجزيرة - فرع لبن", en: "Sanad Aljazeera - Laban Branch" },
     href: "branches/lbn",
     mobileOrder: "order-5",
     order: "md:order-3",
@@ -46,14 +46,14 @@ const branches: Branch[] = [
   },
   {
     img: "hoda.png",
-    title: { ar: "دار الهدا الطبي", en: "Dar Al Hoda Medical Center" },
+    title: { ar: "مجمع دار الهدا الطبي", en: "Dar Al Hoda Medical Center" },
     href: "branches/hoda",
     mobileOrder: "order-4",
     order: "md:order-5",
   },
   {
     img: "khayalLogo.jpeg",
-    title: { ar: "دار الخيال الطبي", en: "Dar Al Khayal Medical Center" },
+    title: { ar: "مجمع دار الخيال الطبي", en: "Dar Al Khayal Medical Center" },
     href: "branches/khayal",
     mobileOrder: "order-6",
     order: "md:order-6",
