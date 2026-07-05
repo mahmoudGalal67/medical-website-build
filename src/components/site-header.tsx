@@ -16,15 +16,15 @@ const navLinks: {
   { en: { title: "Home", href: "/" }, ar: { title: "الرئيسية", href: "/" } },
   {
     en: { title: "sanad el-jezera taweq", href: "en/branches/tweq" },
-    ar: { title: "سند الجزيرة فرع طويق", href: "ar/branches/tweq" },
+    ar: { title: "مجمع سند الجزيرة فرع طويق", href: "ar/branches/tweq" },
   },
   {
     en: { title: "sanad el-jezera mahdya", href: "en/branches/mahdya" },
-    ar: { title: "سند الجزيرة فرع المهدية", href: "ar/branches/mahdya" },
+    ar: { title: "مجمع سند الجزيرة فرع المهدية", href: "ar/branches/mahdya" },
   },
   {
     en: { title: "sanad el--jezera lbn", href: "en/branches/lbn" },
-    ar: { title: "سند الجزيرة فرع لبن", href: "ar/branches/lbn" },
+    ar: { title: "مجمع سند الجزيرة فرع لبن", href: "ar/branches/lbn" },
   },
   {
     en: { title: "sade el-jezera care", href: "en/branches/care" },
@@ -32,11 +32,11 @@ const navLinks: {
   },
   {
     en: { title: "dar el-khyal", href: "en/branches/khayal" },
-    ar: { title: "دار الخيال الطبي", href: "ar/branches/khayal" },
+    ar: { title: "مجمع دار الخيال الطبي", href: "ar/branches/khayal" },
   },
   {
     en: { title: "dar el-hoda", href: "en/branches/hoda" },
-    ar: { title: " دار الهدا الطبي", href: "ar/branches/hoda" },
+    ar: { title: "مجمع دار الهدا الطبي", href: "ar/branches/hoda" },
   },
   {
     en: { title: "Offers", href: "en/offers" },
@@ -211,7 +211,7 @@ export function SiteHeader() {
                 </Button>
               </Link>
               <Button size="sm" className="rounded-full px-4 shadow-sm">
-                {locale === "en" ? "Book" : "احجز"}
+                {locale === "en" ? "Book" : "راسلنا واتساب"}
               </Button>
             </div>
 
