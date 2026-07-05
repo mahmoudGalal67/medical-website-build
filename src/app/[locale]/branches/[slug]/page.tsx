@@ -6,8 +6,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-import Image from "next/image";
-
 import DoctorsSection from "@/components/doctors-section";
 import TestimonialsSection from "@/components/AAtestimonials-section";
 import GallerySection from "@/components/AAgallary-section";
@@ -21,7 +19,7 @@ const branches = [
     desc: "رعاية متقدمة   على يد أخصائيين يتمتعون بخبرة دولية، وباستخدام تقنيات تشخيصية حديثة وخطط علاجية تتمحور حول المريض.",
     logo: "/branches/pages/care.jpeg",
     doctors: 2,
-    description: "",
+    address: "محافظة ثادق، حي الخالدية، طريق الملك فهد",
     location:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.5301159142036!2d45.8607969!3d25.2863875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2bc1037acc120b%3A0x133471c5b9890ee5!2z2YXYrNmF2Lkg2KfZhNis2LLYqNix2Kkg2YPZitixINin2YTYt9io2Yo!5e0!3m2!1sar!2seg!4v1783178785468!5m2!1sar!2seg",
   },
@@ -32,29 +30,29 @@ const branches = [
     desc: "رعاية متقدمة   على يد أخصائيين يتمتعون بخبرة دولية، وباستخدام تقنيات تشخيصية حديثة وخطط علاجية تتمحور حول المريض.",
     logo: "/branches/pages/tweq.jpeg",
     doctors: 10,
-    description: "",
+    address: "شارع خديجة بنت خويلد، أمام القرية الشعبية",
     location:
       "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3628.1568057331287!2d46.580284075362044!3d24.58378407811085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjTCsDM1JzAxLjYiTiA0NsKwMzQnNTguMyJF!5e0!3m2!1sen!2seg!4v1783178414958!5m2!1sen!2seg",
   },
   {
     id: "3",
     slug: "khayal",
-    title: "دار الخيال",
+    title: "دار الخيال الطبي",
     desc: "رعاية متقدمة   على يد أخصائيين يتمتعون بخبرة دولية، وباستخدام تقنيات تشخيصية حديثة وخطط علاجية تتمحور حول المريض.",
     logo: "/branches/pages/khayal.jpeg",
     doctors: 8,
-    description: "",
+    address: "طويق، شارع خديجة بنت خويلد",
     location:
       "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3628.2607342403053!2d46.54438397536189!3d24.58019637811336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjTCsDM0JzQ4LjciTiA0NsKwMzInNDkuMSJF!5e0!3m2!1sen!2seg!4v1783178657254!5m2!1sen!2seg",
   },
   {
     id: "4",
     slug: "hoda",
-    title: " دار الهدا",
+    title: " دار الهدا الطبي",
     desc: "رعاية متقدمة   على يد أخصائيين يتمتعون بخبرة دولية، وباستخدام تقنيات تشخيصية حديثة وخطط علاجية تتمحور حول المريض.",
     logo: "/branches/pages/hoda.jpeg",
     doctors: 3,
-    description: "",
+    address: "حي طويق، شارع بلال بن رباح",
     location:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3628.118019090726!2d46.567173399999994!3d24.585122899999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f19a44c021647%3A0x45da4f842e337a88!2z2YXYrNmF2Lkg2K_Yp9ixINin2YTZh9iv2KfYoSDZhNi32Kgg2YjYqtmC2YjZitmFINin2YTYp9iz2YbYp9mG!5e0!3m2!1sen!2seg!4v1783178746436!5m2!1sen!2seg",
   },
@@ -65,7 +63,7 @@ const branches = [
     desc: "رعاية متقدمة   على يد أخصائيين يتمتعون بخبرة دولية، وباستخدام تقنيات تشخيصية حديثة وخطط علاجية تتمحور حول المريض.",
     logo: "/branches/pages/mahdya.jpeg",
     doctors: 5,
-    description: "",
+    address: "شارع تقي الدين",
     location:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3626.099288896348!2d46.5224044!3d24.6547105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f1f8b044d182d%3A0xa69f981c49107343!2z2YXYrNmF2Lkg2LnZitin2K_Yp9iqINiz2YbYryDYp9mE2KzYstmK2LHYqSDYp9mE2LfYqNmK!5e0!3m2!1sen!2seg!4v1783178718485!5m2!1sen!2seg",
   },
@@ -76,7 +74,7 @@ const branches = [
     desc: "رعاية متقدمة   على يد أخصائيين يتمتعون بخبرة دولية، وباستخدام تقنيات تشخيصية حديثة وخطط علاجية تتمحور حول المريض.",
     logo: "/branches/pages/lbn.jpeg",
     doctors: 6,
-    description: "",
+    address: "حي ظهرة لبن، حي عسير",
     location:
       "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3627.0748994759865!2d46.5330276753632!3d24.62110327808628!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjTCsDM3JzE2LjAiTiA0NsKwMzInMDguMiJF!5e0!3m2!1sen!2seg!4v1783178687747!5m2!1sen!2seg",
   },
@@ -217,7 +215,7 @@ export default async function Page({ params }: Props) {
               </h3>
 
               <p className="text-slate-600 mt-4 leading-8">
-                مُجهَّز بأحدث التقنيات للتشخيص والعلاج الدقيق.
+                مُجهَّز بأحدث التقنيات للتشخيص والعلاج الدقيق.
               </p>
             </div>
           </div>
@@ -324,6 +322,32 @@ export default async function Page({ params }: Props) {
           <button className="bg-white text-primary px-10 py-4 rounded-xl mt-8 font-semibold">
             حجز موعد
           </button>
+        </div>
+      </section>
+
+      {/* Google Map */}
+      <section id="location" className="pb-24 my-16">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <h2 className="text-4xl text-primary2 font-bold">موقعنا</h2>
+            <p
+              className="mt-4 text-lg font-semibold"
+              style={{ color: "#dc3433" }}
+            >
+              {branch?.address}
+            </p>
+          </div>
+
+          <div className="overflow-hidden rounded-3xl shadow-2xl">
+            <iframe
+              className="h-[450px] w-full border-0"
+              src={branch?.location}
+              title="Google Map"
+              loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
+          </div>
         </div>
       </section>
     </div>

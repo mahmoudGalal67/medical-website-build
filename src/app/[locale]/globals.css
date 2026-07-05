@@ -152,7 +152,9 @@ html[lang="en"] body {
 .swiper {
   padding-bottom: 55px;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 .swiper-button-next,
 .swiper-button-prev {
   color: var(--primary2);
