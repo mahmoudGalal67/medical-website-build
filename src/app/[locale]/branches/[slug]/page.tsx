@@ -126,7 +126,7 @@ export default async function Page({ params }: Props) {
                   التواصل مع الفرع
                 </button>
 
-                
+                <a
                   href="#location"
                   className="border px-8 py-4 rounded-xl font-medium flex items-center justify-center"
                 >
