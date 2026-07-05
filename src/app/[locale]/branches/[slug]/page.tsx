@@ -11,7 +11,6 @@ import Image from "next/image";
 
 import DoctorsSection from "@/components/doctors-section";
 import TestimonialsSection from "@/components/AAtestimonials-section";
-
 const branches = [
   {
     id: "1",
