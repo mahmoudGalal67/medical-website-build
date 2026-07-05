@@ -16,7 +16,7 @@ export default function BranchHeroSlider({ cover }: Props) {
     "/gallary/gallary4.jpeg",
     "/gallary/gallary5.jpeg",
     "/gallary/gallary6.jpeg",
-    "/gallary/gallary7.jpeg",
+    "/gallary/gallary7.jpeg"
   ];
 
   const [current, setCurrent] = useState(0);
