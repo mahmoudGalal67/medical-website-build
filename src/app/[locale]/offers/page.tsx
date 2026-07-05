@@ -570,27 +570,6 @@ export default function AllOffersPage() {
           })}
         </div>
 
-        {/* Contact footer */}
-        <div className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-4 text-center">
-          <a
-            href="tel:0555076023"
-            className="flex items-center gap-2 text-primary2 font-semibold hover:text-primary transition-colors"
-          >
-            <Phone size={16} />
-            0555076023
-          </a>
-          <span className="hidden sm:inline text-gray-300">|</span>
-          <a
-            href="https://instagram.com/Sanad_aljazeera"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-primary2 font-semibold hover:text-primary transition-colors"
-          >
-            Sanad_aljazeera
-          </a>
-          <span className="hidden sm:inline text-gray-300">|</span>
-          <span className="text-gray-500 text-sm">{t.payment}</span>
-        </div>
       </div>
     </section>
   );
