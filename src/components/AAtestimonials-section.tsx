@@ -1,17 +1,41 @@
 "use client";
 
 import { useIntersection } from "@/hooks/use-intersection";
+import { useParams } from "next/navigation";
 import { reviews } from "@/data/reviwes";
 import { Quote, Star } from "lucide-react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
+type Lang = "ar" | "en";
+
+const uiText = {
+  ar: {
+    kicker: "قصص المرضى",
+    heading: "ما يقوله مرضانا",
+    subheading: "تجارب حقيقية لمرضى حقيقيين وضعوا ثقتهم بنا وبابتساماتهم.",
+  },
+  en: {
+    kicker: "Patient Stories",
+    heading: "What Our Patients Say",
+    subheading: "Real experiences from real patients who trusted us with their smiles.",
+  },
+};
+
 export default function TestimonialsSection() {
   const { ref, isVisible } = useIntersection(0.15);
+  const params = useParams();
+  const locale: Lang = params.locale === "en" ? "en" : "ar";
+  const isRTL = locale === "ar";
+  const t = uiText[locale];
 
   return (
-    <section className="bg-gradient-to-br from-primary via-primary to-primary2 py-24 overflow-hidden" id="testimonials">
+    <section
+      className="bg-gradient-to-br from-primary via-primary to-primary2 py-24 overflow-hidden"
+      id="testimonials"
+      dir={isRTL ? "rtl" : "ltr"}
+    >
       <div className="max-w-7xl mx-auto px-4" ref={ref}>
         <div
           className={`text-center mb-14 transition-all duration-700 ${
@@ -21,15 +45,15 @@ export default function TestimonialsSection() {
           }`}
         >
           <span className="text-primary2 text-sm font-semibold uppercase tracking-widest">
-            قصص المرضى
+            {t.kicker}
           </span>
 
           <h2 className="text-3xl sm:text-4xl font-bold text-white mt-2">
-            ما يقوله مرضانا
+            {t.heading}
           </h2>
 
           <p className="text-purple-200/70 mt-3 max-w-xl mx-auto">
-            تجارب حقيقية لمرضى حقيقيين وضعوا ثقتهم بنا وبابتساماتهم.
+            {t.subheading}
           </p>
         </div>
 
@@ -43,6 +67,7 @@ export default function TestimonialsSection() {
             delay: 4500,
             disableOnInteraction: false,
           }}
+          dir={isRTL ? "rtl" : "ltr"}
           breakpoints={{
             0: {
               slidesPerView: 1,
@@ -61,7 +86,9 @@ export default function TestimonialsSection() {
 
                 <Quote
                   size={36}
-                  className="absolute top-6 left-6 text-primary2"
+                  className={`absolute top-6 text-primary2 ${
+                    isRTL ? "left-6" : "right-6"
+                  }`}
                 />
 
                 <div className="flex gap-1 mb-5">
@@ -75,7 +102,7 @@ export default function TestimonialsSection() {
                 </div>
 
                 <p className="text-white/90 leading-8 mb-8 min-h-[170px]">
-                  "{review.review}"
+                  "{review.review[locale]}"
                 </p>
 
                 <div className="border-t border-white/10 pt-5 flex items-center justify-between">
@@ -85,7 +112,7 @@ export default function TestimonialsSection() {
                     </h4>
 
                     <span className="text-sm text-white/60">
-                      {review.date}
+                      {review.date[locale]}
                     </span>
                   </div>
 
