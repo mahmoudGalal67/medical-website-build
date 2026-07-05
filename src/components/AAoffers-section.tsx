@@ -141,7 +141,7 @@ export default function LabOffersSection() {
 
   return (
     <section
-      id="lab-offers"
+      id="offers"
       className="bg-gradient-to-t from-primary/80 to-transparent py-24"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6" ref={ref}>
