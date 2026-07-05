@@ -1,11 +1,12 @@
 "use client";
 
 import { useIntersection } from "@/hooks/use-intersection";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 
-import { Phone, Mail, MapPin, Clock, ChevronLeft } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, ChevronLeft, ChevronUp } from "lucide-react";
 
 import { FaInstagram, FaTiktok, FaSnapchat } from "react-icons/fa6";
 
@@ -82,6 +83,9 @@ export default function FooterSection() {
   const locale: Lang = params.locale === "en" ? "en" : "ar";
   const isRTL = locale === "ar";
   const t = content[locale];
+  const [showScrollTop,setShowScrollTop]=useState(false);
+  useEffect(()=>{const h=()=>setShowScrollTop(window.scrollY>400);window.addEventListener("scroll",h);return ()=>window.removeEventListener("scroll",h);},[]);
+  const scrollToTop=()=>window.scrollTo({top:0,behavior:"smooth"});
 
   return (
     <footer
@@ -276,6 +280,7 @@ export default function FooterSection() {
           </div>
         </div>
       </div>
+    <button onClick={scrollToTop} className={`fixed bottom-6 ${isRTL?"left-6":"right-6"} z-50 flex h-14 w-14 items-center justify-center rounded-full bg-primary2 text-white shadow-xl transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:bg-primary ${showScrollTop?"opacity-100 translate-y-0":"pointer-events-none opacity-0 translate-y-4"}`}><ChevronUp size={24}/></button>
     </footer>
   );
 }
