@@ -125,7 +125,8 @@ export default async function Page({ params }: Props) {
                 <button className="border px-8 py-4 rounded-xl font-medium">
                   التواصل مع الفرع
                 </button>
-                                
+
+                
                   href="#location"
                   className="border px-8 py-4 rounded-xl font-medium flex items-center justify-center"
                 >
@@ -369,7 +370,8 @@ export default async function Page({ params }: Props) {
           </button>
         </div>
       </section>
-       {/* Google Map */}
+
+      {/* Google Map */}
       <section id="location" className="pb-24 my-16">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center mb-8">
