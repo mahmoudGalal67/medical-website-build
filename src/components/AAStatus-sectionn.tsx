@@ -9,21 +9,21 @@ const stats = [
     value: 50000,
     suffix: "+",
     label: "عدد المراجعين منذ الافتتاح",
-    color: "#367F8B",
+    color: "var(--primary)",
     progress: 97,
   },
   {
     value: 9.4,
     decimals: 1,
     label: "تقييم المراجعين",
-    color: "#7A1F3D",
+    color: "var(--primary2)",
     progress: 94,
   },
   {
     value: 97,
     suffix: "%",
     label: "جودة الخدمات المقدمة",
-    color: "#367F8B",
+    color: "var(--primary)",
     progress: 97,
   },
   {
@@ -31,7 +31,7 @@ const stats = [
     suffix: "+",
     secondLine: "عام",
     label: "خبرات الأطباء",
-    color: "#7A1F3D",
+    color: "var(--primary2)",
     progress: 96,
   },
 ];

@@ -179,9 +179,7 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <p className="font-semibold">ساعات العمل</p>
-                    <p className="text-cyan-100">من السبت إلى الخميس</p>
-                    <p className="text-cyan-100">8:00 صباحاً - 10:00 مساءً</p>
+                    <p className="font-semibold">طوارئ على مدار الساعة (24/7)</p>
                   </div>
                 </div>
               </div>

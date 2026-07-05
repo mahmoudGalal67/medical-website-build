@@ -1,5 +1,4 @@
 import { Heart, ShieldPlus, CheckCircle2, Building2 } from "lucide-react";
-
 import {
   Accordion,
   AccordionContent,
@@ -11,6 +10,8 @@ import Image from "next/image";
 
 import DoctorsSection from "@/components/doctors-section";
 import TestimonialsSection from "@/components/AAtestimonials-section";
+import GallerySection from "@/components/AAgallary-section";
+import BranchHero from "@/components/BranchHero";
 
 const branches = [
   {
@@ -20,6 +21,9 @@ const branches = [
     desc: "رعاية متقدمة   على يد أخصائيين يتمتعون بخبرة دولية، وباستخدام تقنيات تشخيصية حديثة وخطط علاجية تتمحور حول المريض.",
     logo: "/branches/pages/care.jpeg",
     doctors: 2,
+    description: "",
+    location:
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.5301159142036!2d45.8607969!3d25.2863875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2bc1037acc120b%3A0x133471c5b9890ee5!2z2YXYrNmF2Lkg2KfZhNis2LLYqNix2Kkg2YPZitixINin2YTYt9io2Yo!5e0!3m2!1sar!2seg!4v1783178785468!5m2!1sar!2seg",
   },
   {
     id: "2",
@@ -28,6 +32,9 @@ const branches = [
     desc: "رعاية متقدمة   على يد أخصائيين يتمتعون بخبرة دولية، وباستخدام تقنيات تشخيصية حديثة وخطط علاجية تتمحور حول المريض.",
     logo: "/branches/pages/tweq.jpeg",
     doctors: 10,
+    description: "",
+    location:
+      "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3628.1568057331287!2d46.580284075362044!3d24.58378407811085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjTCsDM1JzAxLjYiTiA0NsKwMzQnNTguMyJF!5e0!3m2!1sen!2seg!4v1783178414958!5m2!1sen!2seg",
   },
   {
     id: "3",
@@ -36,6 +43,9 @@ const branches = [
     desc: "رعاية متقدمة   على يد أخصائيين يتمتعون بخبرة دولية، وباستخدام تقنيات تشخيصية حديثة وخطط علاجية تتمحور حول المريض.",
     logo: "/branches/pages/khayal.jpeg",
     doctors: 8,
+    description: "",
+    location:
+      "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3628.2607342403053!2d46.54438397536189!3d24.58019637811336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjTCsDM0JzQ4LjciTiA0NsKwMzInNDkuMSJF!5e0!3m2!1sen!2seg!4v1783178657254!5m2!1sen!2seg",
   },
   {
     id: "4",
@@ -44,6 +54,9 @@ const branches = [
     desc: "رعاية متقدمة   على يد أخصائيين يتمتعون بخبرة دولية، وباستخدام تقنيات تشخيصية حديثة وخطط علاجية تتمحور حول المريض.",
     logo: "/branches/pages/hoda.jpeg",
     doctors: 3,
+    description: "",
+    location:
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3628.118019090726!2d46.567173399999994!3d24.585122899999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f19a44c021647%3A0x45da4f842e337a88!2z2YXYrNmF2Lkg2K_Yp9ixINin2YTZh9iv2KfYoSDZhNi32Kgg2YjYqtmC2YjZitmFINin2YTYp9iz2YbYp9mG!5e0!3m2!1sen!2seg!4v1783178746436!5m2!1sen!2seg",
   },
   {
     id: "5",
@@ -52,6 +65,9 @@ const branches = [
     desc: "رعاية متقدمة   على يد أخصائيين يتمتعون بخبرة دولية، وباستخدام تقنيات تشخيصية حديثة وخطط علاجية تتمحور حول المريض.",
     logo: "/branches/pages/mahdya.jpeg",
     doctors: 5,
+    description: "",
+    location:
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3626.099288896348!2d46.5224044!3d24.6547105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f1f8b044d182d%3A0xa69f981c49107343!2z2YXYrNmF2Lkg2LnZitin2K_Yp9iqINiz2YbYryDYp9mE2KzYstmK2LHYqSDYp9mE2LfYqNmK!5e0!3m2!1sen!2seg!4v1783178718485!5m2!1sen!2seg",
   },
   {
     id: "6",
@@ -60,18 +76,19 @@ const branches = [
     desc: "رعاية متقدمة   على يد أخصائيين يتمتعون بخبرة دولية، وباستخدام تقنيات تشخيصية حديثة وخطط علاجية تتمحور حول المريض.",
     logo: "/branches/pages/lbn.jpeg",
     doctors: 6,
+    description: "",
+    location:
+      "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3627.0748994759865!2d46.5330276753632!3d24.62110327808628!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjTCsDM3JzE2LjAiTiA0NsKwMzInMDguMiJF!5e0!3m2!1sen!2seg!4v1783178687747!5m2!1sen!2seg",
   },
 ];
 
 const services = [
-  "فحص القلب",
-  "تخطيط القلب (ECG)",
-  "تخطيط صدى القلب (الإيكو)",
-  "اختبار الجهد",
-  "تصوير القلب بالرنين المغناطيسي",
-  "جراحة القلب",
-  "تصوير الأوعية الدموية",
-  "عيادة ارتفاع ضغط الدم",
+  " العيادات الطبية.",
+  " الأسنان",
+  " الجلدية والتجميل.",
+  " المختبر ",
+  "الخدمات المساندة.",
+  " الأشعه",
 ];
 type Props = {
   params: Promise<{
@@ -84,70 +101,11 @@ export default async function Page({ params }: Props) {
   const branch = branches.find((p) => p.slug == slug);
 
   const doctors = Array.from({ length: branch?.doctors || 0 }, () => "");
-  console.log("doctors", doctors);
   return (
     <div className="bg-slate-50">
       {/* HERO */}
 
-      <section className="relative overflow-hidden bg-white">
-        <div className="container mx-auto px-4 py-20">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <span className="bg-blue-100 text-primary px-4 py-2 rounded-full text-sm font-medium">
-                {branch?.title}
-              </span>
-
-              <h1 className=" lg:text-6xl text-4xl font-bold text-primary2 mt-6 leading-tight">
-                عناية
-                <span className="text-primary block">
-                  مميزة باحدث الاساليب الطبية
-                </span>
-              </h1>
-
-              <p className="mt-6 text-lg text-slate-600 leading-8"></p>
-
-              <div className="flex flex-wrap gap-4 mt-8">
-                <button className="bg-primary text-white px-8 py-4 rounded-xl font-medium">
-                  حجز موعد
-                </button>
-
-                <button className="border px-8 py-4 rounded-xl font-medium">
-                  التواصل مع الفرع
-                </button>
-              </div>
-
-              <div className="grid grid-cols-3 gap-6 mt-12">
-                <div>
-                  <h3 className="font-bold text-3xl text-primary">15+</h3>
-                  <p className="text-slate-500">متخصصون</p>
-                </div>
-
-                <div>
-                  <h3 className="font-bold text-3xl text-primary">20K+</h3>
-                  <p className="text-slate-500">مرضى</p>
-                </div>
-
-                <div>
-                  <h3 className="font-bold text-3xl text-primary">98%</h3>
-                  <p className="text-slate-500">إشباع</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="relative">
-              <div className="bg-blue-100 rounded-[40px] p-6">
-                <Image
-                  src={branch?.logo || ""}
-                  alt=""
-                  width={700}
-                  height={700}
-                  className="rounded-3xl object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <BranchHero branch={branch} />
 
       {/* ABOUT */}
 
@@ -207,6 +165,23 @@ export default async function Page({ params }: Props) {
       {/* DOCTORS */}
 
       <DoctorsSection doctors={doctors} params={branch?.slug} />
+      {/* Google Map */}
+      <section className="pb-24 my-16">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="overflow-hidden rounded-3xl shadow-2xl">
+            <iframe
+              className="h-[450px] w-full border-0"
+              src={branch?.location}
+              title="Google Map"
+              loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
+          </div>
+        </div>
+      </section>
+      <GallerySection />
+
       {/* WHY CHOOSE */}
 
       <section className="bg-white py-20">

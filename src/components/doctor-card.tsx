@@ -23,13 +23,12 @@ export default function DoctorCard({
       {/* Top */}
 {/* Top */}
 <div className="member-media">
-    <div className="member-image">
+<div className="relative h-[420px] w-full overflow-hidden">
         <Image
             src={doctor.image}
             alt={doctor.name[locale]}
-            width={320}
-            height={420}
-            className="doctor-image"
+      fill
+    className="object-cover"
         />
     </div>
 </div>

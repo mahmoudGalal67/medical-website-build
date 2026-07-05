@@ -8,6 +8,8 @@ type Branch = {
   img: string;
   title: string;
   href: string;
+  mobileOrder: string;
+  order: string;
 };
 
 const branches: Branch[] = [
@@ -15,31 +17,43 @@ const branches: Branch[] = [
     img: "sanad.png",
     title: "سند الجزيرة - فرع طويق",
     href: "/branches/tweq",
+    mobileOrder: "order-1",
+    order: "md:order-1",
   },
   {
     img: "sanad.png",
     title: "سند الجزيرة - فرع المهدية",
     href: "/branches/mahdya",
+    mobileOrder: "order-3",
+    order: "md:order-2",
   },
   {
     img: "sanad.png",
     title: "سند الجزيرة - فرع لبن",
     href: "/branches/lbn",
+    mobileOrder: "order-5",
+    order: "md:order-3",
   },
   {
     img: "carelogo.jpeg",
     title: "مجمع الجزيرة كير الطبي",
     href: "/branches/care",
+    mobileOrder: "order-2",
+    order: "md:order-4",
   },
   {
     img: "hoda.png",
-    title: "دار الهدى الطبي",
+    title: "دار الهدا الطبي",
     href: "/branches/hoda",
+    mobileOrder: "order-4",
+    order: "md:order-5",
   },
   {
     img: "khayalLogo.jpeg",
     title: "دار الخيال الطبي",
     href: "/branches/khayal",
+    mobileOrder: "order-6",
+    order: "md:order-6",
   },
 ];
 
@@ -49,9 +63,9 @@ export default function Branches() {
       {/* Background */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-rose-50 via-white to-white" />
 
-      <div className="absolute -top-40 left-0 -z-10 h-96 w-96 rounded-full bg-[#7A1F3D]/10 blur-[150px]" />
+      <div className="absolute -top-40 left-0 -z-10 h-96 w-96 rounded-full bg-primary2/10 blur-[150px]" />
 
-      <div className="absolute bottom-0 right-0 -z-10 h-96 w-96 rounded-full bg-[#B3476B]/10 blur-[150px]" />
+      <div className="absolute bottom-0 right-0 -z-10 h-96 w-96 rounded-full bg-primary2/10 blur-[150px]" />
 
       <div className="mx-auto max-w-8xl lg:px-4 px-2">
         {/* Header */}
@@ -62,7 +76,7 @@ export default function Branches() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <h2 className="text-4xl font-extrabold text-[#7A1F3D] [text-shadow:0_2px_8px_rgba(122,31,61,.15)]">
+          <h2 className="text-4xl font-extrabold text-primary2 [text-shadow:0_2px_8px_rgba(122,31,61,.15)]">
             فروع مجموعة سند الجزيرة الطبية
           </h2>
 
@@ -85,6 +99,7 @@ export default function Branches() {
                   duration: 0.6,
                   delay: index * 0.08,
                 }}
+                className={`${branch.mobileOrder} ${branch.order}`}
               >
                 <Link
                   href={branch.href}
@@ -109,20 +124,20 @@ export default function Branches() {
                   duration-500
                   hover:-translate-y-3
                   hover:scale-105
-                  hover:border-[#7A1F3D]
+                  hover:border-primary2
                   hover:shadow-[0_20px_45px_rgba(122,31,61,.18)]
                   "
                 >
                   {/* Badge */}
-                  <span className="absolute left-4 top-4 z-10 rounded-full bg-[#7A1F3D] px-3 py-1 text-[11px] font-semibold text-white shadow">
+                  <span className="absolute left-4 top-4 z-10 rounded-full bg-primary2 px-3 py-1 text-[11px] font-semibold text-white shadow">
                     فرع
                   </span>
 
                   {/* Glow */}
                   <div className="absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100">
-                    <div className="absolute -top-10 -right-10 h-40 w-40 rounded-full bg-[#7A1F3D]/15 blur-3xl" />
+                    <div className="absolute -top-10 -right-10 h-40 w-40 rounded-full bg-primary2/15 blur-3xl" />
 
-                    <div className="absolute -bottom-10 -left-10 h-40 w-40 rounded-full bg-[#B3476B]/15 blur-3xl" />
+                    <div className="absolute -bottom-10 -left-10 h-40 w-40 rounded-full bg-[#dc3433]/15 blur-3xl" />
                   </div>
 
                   {/* Image */}
@@ -165,7 +180,7 @@ export default function Branches() {
                     text-slate-800
                     transition-all
                     duration-300
-                    group-hover:text-[#7A1F3D]
+                    group-hover:text-primary2
                     "
                   >
                     {branch.title}
@@ -179,9 +194,15 @@ export default function Branches() {
                     w-0
                     rounded-full
                     bg-gradient-to-r
-                    from-[#7A1F3D]
-                    via-[#8B1E3F]
+<<<<<<< HEAD
+                    from-primary2
+                    via-primary2
                     to-[#B3476B]
+=======
+                    from-[#dc3433]
+                    via-[#dc3433]
+                    to-[#dc3433]
+>>>>>>> 7674d6fb9c30ba154a52c48b1bb8af1438318414
                     transition-all
                     duration-500
                     group-hover:w-20

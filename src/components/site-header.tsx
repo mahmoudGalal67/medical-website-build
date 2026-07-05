@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
-import { Phone, MessageCircle, Siren, HeartPulse } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Phone, MessageCircle, ChevronDown, MessageSquare } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
@@ -39,13 +39,18 @@ const navLinks: {
     ar: { title: " دار الهدا الطبي", href: "ar/branches/hoda" },
   },
   {
-    en: { title: "Contact Us", href: "en/contact" },
-    ar: { title: "اتصل بنا", href: "ar/contact" },
+    en: { title: "Insurance", href: "#" },
+    ar: { title: "التأمينات", href: "#" },
+  },
+  {
+    en: { title: "Laboratory and Radiology", href: "#" },
+    ar: { title: "المعمل والأشعة", href: "#" },
   },
 ];
 
 export function SiteHeader() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const params = useParams();
   const router = useRouter();
   const pathname = usePathname();
@@ -57,45 +62,77 @@ export function SiteHeader() {
   const switchLanguage = (lang: "en" | "ar") => {
     const newPath = `/${lang}${pathname.substring(3)}`;
     router.push(newPath);
-
     setLocale(lang);
   };
 
+  // Lock body scroll while the mobile menu is open
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
+  // Subtle elevation once the page has scrolled
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <header className="mx-auto">
+    <header className="sticky top-0 z-50 mx-auto">
       {/* Top Utility Bar */}
       <div className="text-white" dir="ltr">
-        <div className="bg-primary mx-auto flex h-9  items-center justify-between rounded-t-xl px-4 text-xs sm:px-6 lg:px-36">
+        <div className="mx-auto flex h-9 items-center justify-between gap-4 rounded-t-xl bg-gradient-to-r from-primary to-primary/85 px-4 text-xs shadow-sm sm:px-6 lg:px-36">
           <div className="flex items-center gap-4 sm:gap-6">
-            <span className="flex items-center gap-1.5 font-medium text-red-400">
-              <Siren className="size-3.5" />
+            <span className="flex items-center gap-1.5 font-medium text-[#dc3433]">
+              <span className="relative flex size-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#dc3433] opacity-75" />
+                <span className="relative inline-flex size-2 rounded-full bg-[#dc3433]" />
+              </span>
               Emergency 24/7
             </span>
 
-            <span className="hidden items-center gap-1.5 sm:flex">
+            <a
+              href="tel:920012345"
+              className="hidden items-center gap-1.5 opacity-90 transition-opacity hover:opacity-100 sm:flex"
+            >
               <Phone className="size-3.5" />
               9200 12345
-            </span>
+            </a>
 
-            <span className="hidden items-center gap-1.5 md:flex">
+            <a
+              href="https://wa.me/920012345"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden items-center gap-1.5 opacity-90 transition-opacity hover:opacity-100 md:flex"
+            >
               <MessageCircle className="size-3.5" />
               WhatsApp Us
-            </span>
+            </a>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center rounded-full bg-white/10 p-0.5">
             <button
               dir="rtl"
-              className={`opacity-90 cursor-pointer hover:opacity-100 ${locale === "ar" ? "text-primary2" : ""}`}
+              className={`cursor-pointer rounded-full px-3 py-1 font-medium transition-all ${
+                locale === "ar"
+                  ? "bg-white text-primary shadow-sm"
+                  : "text-white/80 hover:text-white"
+              }`}
               onClick={() => switchLanguage("ar")}
             >
               العربية
             </button>
 
-            <span className="opacity-40">|</span>
-
             <button
-              className={`font-medium opacity-90 cursor-pointer hover:opacity-100 ${locale === "en" ? "text-primary2" : ""}`}
+              className={`cursor-pointer rounded-full px-3 py-1 font-medium transition-all ${
+                locale === "en"
+                  ? "bg-white text-primary shadow-sm"
+                  : "text-white/80 hover:text-white"
+              }`}
               onClick={() => switchLanguage("en")}
             >
               EN
@@ -105,64 +142,91 @@ export function SiteHeader() {
       </div>
 
       {/* Main Navigation */}
-      <div className="border-b border-border bg-card">
-        <div className="mx-auto flex h-26 max-w-8xl items-center justify-between px-4 sm:px-6 md:px-12  xl:px-48 ">
+      <div
+        className={`border-b border-border bg-card/95 backdrop-blur transition-shadow duration-300 ${
+          scrolled ? "shadow-md" : "shadow-none"
+        }`}
+      >
+        <div className="mx-auto flex h-26 max-w-8xl items-center justify-between px-4 sm:px-6 md:px-10 xl:px-6 2xl:px-12">
           {/* Logo */}
           <Link
             href={`/${locale}`}
-            className="flex shrink-0 items-center gap-3"
+            className="group flex shrink-0 items-center gap-3"
           >
             <Image
               src="/logo.png"
               alt="HealthCare Booking"
-              width={140}
-              height={90}
+              width={120}
+              height={78}
+              className="h-auto w-28 transition-transform duration-300 group-hover:scale-105 2xl:w-36"
             />
           </Link>
 
           {/* Desktop Navigation + CTA */}
-          <div className="hidden items-center gap-8 xl:flex">
-            <nav className="flex items-center gap-6">
+          <div className="hidden min-w-0 w-[80%] flex-1 items-center overflow-hidden px-3 xl:flex">
+            <nav className="flex w-full flex-nowrap items-center justify-between gap-x-2 py-2 2xl:gap-x-0">
               {navLinks.map((link) => (
                 <Link
                   key={link[locale].href}
-                  href={`/${link[locale].href}`}
-                  className="relative text-sm font-medium text-foreground/80 transition-colors hover:text-primary"
+                  href={`/${link[locale].href}`.replace(/\/{2,}/g, "/")}
+                  className="group relative shrink-0 whitespace-nowrap py-2 text-[11px] font-medium text-foreground/80 transition-colors hover:text-primary xl:text-xs 2xl:text-sm"
                 >
                   {link[locale].title}
+                  <span className="absolute inset-x-0 -bottom-0.5 h-0.5 origin-center scale-x-0 rounded-full bg-primary transition-transform duration-300 group-hover:scale-x-100" />
                 </Link>
               ))}
             </nav>
           </div>
-          <div className="hidden xl:block">
-            <Button className="rounded-full px-6 py-6 cursor-pointer">
+
+          <div className="hidden shrink-0 flex-col items-end gap-1.5 xl:flex">
+            <Link href={`/${locale}/contact`}>
+              <Button
+                variant="outline"
+                size="sm"
+                className="h-7 cursor-pointer gap-1.5 rounded-full px-4 text-xs shadow-sm transition-all hover:shadow-md"
+              >
+                <MessageSquare className="size-3.5" />
+                {locale === "en" ? "Contact Us" : "اتصل بنا"}
+              </Button>
+            </Link>
+            <Button className="cursor-pointer rounded-full px-6 py-5 shadow-sm transition-all hover:shadow-md hover:brightness-105">
               {dict.Buttons.book}
             </Button>
           </div>
 
           {/* Mobile Actions */}
           <div className="flex items-center gap-2 xl:hidden">
-            <Button size="sm" className="rounded-full px-4">
-              {locale === "en" ? "Book" : "احجز"}
-            </Button>
+            <div className="flex flex-col items-end gap-1.5">
+              <Link href={`/${locale}/contact`}>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="h-7 cursor-pointer rounded-full px-3 text-xs shadow-sm"
+                >
+                  {locale === "en" ? "Contact Us" : "اتصل بنا"}
+                </Button>
+              </Link>
+              <Button size="sm" className="rounded-full px-4 shadow-sm">
+                {locale === "en" ? "Book" : "احجز"}
+              </Button>
+            </div>
 
             <button
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle menu"
-              className="relative flex h-10 w-10 items-center justify-center"
+              aria-expanded={isOpen}
+              className="relative flex h-10 w-10 items-center justify-center rounded-full transition-colors hover:bg-muted"
             >
               <span
                 className={`absolute h-0.5 w-6 bg-foreground transition-all duration-300 ${
                   isOpen ? "rotate-45" : "-translate-y-2"
                 }`}
               />
-
               <span
                 className={`absolute h-0.5 w-6 bg-foreground transition-all duration-300 ${
                   isOpen ? "opacity-0" : "opacity-100"
                 }`}
               />
-
               <span
                 className={`absolute h-0.5 w-6 bg-foreground transition-all duration-300 ${
                   isOpen ? "-rotate-45" : "translate-y-2"
@@ -172,31 +236,59 @@ export function SiteHeader() {
           </div>
         </div>
 
+        {/* Mobile Menu Backdrop */}
+        <div
+          onClick={() => setIsOpen(false)}
+          className={`fixed inset-0 top-[calc(2.25rem+6.5rem)] z-40 bg-black/20 backdrop-blur-[2px] transition-opacity duration-300 xl:hidden ${
+            isOpen ? "opacity-100" : "pointer-events-none opacity-0"
+          }`}
+        />
+
         {/* Mobile Menu */}
         <div
-          className={`overflow-hidden transition-all duration-300 xl:hidden ${
-            isOpen ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"
+          className={`relative z-50 overflow-hidden transition-all duration-300 xl:hidden ${
+            isOpen ? "max-h-[700px] opacity-100" : "max-h-0 opacity-0"
           }`}
         >
           <div className="border-t bg-background">
-            <nav className="flex flex-col py-3">
+            <nav className="flex flex-col divide-y divide-border/60 py-2">
               {navLinks.map((link, index) => (
                 <Link
                   key={link[locale].href}
-                  href={link[locale].href}
+                  href={`/${link[locale].href}`.replace(/\/{2,}/g, "/")}
                   onClick={() => setIsOpen(false)}
-                  className="translate-y-0 px-6 py-3 text-sm font-medium text-foreground/80 transition-all duration-300 hover:bg-muted hover:text-primary"
+                  className="group flex translate-y-0 items-center justify-between px-6 py-3.5 text-sm font-medium text-foreground/80 transition-all duration-300 hover:bg-muted hover:text-primary"
                   style={{
                     transitionDelay: isOpen ? `${index * 40}ms` : "0ms",
                   }}
                 >
                   {link[locale].title}
+                  <ChevronDown className="size-4 -rotate-90 text-foreground/30 transition-transform group-hover:translate-x-0.5 group-hover:text-primary rtl:rotate-90" />
                 </Link>
               ))}
             </nav>
 
-            <div className="border-t p-4">
-              <Button className="w-full rounded-full">
+            <div className="space-y-3 border-t bg-muted/40 p-4">
+              <div className="flex gap-2">
+                <a
+                  href="tel:920012345"
+                  className="flex flex-1 items-center justify-center gap-1.5 rounded-full border border-border bg-card py-2.5 text-sm font-medium text-foreground/80 transition-colors hover:border-primary hover:text-primary"
+                >
+                  <Phone className="size-4" />
+                  {locale === "en" ? "Call Us" : "اتصل بنا"}
+                </a>
+                <a
+                  href="https://wa.me/920012345"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-1 items-center justify-center gap-1.5 rounded-full border border-border bg-card py-2.5 text-sm font-medium text-foreground/80 transition-colors hover:border-primary hover:text-primary"
+                >
+                  <MessageCircle className="size-4" />
+                  WhatsApp
+                </a>
+              </div>
+
+              <Button className="w-full rounded-full py-6 shadow-sm">
                 {dict.Buttons.book}
               </Button>
             </div>

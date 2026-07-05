@@ -5,57 +5,323 @@ import { Tag, ArrowRight, CheckCircle2 } from "lucide-react";
 
 const offers = [
   {
-    title: "تبييض الأسنان",
-    subtitle: "تبييض الأسنان بالليزر",
-    description:
-      "احصل على ابتسامة ناصعة البياض باستخدام أحدث تقنيات تبييض الأسنان بالليزر. نتائج آمنة وفعالة تدوم طويلاً.",
-    discount: "خصم 30%",
-    price: "ابتداءً من 699 ريال",
-    originalPrice: "999 ريال",
-    image:
-      "https://images.pexels.com/photos/3762453/pexels-photo-3762453.jpeg?auto=compress&cs=tinysrgb&w=600",
+    title: "باقة الأنيميا وفقر الدم",
+    subtitle: "4 تحاليل",
+    description: "",
+    discount: "45%",
+    price: "  250 ريال",
+    originalPrice: "450  ريال",
+    image: "offer3.jpeg",
     badge: "الأكثر طلباً",
     features: [
-      "استشارة مجانية",
-      "جلسة خلال 60 دقيقة",
-      "نتائج فورية",
-      "متابعة بعد العلاج",
+      "CBC – صورة الدم",
+      "ESR – سرعة ترسيب الدم",
+      "IRON – الحديد",
+      "Ferritin – مخزون الحديد",
     ],
   },
   {
-    title: "عدسات الأسنان",
-    subtitle: "باقة ابتسامة هوليوود",
-    description:
-      "غيّر ابتسامتك مع عدسات الأسنان الخزفية المصممة خصيصاً لك لتمنحك مظهراً طبيعياً وثقة تدوم.",
-    discount: "خصم 20%",
-    price: "ابتداءً من 2,499 ريال",
-    originalPrice: "3,199 ريال",
-    image:
-      "https://images.pexels.com/photos/3762454/pexels-photo-3762454.jpeg?auto=compress&cs=tinysrgb&w=600",
+    title: "باقة مرضى السكري",
+    subtitle: "8 تحاليل",
+    description: "",
+    discount: "25%",
+    price: "300 ريال",
+    originalPrice: "400 ريال",
+    image: "offer10.jpeg",
     badge: "لفترة محدودة",
     features: [
-      "استشارة مجانية",
-      "جلسة خلال 60 دقيقة",
-      "نتائج فورية",
-      "متابعة بعد العلاج",
+      "FBG – تحليل السكر صائم",
+      "PPG – تحليل السكر بعد الأكل",
+      "HbA1c – السكر التراكمي",
+      "تحليل الإنسولين",
+      "الكوليسترول",
+      "وظائف الكلى (Creatinine & Urea)",
+      "الدهون الثلاثية",
+      "تحليل البول",
     ],
   },
   {
-    title: "تنظيف الأسنان",
-    subtitle: "تنظيف عميق وإزالة الجير وتلميع الأسنان",
-    description:
-      "جلسة تنظيف احترافية لإزالة الجير والبلاك والتصبغات، مما يمنحك أسناناً أكثر صحة ولمعاناً.",
-    discount: "خصم 40%",
-    price: "ابتداءً من 299 ريال",
-    originalPrice: "499 ريال",
-    image:
-      "https://images.pexels.com/photos/3845547/pexels-photo-3845547.jpeg?auto=compress&cs=tinysrgb&w=600",
+    title: "باقة نمو الأطفال",
+    subtitle: "9 تحاليل",
+    description: "",
+    discount: "40%",
+    price: " 500  ريال",
+    originalPrice: "1000 ريال",
+    image: "offer1.jpeg",
     badge: "أفضل قيمة",
     features: [
-      "استشارة مجانية",
-      "جلسة خلال 60 دقيقة",
-      "نتائج فورية",
-      "متابعة بعد العلاج",
+      "Serum Iron",
+      "Calcium",
+      "ALP",
+      "CBC",
+      "Growth Hormone",
+      "Calcium in Serum",
+      "Vitamin D",
+      "Urine Analysis",
+      "Stool Examination",
+    ],
+  },
+  {
+    title: "باقة هشاشة العظام",
+    subtitle: "6 تحاليل",
+    description: "",
+    discount: "40%",
+    price: " 450  ريال",
+    originalPrice: "800  ريال",
+    image: "offer6.jpeg",
+    badge: "أفضل قيمة",
+    features: [
+      "TSH",
+      "Calcium",
+      "ALP",
+      "Vitamin D",
+      "Magnesium",
+      "Vitamin B12",
+    ],
+  },
+  {
+    title: "باقة سند الجزيرة الفضية",
+    subtitle: "11 تحليلاً",
+    description: "",
+    discount: "40%",
+    price: " 300  ريال",
+    originalPrice: "600 ريال",
+    image: "",
+    badge: "أفضل قيمة",
+    features: [
+      "CBC",
+      "ALT / AST",
+      "Urea & Creatinine",
+      "Uric Acid",
+      "Calcium",
+      "Glucose",
+      "Cholesterol",
+      "Triglyceride",
+      "H. pylori",
+      "CRP",
+      "Urine Analysis",
+    ],
+  },
+  {
+    title: "باقات إبر التخسيس",
+    subtitle: "باقة البداية 5 تحاليل",
+    description: "",
+    discount: "40%",
+    price: " 299 ريال",
+    originalPrice: "220 ريال",
+    image: "offer5.jpeg",
+    badge: "أفضل قيمة",
+    features: [
+      "تحليل السكر",
+      "وظائف الكلى",
+      "وظائف الكبد",
+      "السكر التراكمي",
+      "تحليل الغدة الدرقية",
+    ],
+  },
+  {
+    title: "باقة الغدة الدرقية",
+    subtitle: "3 تحاليل",
+    description: "",
+    discount: "40%",
+    price: "300 ريال",
+    originalPrice: "450 ريال",
+    image: "offer7.jpeg",
+    badge: "أفضل قيمة",
+    features: ["TSH", "FT3", "FT4"],
+  },
+  {
+    title: "باقة سند الجزيرة الذهبية",
+    subtitle: "13 تحليلاً",
+    description: "",
+    discount: "40%",
+    price: " 299 ريال",
+    originalPrice: "220 ريال",
+    image: "",
+    badge: "أفضل قيمة",
+    features: [
+      "Urea & Creatinine",
+      "Uric Acid",
+      "GOT & GPT",
+      "Cholesterol & Triglycerides",
+      "Urine Analysis",
+      "Stool Analysis",
+      "Vitamin D",
+      "TSH",
+      "CRP",
+      "H. pylori Blood",
+      "CBC",
+      "RBS",
+    ],
+  },
+  {
+    title: "باقة ابر التخسيس باقة المتابعة",
+    subtitle: "5 تحاليل",
+    description: "",
+    discount: "40%",
+    price: "650 ريال",
+    originalPrice: "",
+    image: "offer5.jpeg",
+    badge: "أفضل قيمة",
+    features: [
+      "تحليل الدهون",
+      "صورة الدم",
+      "مخزون الحديد",
+      "فيتامين B12",
+      "فيتامين د",
+      "السكر التراكمي",
+      "تحليل الغدة الدرقية",
+      "وظائف الكبد",
+      "وظائف الكلى",
+    ],
+  },
+  {
+    title: "باقة تساقط الشعر",
+    subtitle: "6 تحاليل",
+    description: "",
+    discount: "40%",
+    price: " 450  ريال",
+    originalPrice: "750  ريال",
+    image: "offer12.jpeg",
+    badge: "أفضل قيمة",
+    features: ["TSH", "Ferritin", "CBC", "Iron", "Ferritin", "Vitamin B12"],
+  },
+  {
+    title: "Calcium",
+    subtitle: "",
+    description: "",
+    discount: "40%",
+    price: " 600  ريال",
+    originalPrice: "1200 ريال",
+    image: "offer11.jpeg",
+    badge: "أفضل قيمة",
+    features: [],
+  },
+  {
+    title: "باقة الخصوبة للرجال",
+    subtitle: "7 تحاليل",
+    description: "",
+    discount: "40%",
+    price: " 500 ريال",
+    originalPrice: "1200 ريال",
+    image: "offer4.jpeg",
+    badge: "أفضل قيمة",
+    features: [
+      "فحص السائل المنوي",
+      "Testosterone Total — هرمون الذكورة",
+      "FSH — هرمون الأنوثة",
+      "LH — هرمون الأنوثة",
+      "Prolactin — هرمون الحليب",
+      "TSH — هرمون الغدة",
+      "Urine Analysis — تحليل البول",
+    ],
+  },
+  {
+    title: "باقة القولون",
+    subtitle: "4 تحاليل",
+    description: "",
+    discount: "40%",
+    price: " 300 ريال",
+    originalPrice: "600 ريال",
+    image: "offer8.jpeg",
+    badge: "أفضل قيمة",
+    features: [
+      "CBC — صورة الدم",
+      "H. pylori — جرثومة المعدة في البراز",
+      "FBO — الدم الخفي في البراز",
+      "Salmonella — السالمونيلا",
+    ],
+  },
+  {
+    title: "باقة الروكتان",
+    subtitle: "8 تحاليل",
+    description: "",
+    discount: "40%",
+    price: " 200 ريال",
+    originalPrice: "",
+    image: "offer2.jpeg",
+    badge: "أفضل قيمة",
+    features: [
+      "CBC — صورة الدم",
+      "Urea — اليوريا",
+      "RBS — السكر في الدم",
+      "Triglycerides — الدهون الثلاثية",
+      "Cholesterol — الكوليسترول",
+      "Creatinine — الكرياتينين",
+      "GPT — إنزيم الكبد",
+      "GOT — إنزيم الكبد",
+    ],
+  },
+  {
+    title: "باقة تساقط الأظافر",
+    subtitle: "6 تحاليل",
+    description: "",
+    discount: "40%",
+    price: " 450 ريال",
+    originalPrice: "800 ريال",
+    image: "offer0.jpeg",
+    badge: "أفضل قيمة",
+    features: [
+      "TSH — الغدة الدرقية",
+      "Vitamin B12 — فيتامين ب12",
+      "Iron — الحديد",
+      "Ferritin — مخزون الحديد",
+      "Calcium — الكالسيوم",
+      "Magnesium — المغنيسيوم",
+    ],
+  },
+  {
+    title: "باقة المدارس",
+    subtitle: "4 تحاليل",
+    description: "مع كشفية طبيب الأطفال",
+    discount: "40%",
+    price: " 150 ريال",
+    originalPrice: "250 ريال",
+    image: "offer9.jpeg",
+    badge: "أفضل قيمة",
+    features: [
+      "Blood Groups — فصيلة الدم",
+      "CBC — صورة الدم",
+      "Urine Analysis — تحليل البول",
+      "Stool Examination — تحليل البراز",
+    ],
+  },
+
+  {
+    title: "باقة فحص الزواج",
+    subtitle: "5 تحاليل",
+    description:
+      "النتائج خلال 3 أيام عمل ، النتائج مرتبطة بمنصة صحتي ، استلامها برسالة نصية",
+    discount: "40%",
+    price: " 599 ريال",
+    originalPrice: "1100 ريال",
+    image: "offer4.jpeg",
+    badge: "أفضل قيمة",
+    features: [
+      "Complete Blood Count",
+      "Hemoglobin Electrophoresis",
+      "HCV Ab",
+      "HBs Ag",
+      "HIV Combo",
+    ],
+  },
+  {
+    title: "باقة الخصوبة للنساء",
+    subtitle: "6 تحاليل",
+    description: "",
+    discount: "40%",
+    price: " 600 ريال",
+    originalPrice: "1200 ريال",
+    image: "offer4.jpeg",
+    badge: "أفضل قيمة",
+    features: [
+      "FSH",
+      "LH",
+      "Total Test — هرمون الذكورة",
+      "Prolactin — هرمون الحليب",
+      "TSH — هرمون الغدة",
+      "Vaginal Swab C/S — مسحة المهبل",
+      "Urine Analysis — تحليل البول",
     ],
   },
 ];
@@ -104,7 +370,7 @@ export default function OffersSection() {
               {/* Image */}
               <div className="relative h-60 overflow-hidden">
                 <img
-                  src={offer.image}
+                  src={`/offers/${offer.image}`}
                   alt={offer.title}
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
@@ -132,7 +398,7 @@ export default function OffersSection() {
               </div>
 
               {/* Content */}
-              <div className="relative p-7">
+              <div className="relative md:p-7 p-3 py-5">
                 <p className="leading-7 text-gray-600">{offer.description}</p>
 
                 {/* Features */}
@@ -164,19 +430,15 @@ export default function OffersSection() {
                       {offer.originalPrice}
                     </p>
 
-                    <h4 className="text-3xl font-extrabold text-primary">
+                    <h4 className="text-lg font-extrabold text-primary">
                       {offer.price}
                     </h4>
                   </div>
-
-                  <button className="group/button flex items-center gap-2 rounded-2xl bg-gradient-to-r from-primary to-primary2 px-6 py-3 font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-xl">
-                    احجز الآن
-                    <ArrowRight
-                      size={18}
-                      className="transition-transform group-hover/button:-translate-x-1"
-                    />
-                  </button>
                 </div>
+                <button className="group/button w-full  flex items-center justify-center mt-5 sm:gap-2 gap-1 rounded-2xl bg-gradient-to-r from-primary to-primary2 px-3 py-3 sm:text-lg text-sm font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                  <ArrowRight className="sm:block hidden transition-transform group-hover/button:-translate-x-1" />
+                  احجز الآن
+                </button>
               </div>
 
               {/* Decorative circles */}
