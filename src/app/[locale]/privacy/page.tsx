@@ -12,10 +12,234 @@ import {
   ScrollText,
 } from "lucide-react";
 
-export default function PrivacyPage() {
+type Lang = "ar" | "en";
+
+const content = {
+  ar: {
+    heroBadge: "سياسة الخصوصية والشروط والأحكام",
+    heroTitle: "خصوصيتكم هي أولويتنا",
+    heroDesc:
+      "تلتزم مجموعة سند الجزيرة الطبية بحماية بيانات المرضى والزوار والمحافظة على سريتها وفق الأنظمة واللوائح المعمول بها في المملكة العربية السعودية.",
+
+    privacySectionTitle: "سياسة الخصوصية",
+    privacySectionText:
+      "تولي مجموعة سند الجزيرة الطبية أهمية قصوى لحماية خصوصية وبيانات زوار الموقع والمرضى، وتلتزم بالمحافظة على سرية المعلومات الشخصية وفق الأنظمة واللوائح المعمول بها في المملكة العربية السعودية.",
+
+    dataCollectedTitle: "البيانات التي نقوم بجمعها",
+    dataCollected: [
+      "الاسم الكامل",
+      "رقم الجوال",
+      "رقم الهوية",
+      "العمر",
+      "بيانات حجز المواعيد",
+      "المعلومات الطبية التي يقدمها المستخدم طوعًا",
+      "بيانات التصفح واستخدام الموقع",
+    ],
+
+    dataUsageTitle: "استخدام البيانات",
+    dataUsage: [
+      "حجز وإدارة المواعيد الطبية",
+      "التواصل مع المرضى",
+      "تحسين جودة الخدمات والموقع الإلكتروني",
+      "الامتثال للمتطلبات النظامية والتنظيمية",
+    ],
+
+    dataProtectionTitle: "حماية البيانات",
+    dataProtectionText:
+      "نتخذ التدابير التقنية والإدارية المناسبة لحماية البيانات الشخصية من الوصول غير المصرح به أو التعديل أو الإفصاح أو الإتلاف.",
+
+    dataSharingTitle: "مشاركة البيانات",
+    dataSharing: [
+      "بموافقة صاحب البيانات.",
+      "عند وجود متطلب نظامي أو قضائي.",
+      "للجهات الصحية المختصة عند الحاجة.",
+    ],
+
+    userRightsTitle: "حقوق المستخدم",
+    userRights: [
+      "الاطلاع على البيانات الشخصية.",
+      "طلب تصحيح البيانات.",
+      "طلب تحديث البيانات.",
+      "الاستفسار عن كيفية معالجة البيانات.",
+    ],
+
+    amendmentsTitle: "التعديلات",
+    amendmentsText:
+      "يحتفظ المجمع بحق تعديل سياسة الخصوصية في أي وقت، ويتم نشر النسخة المحدثة عبر الموقع الإلكتروني.",
+
+    patientRightsDutiesTitle: "حقوق وواجبات المريض",
+    patientRightsDutiesText:
+      "تحرص مجموعة سند الجزيرة الطبية على تقديم خدمات صحية عالية الجودة مع الحفاظ على حقوق المرضى وتعزيز مسؤولياتهم.",
+
+    patientRightsTitle: "حقوق المريض",
+    patientRights: [
+      "الحصول على الرعاية الصحية المناسبة دون تمييز.",
+      "المعاملة باحترام وكرامة.",
+      "الحفاظ على خصوصية وسرية المعلومات الطبية.",
+      "معرفة اسم الطبيب المعالج والمؤهلين المشاركين في الرعاية.",
+      "الحصول على شرح واضح للحالة الصحية والخطة العلاجية.",
+      "الموافقة أو الرفض للإجراءات الطبية وفق الأنظمة.",
+      "معرفة التكاليف والخدمات المقدمة.",
+      "تقديم الشكاوى والملاحظات.",
+      "الحصول على نسخة من التقارير الطبية.",
+    ],
+
+    patientDutiesTitle: "واجبات المريض",
+    patientDuties: [
+      "تقديم معلومات صحية صحيحة وكاملة.",
+      "الالتزام بالخطة العلاجية.",
+      "الالتزام بالمواعيد وإبلاغ المجمع عند الإلغاء.",
+      "احترام العاملين والمرضى الآخرين.",
+      "المحافظة على ممتلكات المجمع.",
+      "الالتزام بالأنظمة والتعليمات.",
+      "الوفاء بالالتزامات المالية.",
+    ],
+
+    complaintsTitle: "الشكاوى والاقتراحات",
+    complaintsText:
+      "يمكن للمرضى تقديم الشكاوى أو المقترحات عبر قنوات التواصل الرسمية الخاصة بالمجمع، وسيتم التعامل معها بسرية ومهنية.",
+
+    termsTitle: "الشروط والأحكام",
+    termsCards: [
+      {
+        title: "استخدام الموقع",
+        text: "يستخدم الموقع لأغراض الاطلاع على الخدمات الطبية وحجز المواعيد والتواصل مع المجمع.",
+      },
+      {
+        title: "دقة المعلومات",
+        text: "يبذل المجمع كافة الجهود لتوفير معلومات دقيقة ومحدثة، إلا أنه لا يضمن خلو الموقع من الأخطاء أو الانقطاعات التقنية.",
+      },
+      {
+        title: "حجز المواعيد",
+        text: "يخضع حجز المواعيد لتوفر المواعيد الفعلية، ويحق للمجمع تعديل أو إعادة جدولة المواعيد عند الضرورة، كما يجب على المريض التأكد من صحة البيانات المدخلة.",
+      },
+      {
+        title: "الملكية الفكرية",
+        text: "جميع النصوص والشعارات والصور والمحتويات المنشورة على الموقع مملوكة للمجمع أو مرخص باستخدامها، ولا يجوز نسخها أو إعادة استخدامها دون موافقة مسبقة.",
+      },
+    ],
+  },
+  en: {
+    heroBadge: "Privacy Policy & Terms and Conditions",
+    heroTitle: "Your Privacy Is Our Priority",
+    heroDesc:
+      "Sanad Aljazeera Medical Group is committed to protecting the data of patients and visitors and maintaining its confidentiality in accordance with the regulations and laws applicable in the Kingdom of Saudi Arabia.",
+
+    privacySectionTitle: "Privacy Policy",
+    privacySectionText:
+      "Sanad Aljazeera Medical Group places the utmost importance on protecting the privacy and data of website visitors and patients, and is committed to maintaining the confidentiality of personal information in accordance with the regulations and laws applicable in the Kingdom of Saudi Arabia.",
+
+    dataCollectedTitle: "Data We Collect",
+    dataCollected: [
+      "Full name",
+      "Mobile number",
+      "National ID number",
+      "Age",
+      "Appointment booking data",
+      "Medical information voluntarily provided by the user",
+      "Browsing and website usage data",
+    ],
+
+    dataUsageTitle: "Use of Data",
+    dataUsage: [
+      "Booking and managing medical appointments",
+      "Communicating with patients",
+      "Improving the quality of services and the website",
+      "Complying with regulatory and legal requirements",
+    ],
+
+    dataProtectionTitle: "Data Protection",
+    dataProtectionText:
+      "We take appropriate technical and administrative measures to protect personal data from unauthorized access, alteration, disclosure, or destruction.",
+
+    dataSharingTitle: "Data Sharing",
+    dataSharing: [
+      "With the data owner's consent.",
+      "When there is a legal or judicial requirement.",
+      "With relevant health authorities when necessary.",
+    ],
+
+    userRightsTitle: "User Rights",
+    userRights: [
+      "Access personal data.",
+      "Request correction of data.",
+      "Request updates to data.",
+      "Inquire about how data is processed.",
+    ],
+
+    amendmentsTitle: "Amendments",
+    amendmentsText:
+      "The complex reserves the right to amend the privacy policy at any time, and the updated version will be published on the website.",
+
+    patientRightsDutiesTitle: "Patient Rights & Responsibilities",
+    patientRightsDutiesText:
+      "Sanad Aljazeera Medical Group is committed to providing high-quality healthcare services while upholding patients' rights and reinforcing their responsibilities.",
+
+    patientRightsTitle: "Patient Rights",
+    patientRights: [
+      "Receive appropriate healthcare without discrimination.",
+      "Be treated with respect and dignity.",
+      "Have the privacy and confidentiality of medical information protected.",
+      "Know the name of the treating physician and the qualified staff involved in care.",
+      "Receive a clear explanation of the health condition and treatment plan.",
+      "Consent to or refuse medical procedures in accordance with regulations.",
+      "Know the costs and services provided.",
+      "Submit complaints and feedback.",
+      "Obtain a copy of medical reports.",
+    ],
+
+    patientDutiesTitle: "Patient Responsibilities",
+    patientDuties: [
+      "Provide accurate and complete health information.",
+      "Adhere to the treatment plan.",
+      "Keep appointments and notify the complex in case of cancellation.",
+      "Respect staff and other patients.",
+      "Preserve the complex's property.",
+      "Comply with regulations and instructions.",
+      "Fulfill financial obligations.",
+    ],
+
+    complaintsTitle: "Complaints & Suggestions",
+    complaintsText:
+      "Patients can submit complaints or suggestions through the complex's official communication channels, and they will be handled confidentially and professionally.",
+
+    termsTitle: "Terms and Conditions",
+    termsCards: [
+      {
+        title: "Use of the Website",
+        text: "The website is used to view medical services, book appointments, and communicate with the complex.",
+      },
+      {
+        title: "Accuracy of Information",
+        text: "The complex makes every effort to provide accurate and up-to-date information; however, it does not guarantee the website will be free of errors or technical interruptions.",
+      },
+      {
+        title: "Appointment Booking",
+        text: "Appointment booking is subject to actual availability, and the complex reserves the right to modify or reschedule appointments when necessary. Patients must also ensure the accuracy of the data entered.",
+      },
+      {
+        title: "Intellectual Property",
+        text: "All text, logos, images, and content published on the website are owned by the complex or used under license, and may not be copied or reused without prior consent.",
+      },
+    ],
+  },
+};
+
+type Props = {
+  params: Promise<{
+    locale: string;
+  }>;
+};
+
+export default async function PrivacyPage({ params }: Props) {
+  const { locale: rawLocale } = await params;
+  const locale: Lang = rawLocale === "en" ? "en" : "ar";
+  const isRTL = locale === "ar";
+  const t = content[locale];
+
   return (
     <main
-      dir="rtl"
+      dir={isRTL ? "rtl" : "ltr"}
       className="min-h-screen bg-gradient-to-b from-sky-50 via-white to-white"
     >
       {/* Hero */}
@@ -27,18 +251,16 @@ export default function PrivacyPage() {
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border bg-white px-5 py-2 shadow-sm">
               <ShieldCheck className="h-5 w-5 text-primary" />
               <span className="font-medium text-sky-700">
-                سياسة الخصوصية والشروط والأحكام
+                {t.heroBadge}
               </span>
             </div>
 
             <h1 className="lg:text-5xl text-3xl font-black text-primary2 leading-tight">
-              خصوصيتكم هي أولويتنا
+              {t.heroTitle}
             </h1>
 
             <p className="mt-6 text-lg leading-8 text-white">
-              تلتزم مجموعة سند الجزيرة الطبية بحماية بيانات المرضى والزوار
-              والمحافظة على سريتها وفق الأنظمة واللوائح المعمول بها في المملكة
-              العربية السعودية.
+              {t.heroDesc}
             </p>
           </div>
         </div>
@@ -49,12 +271,10 @@ export default function PrivacyPage() {
 
         <Section
           icon={<ShieldCheck className="h-7 w-7 text-primary" />}
-          title="سياسة الخصوصية"
+          title={t.privacySectionTitle}
         >
           <p className="leading-8 text-slate-600">
-            تولي مجموعة سند الجزيرة الطبية أهمية قصوى لحماية خصوصية وبيانات
-            زوار الموقع والمرضى، وتلتزم بالمحافظة على سرية المعلومات الشخصية
-            وفق الأنظمة واللوائح المعمول بها في المملكة العربية السعودية.
+            {t.privacySectionText}
           </p>
         </Section>
 
@@ -63,79 +283,47 @@ export default function PrivacyPage() {
         <div className="grid gap-8 lg:grid-cols-2">
           <Card
             icon={<Database className="text-primary" />}
-            title="البيانات التي نقوم بجمعها"
+            title={t.dataCollectedTitle}
           >
-            <List
-              items={[
-                "الاسم الكامل",
-                "رقم الجوال",
-                "رقم الهوية",
-                "العمر",
-                "بيانات حجز المواعيد",
-                "المعلومات الطبية التي يقدمها المستخدم طوعًا",
-                "بيانات التصفح واستخدام الموقع",
-              ]}
-            />
+            <List items={t.dataCollected} />
           </Card>
 
           <Card
             icon={<ClipboardList className="text-primary" />}
-            title="استخدام البيانات"
+            title={t.dataUsageTitle}
           >
-            <List
-              items={[
-                "حجز وإدارة المواعيد الطبية",
-                "التواصل مع المرضى",
-                "تحسين جودة الخدمات والموقع الإلكتروني",
-                "الامتثال للمتطلبات النظامية والتنظيمية",
-              ]}
-            />
+            <List items={t.dataUsage} />
           </Card>
 
           <Card
             icon={<Lock className="text-primary" />}
-            title="حماية البيانات"
+            title={t.dataProtectionTitle}
           >
             <p className="leading-8 text-slate-600">
-              نتخذ التدابير التقنية والإدارية المناسبة لحماية البيانات
-              الشخصية من الوصول غير المصرح به أو التعديل أو الإفصاح أو الإتلاف.
+              {t.dataProtectionText}
             </p>
           </Card>
 
           <Card
             icon={<Scale className="text-primary" />}
-            title="مشاركة البيانات"
+            title={t.dataSharingTitle}
           >
-            <List
-              items={[
-                "بموافقة صاحب البيانات.",
-                "عند وجود متطلب نظامي أو قضائي.",
-                "للجهات الصحية المختصة عند الحاجة.",
-              ]}
-            />
+            <List items={t.dataSharing} />
           </Card>
 
           <Card
             icon={<UserCheck className="text-primary" />}
-            title="حقوق المستخدم"
+            title={t.userRightsTitle}
           >
-            <List
-              items={[
-                "الاطلاع على البيانات الشخصية.",
-                "طلب تصحيح البيانات.",
-                "طلب تحديث البيانات.",
-                "الاستفسار عن كيفية معالجة البيانات.",
-              ]}
-            />
+            <List items={t.userRights} />
           </Card>
 
           <Card
             icon={<FileText className="text-primary" />}
-            title="التعديلات"
+            title={t.amendmentsTitle}
           >
             <p className="leading-8 text-slate-600">
-              يحتفظ المجمع بحق تعديل سياسة الخصوصية في أي وقت، ويتم نشر النسخة
-              المحدثة عبر الموقع الإلكتروني.
+              {t.amendmentsText}
             </p>
           </Card>
         </div>
@@ -144,49 +332,26 @@ export default function PrivacyPage() {
 
         <Section
           icon={<HeartHandshake className="h-7 w-7 text-emerald-600" />}
-          title="حقوق وواجبات المريض"
+          title={t.patientRightsDutiesTitle}
         >
           <p className="text-slate-600 leading-8">
-            تحرص مجموعة سند الجزيرة الطبية على تقديم خدمات صحية عالية الجودة مع
-            الحفاظ على حقوق المرضى وتعزيز مسؤولياتهم.
+            {t.patientRightsDutiesText}
           </p>
         </Section>
 
         <div className="grid gap-8 lg:grid-cols-2">
           <Card
             icon={<BadgeCheck className="text-emerald-600" />}
-            title="حقوق المريض"
+            title={t.patientRightsTitle}
           >
-            <NumberList
-              items={[
-                "الحصول على الرعاية الصحية المناسبة دون تمييز.",
-                "المعاملة باحترام وكرامة.",
-                "الحفاظ على خصوصية وسرية المعلومات الطبية.",
-                "معرفة اسم الطبيب المعالج والمؤهلين المشاركين في الرعاية.",
-                "الحصول على شرح واضح للحالة الصحية والخطة العلاجية.",
-                "الموافقة أو الرفض للإجراءات الطبية وفق الأنظمة.",
-                "معرفة التكاليف والخدمات المقدمة.",
-                "تقديم الشكاوى والملاحظات.",
-                "الحصول على نسخة من التقارير الطبية.",
-              ]}
-            />
+            <NumberList items={t.patientRights} />
           </Card>
 
           <Card
             icon={<UserCheck className="text-emerald-600" />}
-            title="واجبات المريض"
+            title={t.patientDutiesTitle}
           >
-            <NumberList
-              items={[
-                "تقديم معلومات صحية صحيحة وكاملة.",
-                "الالتزام بالخطة العلاجية.",
-                "الالتزام بالمواعيد وإبلاغ المجمع عند الإلغاء.",
-                "احترام العاملين والمرضى الآخرين.",
-                "المحافظة على ممتلكات المجمع.",
-                "الالتزام بالأنظمة والتعليمات.",
-                "الوفاء بالالتزامات المالية.",
-              ]}
-            />
+            <NumberList items={t.patientDuties} />
           </Card>
         </div>
 
@@ -194,12 +359,11 @@ export default function PrivacyPage() {
 
         <Section
           icon={<Phone className="h-7 w-7 text-primary" />}
-          title="الشكاوى والاقتراحات"
+          title={t.complaintsTitle}
         >
           <div className="rounded-3xl bg-sky-50 border border-sky-100 p-8">
             <p className="text-slate-600 leading-8">
-              يمكن للمرضى تقديم الشكاوى أو المقترحات عبر قنوات التواصل الرسمية
-              الخاصة بالمجمع، وسيتم التعامل معها بسرية ومهنية.
+              {t.complaintsText}
             </p>
           </div>
         </Section>
@@ -208,28 +372,12 @@ export default function PrivacyPage() {
 
         <Section
           icon={<ScrollText className="h-7 w-7 text-primary" />}
-          title="الشروط والأحكام"
+          title={t.termsTitle}
         >
           <div className="space-y-6">
-            <CardSimple
-              title="استخدام الموقع"
-              text="يستخدم الموقع لأغراض الاطلاع على الخدمات الطبية وحجز المواعيد والتواصل مع المجمع."
-            />
-
-            <CardSimple
-              title="دقة المعلومات"
-              text="يبذل المجمع كافة الجهود لتوفير معلومات دقيقة ومحدثة، إلا أنه لا يضمن خلو الموقع من الأخطاء أو الانقطاعات التقنية."
-            />
-
-            <CardSimple
-              title="حجز المواعيد"
-              text="يخضع حجز المواعيد لتوفر المواعيد الفعلية، ويحق للمجمع تعديل أو إعادة جدولة المواعيد عند الضرورة، كما يجب على المريض التأكد من صحة البيانات المدخلة."
-            />
-
-            <CardSimple
-              title="الملكية الفكرية"
-              text="جميع النصوص والشعارات والصور والمحتويات المنشورة على الموقع مملوكة للمجمع أو مرخص باستخدامها، ولا يجوز نسخها أو إعادة استخدامها دون موافقة مسبقة."
-            />
+            {t.termsCards.map((card) => (
+              <CardSimple key={card.title} title={card.title} text={card.text} />
+            ))}
           </div>
         </Section>
       </div>
@@ -324,7 +472,7 @@ function NumberList({ items }: { items: string[] }) {
             {index + 1}
           </div>
 
-          <p className="leading-7 text-prima'ry">{item}</p>
+          <p className="leading-7 text-primary">{item}</p>
         </li>
       ))}
     </ol>
