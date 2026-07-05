@@ -1,5 +1,5 @@
 import { Heart, ShieldPlus, CheckCircle2, Building2 } from "lucide-react";
-
+import BranchHeroSlider from "@/components/BranchHeroSlider";
 import {
   Accordion,
   AccordionContent,
@@ -306,14 +306,8 @@ export default async function Page({ params }: Props) {
 
             <div className="relative">
               <div className="bg-blue-100 rounded-[40px] p-6">
-                <Image
-                  src={branch?.logo || ""}
-                  alt=""
-                  width={700}
-                  height={700}
-                  className="rounded-3xl object-cover"
-                />
-              </div>
+                <BranchHeroSlider cover={branch?.logo || ""} />
+                </div>
             </div>
           </div>
         </div>
