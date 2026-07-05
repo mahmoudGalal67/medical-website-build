@@ -3,30 +3,90 @@
 import { useIntersection } from "@/hooks/use-intersection";
 import Image from "next/image";
 import Link from "next/link";
+import { useParams } from "next/navigation";
 
 import { Phone, Mail, MapPin, Clock, ChevronLeft } from "lucide-react";
 
 import { FaInstagram, FaTiktok, FaSnapchat } from "react-icons/fa6";
 
-const footerLinks = {
-  الخدمات: ["عيادة الأسنان", "الجلدية والتجميل", "النساء والولادة", "الليزر"],
-};
+type Lang = "ar" | "en";
 
-const links = [
-  { name: "من نحن", href: "#about" },
-  { name: "الأطباء", href: "#doctors" },
-  { name: "الفروع", href: "#branches" },
-  { name: "العروض", href: "#offers" },
-  { name: "احجز موعد", href: "#contact" },
-];
+const content = {
+  ar: {
+    ctaTitle: "احجز موعدك الآن مع نخبة الأطباء",
+    ctaDesc:
+      "نوفر رعاية صحية متكاملة بأحدث التقنيات الطبية داخل جميع فروع مجموعة سند الجزيرة الطبية.",
+    ctaButton: "اتصل بنا الآن",
+    logoAlt: "مجموعة سند الجزيرة الطبية",
+    aboutText:
+      "مجموعة سند الجزيرة الطبية تقدم خدمات صحية متكاملة بأحدث التقنيات وعلى يد نخبة من الأطباء والاستشاريين، لنمنحكم تجربة علاجية آمنة ومتميزة.",
+    servicesTitle: "الخدمات",
+    services: ["عيادة الأسنان", "الجلدية والتجميل", "النساء والولادة", "الليزر"],
+    quickLinksTitle: "روابط سريعة",
+    links: [
+      { name: "من نحن", href: "#about" },
+      { name: "الأطباء", href: "#doctors" },
+      { name: "الفروع", href: "#branches" },
+      { name: "العروض", href: "#offers" },
+      { name: "احجز موعد", href: "#contact" },
+    ],
+    contactTitle: "معلومات التواصل",
+    address: (
+      <>
+        المملكة العربية السعودية
+        <br />
+        الرياض - حي طويق - شارع خديجة بنت خويلد بجوار القرية الشعبيه
+      </>
+    ),
+    emergency: "طوارئ على مدار الساعة (24/7)",
+    copyright: "© 2026 مجموعة سند الجزيرة الطبية. جميع الحقوق محفوظة.",
+    privacyPolicy: "سياسة الخصوصية",
+    termsAndConditions: "الشروط والأحكام",
+  },
+  en: {
+    ctaTitle: "Book Your Appointment Now with Top Doctors",
+    ctaDesc:
+      "We provide comprehensive healthcare with the latest medical technologies across all branches of Sanad Aljazeera Medical Group.",
+    ctaButton: "Call Us Now",
+    logoAlt: "Sanad Aljazeera Medical Group",
+    aboutText:
+      "Sanad Aljazeera Medical Group provides comprehensive healthcare services with the latest technologies and a team of top doctors and consultants, giving you a safe and exceptional treatment experience.",
+    servicesTitle: "Services",
+    services: ["Dental Clinic", "Dermatology & Cosmetics", "Gynecology & Obstetrics", "Laser"],
+    quickLinksTitle: "Quick Links",
+    links: [
+      { name: "About Us", href: "#about" },
+      { name: "Doctors", href: "#doctors" },
+      { name: "Branches", href: "#branches" },
+      { name: "Offers", href: "#offers" },
+      { name: "Book Appointment", href: "#contact" },
+    ],
+    contactTitle: "Contact Information",
+    address: (
+      <>
+        Kingdom of Saudi Arabia
+        <br />
+        Riyadh - Tuwaiq District - Khadijah bint Khuwaylid Street, next to Al Qariah Al Shaabiya
+      </>
+    ),
+    emergency: "24/7 Emergency Services",
+    copyright: "© 2026 Sanad Aljazeera Medical Group. All rights reserved.",
+    privacyPolicy: "Privacy Policy",
+    termsAndConditions: "Terms and Conditions",
+  },
+};
 
 export default function FooterSection() {
   const { ref, isVisible } = useIntersection(0.1);
+  const params = useParams();
+  const locale: Lang = params.locale === "en" ? "en" : "ar";
+  const isRTL = locale === "ar";
+  const t = content[locale];
 
   return (
     <footer
       id="contact"
-      dir="rtl"
+      dir={isRTL ? "rtl" : "ltr"}
       className="relative overflow-hidden bg-[#171717]"
     >
       {/* Background */}
@@ -43,14 +103,13 @@ export default function FooterSection() {
           }`}
         >
           <div className="flex flex-col items-center justify-between gap-8 lg:flex-row">
-            <div className="text-center lg:text-right">
+            <div className={`text-center ${isRTL ? "lg:text-right" : "lg:text-left"}`}>
               <h2 className="text-3xl font-extrabold text-white">
-                احجز موعدك الآن مع نخبة الأطباء
+                {t.ctaTitle}
               </h2>
 
               <p className="mt-3 max-w-xl leading-8 text-white/90">
-                نوفر رعاية صحية متكاملة بأحدث التقنيات الطبية داخل جميع فروع
-                مجموعة سند الجزيرة الطبية.
+                {t.ctaDesc}
               </p>
             </div>
 
@@ -58,7 +117,7 @@ export default function FooterSection() {
               href="tel:+966500000000"
               className="rounded-full bg-white px-8 py-4 font-bold text-primary2 transition-all duration-300 hover:scale-105 hover:bg-primary2 hover:text-white"
             >
-              اتصل بنا الآن
+              {t.ctaButton}
             </a>
           </div>
         </div>
@@ -71,15 +130,13 @@ export default function FooterSection() {
           <div>
             <Image
               src="/logo.png"
-              alt="مجموعة سند الجزيرة الطبية"
+              alt={t.logoAlt}
               width={180}
               height={70}
             />
 
             <p className="mt-6 leading-8 text-gray-300">
-              مجموعة سند الجزيرة الطبية تقدم خدمات صحية متكاملة بأحدث التقنيات
-              وعلى يد نخبة من الأطباء والاستشاريين، لنمنحكم تجربة علاجية آمنة
-              ومتميزة.
+              {t.aboutText}
             </p>
 
             <div className="mt-8 flex gap-3">
@@ -114,13 +171,13 @@ export default function FooterSection() {
 
           {/* Services */}
           <div>
-            <h3 className="mb-6 text-xl font-bold text-white">الخدمات</h3>
+            <h3 className="mb-6 text-xl font-bold text-white">{t.servicesTitle}</h3>
 
             <ul className="space-y-4">
-              {footerLinks["الخدمات"].map((item) => (
+              {t.services.map((item) => (
                 <li key={item}>
                   <button className="group flex items-center gap-2 text-gray-300 transition hover:text-white">
-                    <ChevronLeft className="h-4 w-4 text-primary2 transition group-hover:-translate-x-1" />
+                    <ChevronLeft className="h-4 w-4 text-primary2 transition group-hover:-translate-x-1 rtl:group-hover:translate-x-1 ltr:rotate-180" />
                     {item}
                   </button>
                 </li>
@@ -130,10 +187,10 @@ export default function FooterSection() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="mb-6 text-xl font-bold text-white">روابط سريعة</h3>
+            <h3 className="mb-6 text-xl font-bold text-white">{t.quickLinksTitle}</h3>
 
             <ul className="space-y-4">
-              {links.map((link) => (
+              {t.links.map((link) => (
                 <li key={link.name}>
                   <button
                     onClick={() => {
@@ -145,7 +202,7 @@ export default function FooterSection() {
                     }}
                     className="group flex cursor-pointer items-center gap-2 text-gray-300 transition hover:text-white"
                   >
-                    <ChevronLeft className="h-4 w-4 text-primary2 transition group-hover:-translate-x-1" />
+                    <ChevronLeft className="h-4 w-4 text-primary2 transition group-hover:-translate-x-1 rtl:group-hover:translate-x-1 ltr:rotate-180" />
                     {link.name}
                   </button>
                 </li>
@@ -156,16 +213,14 @@ export default function FooterSection() {
           {/* Contact */}
           <div>
             <h3 className="mb-6 text-xl font-bold text-white">
-              معلومات التواصل
+              {t.contactTitle}
             </h3>
 
             <ul className="space-y-5">
               <li className="flex items-start gap-3 text-gray-300">
                 <MapPin className="mt-1 text-primary2" size={18} />
                 <span className="leading-7">
-                  المملكة العربية السعودية
-                  <br />
-                  الرياض - حي طويق - شارع خديجة بنت خويلد بجوار القرية الشعبيه
+                  {t.address}
                 </span>
               </li>
 
@@ -189,7 +244,7 @@ export default function FooterSection() {
               <li className="flex items-start gap-3 text-gray-300">
                 <Clock className="mt-1 text-primary2" size={18} />
                 <span className="leading-7">
-طوارئ على مدار الساعة (24/7)
+                  {t.emergency}
                 </span>
               </li>
             </ul>
@@ -201,22 +256,22 @@ export default function FooterSection() {
       <div className="relative z-10 border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 py-6 text-center md:flex-row">
           <p className="text-sm text-gray-400">
-            © 2026 مجموعة سند الجزيرة الطبية. جميع الحقوق محفوظة.
+            {t.copyright}
           </p>
 
           <div className="flex items-center gap-6">
             <Link
-              href="/privacy"
+              href={`/${locale}/privacy`}
               className="text-sm text-gray-400 transition hover:text-white"
             >
-              سياسة الخصوصية
+              {t.privacyPolicy}
             </Link>
 
             <Link
-              href="/privacy"
+              href={`/${locale}/privacy`}
               className="text-sm text-gray-400 transition hover:text-white"
             >
-              الشروط والأحكام
+              {t.termsAndConditions}
             </Link>
           </div>
         </div>
