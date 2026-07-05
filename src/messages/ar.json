@@ -2,16 +2,14 @@
     "HomePage": {
         "title": "صحتك",
         "title2": "هي أولويتنا",
-
         "description": "رعاية طبية متقدمة مع التعاطف والتميز."
     },
     "Buttons": {
-        "book": "حجز موعد",
+        "book": "راسلنا واتساب",
         "findDoctor": "بحث عن طبيب",
         "findTime": "بحث عن وقت متاح",
         "view": "عرض الكل",
         "cancel": "إلغاء"
-
     },
     "heroBookingForm":{
         "title": "احجز موعدك",
