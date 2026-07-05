@@ -148,7 +148,7 @@ const uiText = {
   ar: {
     heroTitle: "عناية",
     heroTitleHighlight: "مميزة باحدث الاساليب الطبية",
-    bookAppointment: "حجز موعد",
+    bookAppointment: "راسلنا واتساب",
     contactBranch: "التواصل مع الفرع",
     ourLocation: "موقعنا",
     stats: { specialists: "متخصصون", patients: "مرضى", satisfaction: "إشباع" },
@@ -181,7 +181,7 @@ const uiText = {
     ],
     ctaTitle: "هل تحتاج إلى استشارة طبية؟",
     ctaSubtitle: "احجز موعدك مع أخصائيينا اليوم.",
-    ctaButton: "حجز موعد",
+    ctaButton: "راسلنا واتساب",
     mapTitle: "موقعنا",
     mapTitleFooter: "موقعنا",
   },
