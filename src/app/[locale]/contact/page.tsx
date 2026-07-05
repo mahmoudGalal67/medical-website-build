@@ -82,7 +82,7 @@ const content = {
       "Fill out the form below and we'll get back to you soon.",
 
     fullName: "Full Name",
-    fullNamePlaceholder: "John Smith",
+    fullNamePlaceholder: "Marwa Samy",
 
     phone: "Phone Number",
     phonePlaceholder: "+966 500 000 000",
