@@ -11,6 +11,7 @@ import Image from "next/image";
 
 import DoctorsSection from "@/components/doctors-section";
 import TestimonialsSection from "@/components/AAtestimonials-section";
+
 const branches = [
   {
     id: "1",
@@ -125,9 +126,10 @@ export default async function Page({ params }: Props) {
                   التواصل مع الفرع
                 </button>
 
-                
+                <a
                   href="#location"
-                  className="border px-8 py-4 rounded-xl font-medium flex items-center justify-center"
+                  className="border px-8 py-4 rounded-xl font-medium flex items-center justify-center hover:bg-primary hover:text-white transition-colors duration-300"
+
                 >
                   موقعنا
                 </a>
