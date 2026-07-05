@@ -14,10 +14,7 @@ export default function ServicesSection() {
   const { ref, isVisible } = useIntersection(0.15);
 
   return (
-    <section
-      id="services"
-      className="relative overflow-hidden py-24"
-    >
+    <section id="services" className="relative overflow-hidden py-24">
       {/* Background */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-white via-[#fcfafb] to-[#f7f2f4]" />
 
@@ -25,26 +22,20 @@ export default function ServicesSection() {
 
       <div className="absolute bottom-0 right-0 -z-10 h-96 w-96 rounded-full bg-[#367F8B]/10 blur-[150px]" />
 
-      <div
-        className="mx-auto max-w-7xl px-4 sm:px-6"
-        ref={ref}
-      >
+      <div className="mx-auto max-w-7xl px-4 sm:px-6" ref={ref}>
         {/* Header */}
         <div
           className={`mb-16 text-center transition-all duration-700 ${
-            isVisible
-              ? "translate-y-0 opacity-100"
-              : "translate-y-8 opacity-0"
+            isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
           }`}
         >
-        
           <h2 className="mt-3 text-4xl font-extrabold text-[#7A1F3D]">
             خدماتنا
           </h2>
 
           <p className="mx-auto mt-4 max-w-2xl text-slate-500 leading-8">
-            نقدم مجموعة متكاملة من الخدمات الطبية والتجميلية بأحدث الأجهزة
-            وعلى يد نخبة من الأطباء والاستشاريين.
+            نقدم مجموعة متكاملة من الخدمات الطبية والتجميلية بأحدث الأجهزة وعلى
+            يد نخبة من الأطباء والاستشاريين.
           </p>
         </div>
 

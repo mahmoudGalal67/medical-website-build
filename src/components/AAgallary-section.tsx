@@ -5,41 +5,39 @@ import { Camera } from "lucide-react";
 
 const photos = [
   {
-    src: "https://images.pexels.com/photos/3845625/pexels-photo-3845625.jpeg?auto=compress&cs=tinysrgb&w=600",
-    alt: "داخل العيادة",
-    span: "col-span-2 row-span-2",
+    src: "gallary3.jpeg",
+    alt: "فريق الأطباء",
+
+    span: "sm:col-span-3 sm:row-span-2 col-span-2 sm:row-span-1",
   },
   {
-    src: "https://images.pexels.com/photos/3881449/pexels-photo-3881449.jpeg?auto=compress&cs=tinysrgb&w=400",
+    src: "gallary1.jpeg",
+
     alt: "استشارة طبية",
   },
   {
-    src: "https://images.pexels.com/photos/3762453/pexels-photo-3762453.jpeg?auto=compress&cs=tinysrgb&w=400",
-    alt: "علاج الأسنان",
-  },
-  {
-    src: "https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg?auto=compress&cs=tinysrgb&w=400",
-    alt: "فريق الأطباء",
-  },
-  {
-    src: "https://images.pexels.com/photos/3845547/pexels-photo-3845547.jpeg?auto=compress&cs=tinysrgb&w=400",
-    alt: "غرفة العلاج",
-  },
-  {
-    src: "https://images.pexels.com/photos/4386466/pexels-photo-4386466.jpeg?auto=compress&cs=tinysrgb&w=400",
+    src: "gallary2.jpeg",
     alt: "الأجهزة الطبية",
   },
   {
-    src: "https://images.pexels.com/photos/3997989/pexels-photo-3997989.jpeg?auto=compress&cs=tinysrgb&w=400",
+    src: "gallary4.jpeg",
+
+    alt: "داخل العيادة",
+  },
+  {
+    src: "gallary5.jpeg",
+
+    alt: "غرفة العلاج",
+  },
+  {
+    src: "gallary6.jpeg",
+
+    alt: "الأجهزة الطبية",
+  },
+  {
+    src: "gallary7.jpeg",
+
     alt: "جلسة تجميل",
-  },
-  {
-    src: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400",
-    alt: "مريض سعيد",
-  },
-  {
-    src: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=400",
-    alt: "مريض راضٍ عن الخدمة",
   },
 ];
 
@@ -59,14 +57,14 @@ export default function GallerySection() {
             معرض الصور
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-primary2 mt-2">
-           داخل عيادتنا
+            داخل عيادتنا
           </h2>
           <p className="text-gray-500 mt-3 max-w-xl mx-auto">
-         لمحة عن مرافقنا العصرية، وفريقنا الخبير، ومرضانا السعداء.
+            لمحة عن مرافقنا العصرية، وفريقنا الخبير، ومرضانا السعداء.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-[200px]">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-[270px]">
           {photos.map((photo, i) => (
             <div
               key={i}
@@ -76,7 +74,7 @@ export default function GallerySection() {
               style={{ transitionDelay: `${i * 70}ms` }}
             >
               <img
-                src={photo.src}
+                src={`/gallary/${photo.src}`}
                 alt={photo.alt}
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
               />
