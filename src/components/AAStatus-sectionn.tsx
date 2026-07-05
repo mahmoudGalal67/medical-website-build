@@ -1,36 +1,39 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useParams } from "next/navigation";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
+
+type Lang = "ar" | "en";
 
 const stats = [
   {
     value: 50000,
     suffix: "+",
-    label: "عدد المراجعين منذ الافتتاح",
+    label: { ar: "عدد المراجعين منذ الافتتاح", en: "Patients Since Opening" },
     color: "var(--primary)",
     progress: 97,
   },
   {
     value: 9.4,
     decimals: 1,
-    label: "تقييم المراجعين",
+    label: { ar: "تقييم المراجعين", en: "Patient Rating" },
     color: "var(--primary2)",
     progress: 94,
   },
   {
     value: 97,
     suffix: "%",
-    label: "جودة الخدمات المقدمة",
+    label: { ar: "جودة الخدمات المقدمة", en: "Quality of Services Provided" },
     color: "var(--primary)",
     progress: 97,
   },
   {
     value: 30,
     suffix: "+",
-    secondLine: "عام",
-    label: "خبرات الأطباء",
+    secondLine: { ar: "عام", en: "Years" },
+    label: { ar: "خبرات الأطباء", en: "Doctors' Experience" },
     color: "var(--primary2)",
     progress: 96,
   },
@@ -41,13 +44,16 @@ export default function StatsSection() {
     triggerOnce: true,
     threshold: 0.3,
   });
+  const params = useParams();
+  const locale: Lang = params.locale === "en" ? "en" : "ar";
+  const isRTL = locale === "ar";
 
   return (
     <section
       ref={ref}
       id="stats"
       className="bg-gray-100 py-20"
-      dir="rtl"
+      dir={isRTL ? "rtl" : "ltr"}
     >
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
@@ -58,11 +64,16 @@ export default function StatsSection() {
             >
               <AnimatedCircle
                 start={inView}
-                {...item}
+                value={item.value}
+                suffix={item.suffix}
+                decimals={item.decimals}
+                secondLine={item.secondLine?.[locale]}
+                color={item.color}
+                progress={item.progress}
               />
 
               <h3 className="mt-6 text-center text-xl font-bold text-primary">
-                {item.label}
+                {item.label[locale]}
               </h3>
             </div>
           ))}
