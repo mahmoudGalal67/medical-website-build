@@ -2,11 +2,14 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useParams } from "next/navigation";
 import { motion } from "framer-motion";
+
+type Lang = "ar" | "en";
 
 type Branch = {
   img: string;
-  title: string;
+  title: { ar: string; en: string };
   href: string;
   mobileOrder: string;
   order: string;
@@ -15,49 +18,69 @@ type Branch = {
 const branches: Branch[] = [
   {
     img: "sanad.png",
-    title: "سند الجزيرة - فرع طويق",
-    href: "/branches/tweq",
+    title: { ar: "سند الجزيرة - فرع طويق", en: "Sanad Aljazeera - Tuwaiq Branch" },
+    href: "branches/tweq",
     mobileOrder: "order-1",
     order: "md:order-1",
   },
   {
     img: "sanad.png",
-    title: "سند الجزيرة - فرع المهدية",
-    href: "/branches/mahdya",
+    title: { ar: "سند الجزيرة - فرع المهدية", en: "Sanad Aljazeera - Al Mahdiyah Branch" },
+    href: "branches/mahdya",
     mobileOrder: "order-3",
     order: "md:order-2",
   },
   {
     img: "sanad.png",
-    title: "سند الجزيرة - فرع لبن",
-    href: "/branches/lbn",
+    title: { ar: "سند الجزيرة - فرع لبن", en: "Sanad Aljazeera - Laban Branch" },
+    href: "branches/lbn",
     mobileOrder: "order-5",
     order: "md:order-3",
   },
   {
     img: "carelogo.jpeg",
-    title: "مجمع الجزيرة كير الطبي",
-    href: "/branches/care",
+    title: { ar: "مجمع الجزيرة كير الطبي", en: "Aljazeera Care Medical Complex" },
+    href: "branches/care",
     mobileOrder: "order-2",
     order: "md:order-4",
   },
   {
     img: "hoda.png",
-    title: "دار الهدا الطبي",
-    href: "/branches/hoda",
+    title: { ar: "دار الهدا الطبي", en: "Dar Al Hoda Medical Center" },
+    href: "branches/hoda",
     mobileOrder: "order-4",
     order: "md:order-5",
   },
   {
     img: "khayalLogo.jpeg",
-    title: "دار الخيال الطبي",
-    href: "/branches/khayal",
+    title: { ar: "دار الخيال الطبي", en: "Dar Al Khayal Medical Center" },
+    href: "branches/khayal",
     mobileOrder: "order-6",
     order: "md:order-6",
   },
 ];
 
+const uiText = {
+  ar: {
+    heading: "فروع مجموعة سند الجزيرة الطبية",
+    subheading:
+      "اختر أقرب فرع إليك وتمتع بخدمات طبية متكاملة بأحدث التقنيات وعلى يد نخبة من الأطباء والاستشاريين.",
+    badge: "فرع",
+  },
+  en: {
+    heading: "Sanad Aljazeera Medical Group Branches",
+    subheading:
+      "Choose the nearest branch to you and enjoy comprehensive medical services with the latest technologies and a team of top doctors and consultants.",
+    badge: "Branch",
+  },
+};
+
 export default function Branches() {
+  const params = useParams();
+  const locale: Lang = params.locale === "en" ? "en" : "ar";
+  const isRTL = locale === "ar";
+  const t = uiText[locale];
+
   return (
     <section className="relative overflow-hidden pt-20 py-24" id="branches">
       {/* Background */}
@@ -77,12 +100,11 @@ export default function Branches() {
           className="text-center"
         >
           <h2 className="text-4xl font-extrabold text-primary2 [text-shadow:0_2px_8px_rgba(122,31,61,.15)]">
-            فروع مجموعة سند الجزيرة الطبية
+            {t.heading}
           </h2>
 
           <p className="mx-auto mt-4 max-w-2xl text-slate-500 leading-8">
-            اختر أقرب فرع إليك وتمتع بخدمات طبية متكاملة بأحدث التقنيات وعلى يد
-            نخبة من الأطباء والاستشاريين.
+            {t.subheading}
           </p>
         </motion.div>
 
@@ -91,7 +113,7 @@ export default function Branches() {
           <div className="grid grid-cols-2 lg:gap-7 gap-3 md:grid-cols-3 xl:grid-cols-6">
             {branches.map((branch, index) => (
               <motion.div
-                key={branch.title}
+                key={branch.title.ar}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -102,7 +124,7 @@ export default function Branches() {
                 className={`${branch.mobileOrder} ${branch.order}`}
               >
                 <Link
-                  href={branch.href}
+                  href={`/${locale}/${branch.href}`}
                   className="
                   group
                   relative
@@ -129,8 +151,12 @@ export default function Branches() {
                   "
                 >
                   {/* Badge */}
-                  <span className="absolute left-4 top-4 z-10 rounded-full bg-primary2 px-3 py-1 text-[11px] font-semibold text-white shadow">
-                    فرع
+                  <span
+                    className={`absolute top-4 z-10 rounded-full bg-primary2 px-3 py-1 text-[11px] font-semibold text-white shadow ${
+                      isRTL ? "right-4" : "left-4"
+                    }`}
+                  >
+                    {t.badge}
                   </span>
 
                   {/* Glow */}
@@ -157,7 +183,7 @@ export default function Branches() {
                   >
                     <Image
                       src={`/branches/${branch.img}`}
-                      alt={branch.title}
+                      alt={branch.title[locale]}
                       width={160}
                       height={110}
                       className="
@@ -183,7 +209,7 @@ export default function Branches() {
                     group-hover:text-primary2
                     "
                   >
-                    {branch.title}
+                    {branch.title[locale]}
                   </h3>
 
                   {/* Animated Line */}
@@ -194,15 +220,9 @@ export default function Branches() {
                     w-0
                     rounded-full
                     bg-gradient-to-r
-<<<<<<< HEAD
                     from-primary2
                     via-primary2
                     to-[#B3476B]
-=======
-                    from-[#dc3433]
-                    via-[#dc3433]
-                    to-[#dc3433]
->>>>>>> 7674d6fb9c30ba154a52c48b1bb8af1438318414
                     transition-all
                     duration-500
                     group-hover:w-20
