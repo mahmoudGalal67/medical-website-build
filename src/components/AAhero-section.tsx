@@ -243,14 +243,14 @@ export default function HeroSection() {
             loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          
+          <a
             href="tel:+966500000000"
             className="inline-flex cursor-pointer items-center justify-center gap-2 bg-[#dc3433] hover:bg-[#c52d2c] text-white font-semibold px-12 py-3.5 rounded-lg transition-all duration-300 shadow-lg shadow-[#dc3433]/30 hover:shadow-[#dc3433]/50 hover:-translate-y-0.5"
           >
             {t.callButton}
           </a>
 
-          
+          <a
             href="https://wa.me/966500000000"
             target="_blank"
             rel="noopener noreferrer"
