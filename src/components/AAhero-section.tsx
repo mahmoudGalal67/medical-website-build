@@ -40,7 +40,7 @@ const branches: Branch[] = [
   {
     img: "carelogo.jpeg",
     title: { ar: "مجمع الجزيرة كير الطبي", en: "Aljazeera Care Medical Complex" },
-    href: "branches/care",
+    href: "branches/carelogo",
     mobileOrder: "order-2",
     order: "md:order-4",
   },
