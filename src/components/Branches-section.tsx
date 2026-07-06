@@ -38,9 +38,9 @@ const branches: Branch[] = [
     order: "md:order-3",
   },
   {
-    img: "carelogo.jpeg",
+    img: "carelogo.png",
     title: { ar: "مجمع الجزيرة كير الطبي", en: "Aljazeera Care Medical Complex" },
-    href: "branches/care",
+    href: "branches/carelogo",
     mobileOrder: "order-2",
     order: "md:order-4",
   },
@@ -52,9 +52,9 @@ const branches: Branch[] = [
     order: "md:order-5",
   },
   {
-    img: "khayalLogo.jpeg",
+    img: "khayalLogo.png",
     title: { ar: "مجمع دار الخيال الطبي", en: "Dar Al Khayal Medical Center" },
-    href: "branches/khayal",
+    href: "branches/khayalLogo",
     mobileOrder: "order-6",
     order: "md:order-6",
   },
