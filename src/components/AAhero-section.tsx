@@ -216,12 +216,12 @@ export default function HeroSection() {
                 y: -8,
                 scale: 1.05,
               }}
-              className={`${branch.mobileOrder} ${branch.order} bg-white border border-white/20 rounded-2xl p-5 flex flex-col items-center justify-center shadow-xl hover:border-[#dc3433]/60 transition-all`}
+              className={`${branch.mobileOrder} ${branch.order} bg-white border border-white/20 rounded-2xl p-3 flex flex-col items-center justify-center shadow-xl hover:border-[#dc3433]/60 transition-all`}
             >
               <img
                 src={`/branches/${branch.img}`}
                 alt={branch.title[locale]}
-                className="w-24 h-24 object-contain mb-4"
+                className="w-32 h-32 md:w-36 md:h-36 object-contain mb-4"
               />
 
               <span className="text-primary font-semibold text-center">
