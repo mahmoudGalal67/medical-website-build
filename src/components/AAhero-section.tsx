@@ -244,15 +244,17 @@ export default function HeroSection() {
             loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <button
-            onClick={scrollToBranches}
+          
+            href="tel:+966500000000"
             className="inline-flex cursor-pointer items-center justify-center gap-2 bg-[#dc3433] hover:bg-[#c52d2c] text-white font-semibold px-12 py-3.5 rounded-lg transition-all duration-300 shadow-lg shadow-[#dc3433]/30 hover:shadow-[#dc3433]/50 hover:-translate-y-0.5"
           >
             {t.callButton}
-          </button>
+          </a>
 
-          <a
-            href="#contact"
+          
+            href="https://wa.me/966500000000"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 border-2 border-white/40 hover:bg-[#dc3433] text-white hover:text-white font-semibold px-12 py-3.5 rounded-lg transition-all duration-300 hover:-translate-y-0.5"
           >
             {t.whatsappButton}
