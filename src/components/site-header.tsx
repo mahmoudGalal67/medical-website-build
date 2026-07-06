@@ -43,8 +43,8 @@ const navLinks: {
     ar: { title: "العروض", href: "ar/offers" },
   },
   {
-    en: { title: "Insurance", href: "#" },
-    ar: { title: "التأمينات", href: "#" },
+    en: { title: "Insurance", href: "en/insurance" },
+    ar: { title: "التأمينات", href: "ar/insurance" },
   },
   {
     en: { title: "Laboratory and Radiology", href: "#" },
