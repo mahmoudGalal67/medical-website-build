@@ -23,7 +23,7 @@ const branches = [
       ar: "محافظة ثادق، حي الخالدية، طريق الملك فهد",
       en: "Thadiq Governorate, Al Khalidiyah District, King Fahd Road",
     },
-    location: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.5301159142036!2d45.8607969!3d25.2863875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2bc1037acc120b%3A0x133471c5b9890ee5!2z2YXYrNmF2Lkg2KfZhNis2LLYqNix2Kkg2YPZitixINin2YTYt9io2Yo!5e0!3m2!1sar!2seg!4v1783178785468!5m2!1sar!2seg'
+    location: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.5301159142036!2d45.8607969!3d25.2863875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2bc1037acc120b%3A0x133471c5b9890ee5!2z2YXYrNmF2Lkg2KfZhNis2LLYqNix2Kkg2YPZitixINin2YTYt9io2Yo!5e0!3m2!1sen!2seg!4v1783339170285!5m2!1sen!2seg"
   },
   {
     id: "2",
@@ -39,7 +39,7 @@ const branches = [
       ar: "شارع خديجة بنت خويلد، أمام القرية الشعبية",
       en: "Khadijah bint Khuwaylid Street, opposite Al Qariah Al Shaabiya",
     },
-    location: 'https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3628.1568057331287!2d46.580284075362044!3d24.58378407811085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjTCsDM1JzAxLjYiTiA0NsKwMzQnNTguMyJF!5e0!3m2!1sen!2seg!4v1783178414958!5m2!1sen!2seg'
+    location: "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3628.1568057331287!2d46.580284075362044!3d24.58378407811085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjTCsDM1JzAxLjYiTiA0NsKwMzQnNTguMyJF!5e0!3m2!1sen!2seg!4v1783178414958!5m2!1sen!2seg"
   },
   {
     id: "3",
@@ -52,7 +52,7 @@ const branches = [
     logo: "/branches/pages/khayal.jpeg",
     doctors: 8,
     address: { ar: "طويق، شارع خديجة بنت خويلد", en: "Tuwaiq, Khadijah bint Khuwaylid Street" },
-    location: 'https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3628.2607342403053!2d46.54438397536189!3d24.58019637811336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjTCsDM0JzQ4LjciTiA0NsKwMzInNDkuMSJF!5e0!3m2!1sen!2seg!4v1783178657254!5m2!1sen!2seg'
+    location: "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3628.2607342403053!2d46.54438397536189!3d24.58019637811336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjTCsDM0JzQ4LjciTiA0NsKwMzInNDkuMSJF!5e0!3m2!1sen!2seg!4v1783178657254!5m2!1sen!2seg"
   },
   {
     id: "4",
@@ -65,7 +65,7 @@ const branches = [
     logo: "/branches/pages/hoda.jpeg",
     doctors: 3,
     address: { ar: "حي طويق، شارع بلال بن رباح", en: "Tuwaiq District, Bilal bin Rabah Street" },
-    location: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3628.118019090726!2d46.567173399999994!3d24.585122899999995!2m3!1f0!2f0!3f0!3m3!1m2!1s0x3e2f19a44c021647%3A0x45da4f842e337a88!2z2YXYrNmF2Lkg2K_Yp9ixINin2YTZh9iv2KfYoSDZhNi32Kgg2YjYqtmC2YjZitmFINin2YTYp9iz2YbYp9mG!5e0!3m2!1sen!2seg!4v1783178746436!5m2!1sen!2seg'
+    location: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7351661.67661671!2d35.23876475721614!3d25.880055038543247!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f19a44c021647%3A0x45da4f842e337a88!2z2YXYrNmF2Lkg2K_Yp9ixINin2YTZh9iv2KfYoSDZhNi32Kgg2YjYqtmC2YjZitmFINin2YTYp9iz2YbYp9mG!5e0!3m2!1sen!2seg!4v1783339226691!5m2!1sen!2seg"
   },
   {
     id: "5",
@@ -78,7 +78,7 @@ const branches = [
     logo: "/branches/pages/mahdya.jpeg",
     doctors: 5,
     address: { ar: "شارع تقي الدين", en: "Taqi Al Din Street" },
-    location: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3626.099288896348!2d46.5224044!3d24.6547105!2m3!1f0!2f0!3f0!3m3!1m2!1s0x3e2f1f8b044d182d%3A0xa69f981c49107343!2z2YXYrNmF2Lkg2LnZitin2K_Yp9iqINiz2YbYryDYp9mE2KzYstmK2LHYqSDYp9mE2LfYqNmK!5e0!3m2!1sen!2seg!4v1783178718485!5m2!1sen!2seg'
+    location: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3626.099288896348!2d46.5224044!3d24.6547105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f1f8b044d182d%3A0xa69f981c49107343!2z2YXYrNmF2Lkg2LnZitin2K_Yp9iqINiz2YbYryDYp9mE2KzYstmK2LHYqSDYp9mE2LfYqNmK!5e0!3m2!1sar!2seg!4v1783339271221!5m2!1sar!2seg"
   },
   {
     id: "6",
@@ -91,7 +91,7 @@ const branches = [
     logo: "/branches/pages/lbn.jpeg",
     doctors: 6,
     address: { ar: "حي لبن شارع عسير", en: "Laban neighborhood, Asir Street" },
-    location: 'https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3627.0748994759865!2d46.5330276753632!3d24.62110327808628!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjTCsDM3JzE2LjAiTiA0NsKwMzInMDguMiJF!5e0!3m2!1sen!2seg!4v1783178687747!5m2!1sen!2seg'
+    location: "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3627.0748994759865!2d46.5330276753632!3d24.62110327808628!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjTCsDM3JzE2LjAiTiA0NsKwMzInMDguMiJF!5e0!3m2!1sen!2seg!4v1783178687747!5m2!1sen!2seg"
   },
 ];
 
@@ -115,66 +115,122 @@ const servicesText = {
 };
 
 const aboutFeaturesText = {
-  ar: ["التشخيص المتقدم", "جراحة القلب", "التصوير بالرنين المغناطيسي للقلب", "الرعاية الطارئة"],
-  en: ["Advanced Diagnostics", "Cardiac Surgery", "Cardiac MRI Imaging", "Emergency Care"],
+  ar: [
+    "جميع التخصصات الطبية",
+    "أجهزة تشخيص حديثة",
+    "مختبر وأشعة متكاملة",
+    "رعاية صحية شاملة للأسرة",
+  ],
+  en: [
+    "Comprehensive Medical Specialties",
+    "Modern Diagnostic Equipment",
+    "Integrated Laboratory & Radiology",
+    "Comprehensive Family Healthcare",
+  ],
 };
 
 const whyChooseUsText = {
   ar: [
-    "أطباء قلب ذوو خبرة",
-    "معدات حديثة",
-    "قبول التأمين",
-    "خدمات طوارئ على مدار الساعة",
-    "سرعة تحديد المواعيد",
-    "تشخيصات متطورة",
+    "نخبة من الأطباء والاستشاريين",
+    "أحدث الأجهزة والتقنيات الطبية",
+    "قبول معظم شركات التأمين",
+    "سرعة في الحجز واستقبال المرضى",
+    "رعاية صحية متكاملة لجميع أفراد الأسرة",
+    "الالتزام بأعلى معايير الجودة وسلامة المرضى",
   ],
   en: [
-    "Experienced Cardiologists",
-    "Modern Equipment",
-    "Insurance Accepted",
-    "24/7 Emergency Services",
-    "Fast Appointment Scheduling",
-    "Advanced Diagnostics",
+    "Highly Qualified Doctors & Consultants",
+    "Latest Medical Technologies",
+    "Accepted by Major Insurance Providers",
+    "Fast Appointment & Patient Reception",
+    "Comprehensive Family Healthcare",
+    "Committed to the Highest Standards of Quality & Patient Safety",
   ],
 };
 
 const uiText = {
   ar: {
     heroTitle: "عناية",
-    heroTitleHighlight: "مميزة باحدث الاساليب الطبية",
+    heroTitleHighlight: "مميزة بأحدث الأساليب الطبية",
     bookAppointment: "راسلنا واتساب",
     ourLocation: "موقعنا",
-    stats: { specialists: "متخصصون", patients: "مرضى", satisfaction: "إشباع" },
+
+    stats: {
+      specialists: "متخصصون",
+      patients: "مراجع",
+      satisfaction: "رضا العملاء",
+    },
+
     aboutTitle: "عن الفرع",
-    aboutP1: "يوفر فرعنا رعاية شاملة باستخدام تقنيات تشخيصية وعلاجية متطورة.",
-    aboutP2: "نركز على الوقاية وإعادة التأهيل على المدى الطويل.",
-    servicesTitle: "العلاجات والخدمات",
+
+    aboutP1:
+      "يقدم فرعنا خدمات طبية متكاملة في مختلف التخصصات، من خلال نخبة من الأطباء المؤهلين وأحدث الأجهزة الطبية، لضمان تشخيص دقيق ورعاية صحية متميزة.",
+
+    aboutP2:
+      "نحرص على توفير تجربة علاجية متكاملة تبدأ من الاستقبال وحتى المتابعة، مع الالتزام بأعلى معايير الجودة وسلامة المرضى، لتلبية احتياجات جميع أفراد الأسرة.",
+
+    servicesTitle: "الخدمات الطبية",
+
     whyChooseTitle: "لماذا تختارنا",
-    facilitiesTitle: "مرافق عالمية المستوى",
-    facilitiesDesc: "مُجهَّز بأحدث التقنيات للتشخيص والعلاج الدقيق.",
+
+    facilitiesTitle: "بيئة طبية متكاملة",
+
+    facilitiesDesc:
+      "يضم الفرع عيادات متخصصة، ومختبرًا متطورًا، وقسم أشعة مجهز بأحدث التقنيات، لتقديم خدمات تشخيصية وعلاجية متكاملة تحت سقف واحد.",
+
     ctaTitle: "هل تحتاج إلى استشارة طبية؟",
-    ctaSubtitle: "احجز موعدك مع أخصائيينا اليوم.",
+
+    ctaSubtitle:
+      "احجز موعدك الآن مع نخبة من الأطباء في مختلف التخصصات الطبية.",
+
     ctaButton: "راسلنا واتساب",
+
     mapTitle: "موقعنا",
+
     mapTitleFooter: "موقعنا",
   },
+
   en: {
-    heroTitle: "Distinguished",
-    heroTitleHighlight: "Care with the Latest Medical Methods",
+    heroTitle: "Exceptional",
+
+    heroTitleHighlight: "Healthcare with Modern Medical Excellence",
+
     bookAppointment: "Book Appointment",
+
     ourLocation: "Our Location",
-    stats: { specialists: "Specialists", patients: "Patients", satisfaction: "Satisfaction" },
+
+    stats: {
+      specialists: "Specialists",
+      patients: "Patients",
+      satisfaction: "Patient Satisfaction",
+    },
+
     aboutTitle: "About the Branch",
-    aboutP1: "Our branch provides comprehensive care using advanced diagnostic and treatment technologies.",
-    aboutP2: "We focus on prevention and long-term rehabilitation.",
-    servicesTitle: "Treatments & Services",
+
+    aboutP1:
+      "Our branch provides comprehensive healthcare services across multiple specialties through experienced physicians and advanced medical technologies to ensure accurate diagnosis and exceptional patient care.",
+
+    aboutP2:
+      "We are committed to delivering a seamless healthcare experience from reception to follow-up while maintaining the highest standards of quality and patient safety for every member of the family.",
+
+    servicesTitle: "Medical Services",
+
     whyChooseTitle: "Why Choose Us",
-    facilitiesTitle: "World-Class Facilities",
-    facilitiesDesc: "Equipped with the latest technologies for precise diagnosis and treatment.",
+
+    facilitiesTitle: "Integrated Medical Facilities",
+
+    facilitiesDesc:
+      "Our branch features specialized clinics, advanced laboratory services, and modern radiology units equipped with the latest technologies to provide high-quality diagnostic and treatment services under one roof.",
+
     ctaTitle: "Need a Medical Consultation?",
-    ctaSubtitle: "Book your appointment with our specialists today.",
+
+    ctaSubtitle:
+      "Book your appointment today with our experienced specialists across multiple medical fields.",
+
     ctaButton: "Book Appointment",
+
     mapTitle: "Our Location",
+
     mapTitleFooter: "Our Location",
   },
 };
