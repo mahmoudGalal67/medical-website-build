@@ -4,7 +4,7 @@ import Image from "next/image";
 
 import DoctorsSection from "@/components/doctors-section";
 import TestimonialsSection from "@/components/AAtestimonials-section";
-import FaqSection from "@/components/FaqSection";
+import FaqSection from "@/components/Faqsection";
 
 type Lang = "ar" | "en";
 
