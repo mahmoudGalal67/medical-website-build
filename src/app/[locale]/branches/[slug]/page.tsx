@@ -1,16 +1,10 @@
 import { Heart, ShieldPlus, CheckCircle2, Building2 } from "lucide-react";
 import BranchHeroSlider from "@/components/BranchHeroSlider";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-
 import Image from "next/image";
 
 import DoctorsSection from "@/components/doctors-section";
 import TestimonialsSection from "@/components/AAtestimonials-section";
+import FaqSection from "@/components/FaqSection";
 
 type Lang = "ar" | "en";
 
@@ -71,7 +65,7 @@ const branches = [
     logo: "/branches/pages/hoda.jpeg",
     doctors: 3,
     address: { ar: "حي طويق، شارع بلال بن رباح", en: "Tuwaiq District, Bilal bin Rabah Street" },
-    location: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3628.118019090726!2d46.567173399999994!3d24.585122899999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f19a44c021647%3A0x45da4f842e337a88!2z2YXYrNmF2Lkg2K_Yp9ixINin2YTZh9iv2KfYoSDZhNi32Kgg2YjYqtmC2YjZitmFINin2YTYp9iz2YbYp9mG!5e0!3m2!1sen!2seg!4v1783178746436!5m2!1sen!2seg'
+    location: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3628.118019090726!2d46.567173399999994!3d24.585122899999995!2m3!1f0!2f0!3f0!3m3!1m2!1s0x3e2f19a44c021647%3A0x45da4f842e337a88!2z2YXYrNmF2Lkg2K_Yp9ixINin2YTZh9iv2KfYoSDZhNi32Kgg2YjYqtmC2YjZitmFINin2YTYp9iz2YbYp9mG!5e0!3m2!1sen!2seg!4v1783178746436!5m2!1sen!2seg'
   },
   {
     id: "5",
@@ -84,7 +78,7 @@ const branches = [
     logo: "/branches/pages/mahdya.jpeg",
     doctors: 5,
     address: { ar: "شارع تقي الدين", en: "Taqi Al Din Street" },
-    location: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3626.099288896348!2d46.5224044!3d24.6547105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f1f8b044d182d%3A0xa69f981c49107343!2z2YXYrNmF2Lkg2LnZitin2K_Yp9iqINiz2YbYryDYp9mE2KzYstmK2LHYqSDYp9mE2LfYqNmK!5e0!3m2!1sen!2seg!4v1783178718485!5m2!1sen!2seg'
+    location: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3626.099288896348!2d46.5224044!3d24.6547105!2m3!1f0!2f0!3f0!3m3!1m2!1s0x3e2f1f8b044d182d%3A0xa69f981c49107343!2z2YXYrNmF2Lkg2LnZitin2K_Yp9iqINiz2YbYryDYp9mE2KzYstmK2LHYqSDYp9mE2LfYqNmK!5e0!3m2!1sen!2seg!4v1783178718485!5m2!1sen!2seg'
   },
   {
     id: "6",
@@ -158,26 +152,6 @@ const uiText = {
     whyChooseTitle: "لماذا تختارنا",
     facilitiesTitle: "مرافق عالمية المستوى",
     facilitiesDesc: "مُجهَّز بأحدث التقنيات للتشخيص والعلاج الدقيق.",
-    faqTitle: "الأسئلة الشائعة",
-    faqSubtitle: "اعثر على إجابات للأسئلة الأكثر شيوعاً حول قسم أمراض القلب لدينا.",
-    faq: [
-      {
-        q: "ما هي الحالات التي تعالجها؟",
-        a: "نقوم بتشخيص وعلاج مجموعة واسعة من أمراض القلب والأوعية الدموية، بما في ذلك مرض الشريان التاجي، وفشل القلب، واضطرابات نظم القلب، وارتفاع ضغط الدم، وعيوب القلب الخلقية، وأمراض صمامات القلب.",
-      },
-      {
-        q: "هل تقبلون التأمين؟",
-        a: "نعم، نحن نتعاون مع معظم شركات التأمين الكبرى. يرجى التواصل مع فريق الدعم لدينا أو الاطلاع على قسم التأمين للحصول على قائمة كاملة بالخطط المقبولة.",
-      },
-      {
-        q: "كيف أحجز موعداً؟",
-        a: "يمكنك حجز موعد عبر الإنترنت من خلال نظام الحجز لدينا، أو عن طريق الاتصال بمكتب الاستقبال، أو بزيارة المستشفى مباشرةً.",
-      },
-      {
-        q: "هل يمكنني الحصول على استشارة عبر الإنترنت؟",
-        a: "نعم، يقدم العديد من المتخصصين لدينا استشارات عبر الطب الاتصالي لزيارات المتابعة وبعض التقييمات الطبية المحددة.",
-      },
-    ],
     ctaTitle: "هل تحتاج إلى استشارة طبية؟",
     ctaSubtitle: "احجز موعدك مع أخصائيينا اليوم.",
     ctaButton: "راسلنا واتساب",
@@ -197,26 +171,6 @@ const uiText = {
     whyChooseTitle: "Why Choose Us",
     facilitiesTitle: "World-Class Facilities",
     facilitiesDesc: "Equipped with the latest technologies for precise diagnosis and treatment.",
-    faqTitle: "Frequently Asked Questions",
-    faqSubtitle: "Find answers to the most common questions about our cardiology department.",
-    faq: [
-      {
-        q: "What conditions do you treat?",
-        a: "We diagnose and treat a wide range of cardiovascular diseases, including coronary artery disease, heart failure, arrhythmias, high blood pressure, congenital heart defects, and heart valve diseases.",
-      },
-      {
-        q: "Do you accept insurance?",
-        a: "Yes, we work with most major insurance providers. Please contact our support team or check the insurance section for a full list of accepted plans.",
-      },
-      {
-        q: "How do I book an appointment?",
-        a: "You can book an appointment online through our booking system, by calling the reception desk, or by visiting the hospital directly.",
-      },
-      {
-        q: "Can I get an online consultation?",
-        a: "Yes, many of our specialists offer telemedicine consultations for follow-up visits and certain specific medical evaluations.",
-      },
-    ],
     ctaTitle: "Need a Medical Consultation?",
     ctaSubtitle: "Book your appointment with our specialists today.",
     ctaButton: "Book Appointment",
@@ -399,45 +353,10 @@ export default async function Page({ params }: Props) {
         </div>
       </section>
 
-      {/* FAQ */}
       <TestimonialsSection />
+
       {/* FAQ */}
-
-      <section className="container mx-auto px-4 py-20">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-primary2">
-              {t.faqTitle}
-            </h2>
-
-            <p className="mt-4 text-slate-600">
-              {t.faqSubtitle}
-            </p>
-          </div>
-
-          <div className="bg-white rounded-[32px] border border-slate-100 shadow-lg overflow-hidden">
-            <Accordion type="single" collapsible className="w-full">
-              {t.faq.map((item, index) => (
-                <AccordionItem
-                  key={item.q}
-                  value={`item-${index + 1}`}
-                  className="border-b last:border-b-0 px-2 "
-                >
-                  <AccordionTrigger className="px-6 text-left text-lg font-semibold hover:no-underline">
-                    <span className={`flex-1 ${isRTL ? "text-right" : "text-left"}`}>
-                      {item.q}
-                    </span>
-                  </AccordionTrigger>
-
-                  <AccordionContent className="px-6 text-slate-600 leading-7">
-                    {item.a}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </div>
-        </div>
-      </section>
+      <FaqSection locale={locale} />
 
       {/* CTA */}
 
