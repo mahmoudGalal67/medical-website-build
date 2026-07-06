@@ -168,7 +168,6 @@ export default function HeroSection() {
           </div>
         ))}
 
-        {/* رجعت الخلفية زي ما كانت */}
         <div className="absolute inset-0 bg-primary/70" />
       </div>
 
