@@ -6,8 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 
-import { Phone, Mail, MapPin, Clock, ChevronLeft, ChevronUp } from "lucide-react";
-
+import { Phone, Mail, MapPin, Clock, ChevronLeft, ChevronRight, ChevronUp } from "lucide-react";
 import { FaInstagram, FaTiktok, FaSnapchat } from "react-icons/fa6";
 
 type Lang = "ar" | "en";
@@ -83,9 +82,30 @@ export default function FooterSection() {
   const locale: Lang = params.locale === "en" ? "en" : "ar";
   const isRTL = locale === "ar";
   const t = content[locale];
-  const [showScrollTop,setShowScrollTop]=useState(false);
-  useEffect(()=>{const h=()=>setShowScrollTop(window.scrollY>400);window.addEventListener("scroll",h);return ()=>window.removeEventListener("scroll",h);},[]);
-  const scrollToTop=()=>window.scrollTo({top:0,behavior:"smooth"});
+  
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 400);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  // Dynamic Chevron based on layout direction
+  const LinkChevron = () => {
+    return isRTL ? (
+      <ChevronLeft className="h-4 w-4 text-primary2 transition group-hover:-translate-x-1" />
+    ) : (
+      <ChevronRight className="h-4 w-4 text-primary2 transition group-hover:translate-x-1" />
+    );
+  };
 
   return (
     <footer
@@ -93,12 +113,12 @@ export default function FooterSection() {
       dir={isRTL ? "rtl" : "ltr"}
       className="relative overflow-hidden bg-[#171717]"
     >
-      {/* Background */}
+      {/* Background Decorators */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary2/15 via-transparent to-[#367F8B]/10" />
       <div className="absolute -top-32 right-0 h-96 w-96 rounded-full bg-primary2/10 blur-[150px]" />
       <div className="absolute bottom-0 left-0 h-96 w-96 rounded-full bg-[#367F8B]/10 blur-[150px]" />
 
-      {/* CTA */}
+      {/* CTA Box */}
       <div className="relative z-10 px-4 pt-14">
         <div
           ref={ref}
@@ -111,7 +131,6 @@ export default function FooterSection() {
               <h2 className="text-3xl font-extrabold text-white">
                 {t.ctaTitle}
               </h2>
-
               <p className="mt-3 max-w-xl leading-8 text-white/90">
                 {t.ctaDesc}
               </p>
@@ -127,10 +146,11 @@ export default function FooterSection() {
         </div>
       </div>
 
-      {/* Main Footer */}
+      {/* Main Footer Content */}
       <div className="relative z-10 mx-auto max-w-7xl px-4 py-20">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
-          {/* Logo */}
+          
+          {/* Brand Info */}
           <div>
             <Image
               src="/logo.png"
@@ -138,11 +158,9 @@ export default function FooterSection() {
               width={180}
               height={70}
             />
-
             <p className="mt-6 leading-8 text-gray-300">
               {t.aboutText}
             </p>
-
             <div className="mt-8 flex gap-3">
               <a
                 href="https://www.instagram.com/sanad_aljazeera"
@@ -152,7 +170,6 @@ export default function FooterSection() {
               >
                 <FaInstagram size={20} />
               </a>
-
               <a
                 href="https://www.tiktok.com/@sanad_aljazeera"
                 target="_blank"
@@ -161,7 +178,6 @@ export default function FooterSection() {
               >
                 <FaTiktok size={18} />
               </a>
-
               <a
                 href="https://snapchat.com/t/kGMdQePz"
                 target="_blank"
@@ -173,26 +189,40 @@ export default function FooterSection() {
             </div>
           </div>
 
-          {/* Services */}
+          {/* Services Links */}
           <div>
             <h3 className="mb-6 text-xl font-bold text-white">{t.servicesTitle}</h3>
-
             <ul className="space-y-4">
-              {t.services.map((item) => (
-                <li key={item}>
-                  <button className="group flex items-center gap-2 text-gray-300 transition hover:text-white">
-                    <ChevronLeft className="h-4 w-4 text-primary2 transition group-hover:-translate-x-1 rtl:group-hover:translate-x-1 ltr:rotate-180" />
-                    {item}
-                  </button>
-                </li>
-              ))}
+              {t.services.map((item) => {
+                const isDental = item === "Dental Clinic" || item === "عيادة الأسنان";
+                const isDermatology = item === "Dermatology & Cosmetics" || item === "الجلدية والتجميل";
+                const isGynecology = item === "Gynecology & Obstetrics" || item === "النساء والولادة";
+                const isLaser = item === "Laser" || item === "الليزر";
+
+                let targetHref = "#";
+                if (isDental) targetHref = `/${locale}/clinics`;
+                else if (isDermatology) targetHref = `/${locale}/dermatology`;
+                else if (isGynecology) targetHref = `/${locale}/gynecology`;
+                else if (isLaser) targetHref = `/${locale}/laser`;
+
+                return (
+                  <li key={item}>
+                    <Link
+                      href={targetHref}
+                      className="group flex items-center gap-2 text-gray-300 transition hover:text-white"
+                    >
+                      <LinkChevron />
+                      {item}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 
           {/* Quick Links */}
           <div>
             <h3 className="mb-6 text-xl font-bold text-white">{t.quickLinksTitle}</h3>
-
             <ul className="space-y-4">
               {t.links.map((link) => (
                 <li key={link.name}>
@@ -206,7 +236,7 @@ export default function FooterSection() {
                     }}
                     className="group flex cursor-pointer items-center gap-2 text-gray-300 transition hover:text-white"
                   >
-                    <ChevronLeft className="h-4 w-4 text-primary2 transition group-hover:-translate-x-1 rtl:group-hover:translate-x-1 ltr:rotate-180" />
+                    <LinkChevron />
                     {link.name}
                   </button>
                 </li>
@@ -214,49 +244,39 @@ export default function FooterSection() {
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Contact Details */}
           <div>
             <h3 className="mb-6 text-xl font-bold text-white">
               {t.contactTitle}
             </h3>
-
             <ul className="space-y-5">
               <li className="flex items-start gap-3 text-gray-300">
-                <MapPin className="mt-1 text-primary2" size={18} />
-                <span className="leading-7">
-                  {t.address}
-                </span>
+                <MapPin className="mt-1 text-primary2 flex-shrink-0" size={18} />
+                <span className="leading-7">{t.address}</span>
               </li>
-
               <li className="flex items-center gap-3 text-gray-300">
-                <Phone className="text-primary2" size={18} />
+                <Phone className="text-primary2 flex-shrink-0" size={18} />
                 <a href="tel:+966500000000" className="hover:text-white">
                   +966 50 000 0000
                 </a>
               </li>
-
               <li className="flex items-center gap-3 text-gray-300">
-                <Mail className="text-primary2" size={18} />
-                <a
-                  href="mailto:info@sanadaljazeera.com"
-                  className="hover:text-white"
-                >
+                <Mail className="text-primary2 flex-shrink-0" size={18} />
+                <a href="mailto:info@sanadaljazeera.com" className="hover:text-white">
                   info@sanadaljazeera.com
                 </a>
               </li>
-
               <li className="flex items-start gap-3 text-gray-300">
-                <Clock className="mt-1 text-primary2" size={18} />
-                <span className="leading-7">
-                  {t.emergency}
-                </span>
+                <Clock className="mt-1 text-primary2 flex-shrink-0" size={18} />
+                <span className="leading-7">{t.emergency}</span>
               </li>
             </ul>
           </div>
+
         </div>
       </div>
 
-      {/* Bottom */}
+      {/* Bottom Sub-Footer */}
       <div className="relative z-10 border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 py-6 text-center md:flex-row">
           <p className="text-sm text-gray-400">
@@ -270,9 +290,8 @@ export default function FooterSection() {
             >
               {t.privacyPolicy}
             </Link>
-
             <Link
-              href={`/${locale}/privacy`}
+              href={`/${locale}/terms`}
               className="text-sm text-gray-400 transition hover:text-white"
             >
               {t.termsAndConditions}
@@ -280,7 +299,16 @@ export default function FooterSection() {
           </div>
         </div>
       </div>
-    <button onClick={scrollToTop} className={`fixed bottom-6 ${isRTL?"left-6":"right-6"} z-50 flex h-14 w-14 items-center justify-center rounded-full bg-primary2 text-white shadow-xl transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:bg-primary ${showScrollTop?"opacity-100 translate-y-0":"pointer-events-none opacity-0 translate-y-4"}`}><ChevronUp size={24}/></button>
+
+      {/* Scroll To Top Button */}
+      <button
+        onClick={scrollToTop}
+        className={`fixed bottom-6 ${isRTL ? "left-6" : "right-6"} z-50 flex h-14 w-14 items-center justify-center rounded-full bg-primary2 text-white shadow-xl transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:bg-primary ${
+          showScrollTop ? "opacity-100 translate-y-0" : "pointer-events-none opacity-0 translate-y-4"
+        }`}
+      >
+        <ChevronUp size={24} />
+      </button>
     </footer>
   );
 }
